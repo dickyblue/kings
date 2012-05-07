@@ -1,6 +1,6 @@
 NickMing::Application.routes.draw do
 
-  root :to => 'pages#index'
+  root :to => 'login#index'
 
   match '/pages/how_we_met', :to => 'pages#how_we_met', :as => :how_we_met
   match '/pages/then_and_now', :to => 'pages#then_and_now', :as => :then_and_now
