@@ -27,6 +27,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# added thin and pg for heroku
+group :production do
+  gem 'thin'
+  gem 'pg'
+end  
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
