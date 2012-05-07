@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NickMing</title>
+  <%= stylesheet_link_tag    "application", "nivo-slider", :media => "all" %>
+  <%= javascript_include_tag "application", "jquery.nivo.slider", "jquery.nivo.slider.pack" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="container">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">Nick and Ming</a>
+        <ul class="nav">
+          <li class="dropdown">
+            
+          <%= tabs %>
+                   
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+</body>
+</html>
