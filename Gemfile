@@ -11,6 +11,7 @@ gem 'carrierwave'
 gem 'tabulous'
 gem 'formtastic-bootstrap'
 gem 'formtastic', " ~> 2.1.1"
+gem 'heroku'
 
 
 # Gems used only for assets and not required
