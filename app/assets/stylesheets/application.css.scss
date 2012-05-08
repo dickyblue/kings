@@ -13,6 +13,9 @@
  *= require_tree .
 */
 
+/*-----------COLOR------------*/
+$red: #ED0D42;
+
 @import 'bootstrap';
 
 .welcome-pix {
@@ -22,6 +25,31 @@
   margin-left: auto;
   margin-right: auto
   }
+
+
+.login-container {
+  padding-top: 150px
+  }
+  
+#login_box {
+  display:none;
+	position: absolute;
+  top: 250px;
+  width: 158px;
+  float: left;
+  z-index: 2;
+}
+
+.login {
+  background: #FFFFFF;
+  text-align: center;
+  padding: 40px 0 40px 0;
+  width: 265px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  
+}
 
 
 /*-------------NAV BAR------------------------*/
@@ -100,5 +128,117 @@
   top: -60px;
   height: 400px; 
   z-index: 0; 
+  }
 
+
+/*-------------EFFECTS------------------------*/
+  
+  .effect6
+  {
+      position:relative;
+      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 10px $red inset;
+         -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 10px $red inset;
+              box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 10px $red inset;
+  }
+  .effect6:before, .effect6:after
+  {
+      content:"";
+      position:absolute;
+      z-index:-1;
+      -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+      -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+      box-shadow:0 0 20px rgba(0,0,0,0.8);
+      top:50%;
+      bottom:0;
+      left:10px;
+      right:10px;
+      -moz-border-radius:100px / 10px;
+      border-radius:100px / 10px;
+  }
+  .effect6:after
+  {
+      right:10px;
+      left:auto;
+      -webkit-transform:skew(8deg) rotate(3deg);
+         -moz-transform:skew(8deg) rotate(3deg);
+          -ms-transform:skew(8deg) rotate(3deg);
+           -o-transform:skew(8deg) rotate(3deg);
+              transform:skew(8deg) rotate(3deg);
+  }
+
+
+/*-------------HOME ROTATING IMAGES------------------------*/
+
+ul.slideshow {
+  list-style:none;
+  width:940px;
+  height:400px;
+  overflow:hidden;
+  position:relative;
+  margin:0;
+  padding:0;
+  }   
+
+ul.slideshow li {
+  position:absolute;
+  left:0;
+  right:0;
+  }
+
+ul.slideshow li.show {
+  z-index:500;    
+  }
+
+ul img {
+  border:none;    
+  }
+
+#slideshow-caption {
+  width:300px;
+  height:400px;
+  position:absolute;
+  float: right;
+  bottom:0;
+  left:600px; 
+  color:#fff;
+  background: $red;
+  z-index:500;
+  }
+
+#slideshow-caption .slideshow-caption-container {
+  padding:5px 10px;   
+  z-index:1000;   
+  }
+
+#slideshow-caption h3 {
+  margin:0;
+  padding-top:10px;
+  font-size:18px;
+  color: #fff;
+  line-height: 105%;
+  }
+
+#slideshow-caption p {
+  margin:5px 0 0 0;
+  padding-top:10px;
+  font-size:14px;
+  font-weight: bold;
+  }
+  
+.featured_thumbs{  
+  width: 90px;  
+  height: 250px;  
+  overflow: hidden; 
+  position: relative;
+  float: right; 
+  }
+
+.gallery{  
+  width: 940px;  
+  height: 400px;  
+  /*border: 1px solid #F0F0F0;*/
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+	background:#FFF;
   }

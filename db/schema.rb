@@ -11,13 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120412201957) do
+ActiveRecord::Schema.define(:version => 20120507194326) do
 
   create_table "galleries", :force => true do |t|
     t.string   "image"
     t.text     "description"
+    t.boolean  "featured"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "name",                   :limit => 25
+    t.string   "email",                  :limit => 75
+    t.string   "password_salt"
+    t.string   "password_hash"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.boolean  "admin",                                :default => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

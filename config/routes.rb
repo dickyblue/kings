@@ -1,15 +1,24 @@
 NickMing::Application.routes.draw do
 
-  root :to => 'login#index'
+  root :to => 'sessions#index'
+
+  match '/login', :to => 'sessions#new', :as => :login
+  match '/signout', :to => 'sessions#destroy', :as => :sign_out
 
   match '/pages/how_we_met', :to => 'pages#how_we_met', :as => :how_we_met
   match '/pages/then_and_now', :to => 'pages#then_and_now', :as => :then_and_now
   match '/pages/she_said_yes', :to => 'pages#she_said_yes', :as => :she_said_yes
+  match '/pages/weekend_schedule', :to => 'pages#weekend_schedule', :as => :weekend_schedule
 
+
+  match '/welcome', :to => 'galleries#home', :as => :welcome
   match '/galleries/manage', :to => 'galleries#manage', :as => :manage_gallery
+  match '/galleries/list', :to => 'galleries#list', :as => :list_gallery
 
+  match '/users/manage', :to => 'users#manage', :as => :manage_user
+  match '/users/list', :to => 'users#list', :as => :list_user
   
-  resources :galleries
+  resources :galleries, :sessions, :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

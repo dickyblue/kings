@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  def index
+  def home
   end
 
   def how_we_met
@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   end
   
   def she_said_yes
+  end
+  
+  def weekend_schedule
   end
 
 end

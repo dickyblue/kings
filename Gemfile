@@ -12,6 +12,8 @@ gem 'tabulous'
 gem 'formtastic-bootstrap'
 gem 'formtastic', " ~> 2.1.1"
 gem 'heroku'
+gem 'will_paginate'
+gem 'meta_search'
 
 
 # Gems used only for assets and not required

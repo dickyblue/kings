@@ -1,0 +1,37 @@
+<p><%= link_to "«« Back to Home »»", welcome_path %></p></br> 
+
+<h4>List of Pictures</h4></br>
+
+<div>
+  <%= semantic_form_for @search, :url => list_gallery_path do |f| %>
+    <%= f.input :description_contains, :label => "Keyword Search", :required => false %>
+    SORT BY: <%= f.sort_link :id, "ID Order" %>
+  <% end %>
+</div>
+
+<table class="table zebra-striped">
+  <thead>
+    <tr>
+      <th>ID #</th>
+      <th>Description</th>
+      <th>Featured?</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @galleries.each do |gal| %>
+    <tr>
+      <td><%= gal.id %></td>
+      <td><%= truncate(gal.description, :length => 50, :separator => " ") %></td>
+      <td><%= gal.featured? %></td>
+      <td><%= link_to "Edit", :action => 'manage', :id => gal.id %> | <%= link_to "Delete", gal, :method => :delete %></td>        
+     </tr>
+    <% end %>
+  </tbody>  
+
+</table>
+
+<%= will_paginate @users %>
+
+<div class="btn primary white-link pull-right"><%= link_to "New", :action => 'manage' %></div>

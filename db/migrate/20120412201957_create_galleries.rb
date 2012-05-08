@@ -3,6 +3,7 @@ class CreateGalleries < ActiveRecord::Migration
     create_table :galleries do |t|
       t.string  :image
       t.text    :description
+      t.boolean :featured
       t.timestamps
     end
   end
