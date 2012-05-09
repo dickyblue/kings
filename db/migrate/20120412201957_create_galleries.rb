@@ -4,6 +4,7 @@ class CreateGalleries < ActiveRecord::Migration
       t.string  :image
       t.text    :description
       t.boolean :featured
+      t.boolean :lodging
       t.timestamps
     end
   end

@@ -14,9 +14,19 @@
 */
 
 /*-----------COLOR------------*/
-$red: #ED0D42;
+$red:         #ED0D42;
+$beige:       #F0ECEB;
+$sky-blue:    #CEEBFB;
+$medium-blue: #A3D6F5;
+$dark-blue:   #66A7C5;
+$light-red:   #EE3233;
+$gray: 	      #6C7476;
 
 @import 'bootstrap';
+
+body {
+  padding-top: 140px
+  }
 
 .welcome-pix {
   border: solid 1px #eee;
@@ -26,6 +36,19 @@ $red: #ED0D42;
   margin-right: auto
   }
 
+p, blockquote {
+  font-size: 14px;
+  line-height: 150%
+  }
+  
+h5 {
+  font-size: 14px;
+  line-height: 150%
+  }  
+
+a {
+  color: $dark-blue;
+}
 
 .login-container {
   padding-top: 150px
@@ -51,6 +74,10 @@ $red: #ED0D42;
   
 }
 
+.sign-out {
+  position: relative;
+  float: right
+  }
 
 /*-------------NAV BAR------------------------*/
   
@@ -72,7 +99,24 @@ $red: #ED0D42;
           box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25), inset 0 0 0 rgba(0, 0, 0, 0.1);
   }
 
- 
+
+
+.navbar .nav > li > a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: pacifico
+  }
+
+.navbar .nav .active > a, .navbar .nav .active > a:hover {
+  color: $red;
+  background-color: #FFFFFF;
+  }
+
+.navbar .nav > li > a:hover {
+  color: $dark-blue;
+  background-color: #FFFFFF;
+  } 
   
 /*-------------PACIFICO FONT------------------------*/
 
@@ -242,3 +286,87 @@ ul img {
   -moz-border-radius: 4px;
 	background:#FFF;
   }
+
+
+/*-------------SLIDE GALLERY------------------------*/
+#slide_gallery {
+  background: url(bg_img.png) no-repeat;
+  height: 440px;
+  width: 940px;
+  padding-left: 35px;
+  padding-top:30px
+  }
+  
+.slide_gallery li {
+  display: inline;
+  margin-right: 6px;
+  float: left;
+  }
+
+
+/*-------------ACCORDION------------------------*/
+
+.accordion-tabs {
+  background-image: -moz-linear-gradient(center top , $beige, #F6F6F6);
+  background-image: -ms-linear-gradient(center top , $beige, #F6F6F6);
+  background-image: -khtml-gradient(linear, left top, left bottom, from($beige), to(#F6F6F6));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F6F6F6), color-stop(100%, $beige));
+  background-image: -webkit-linear-gradient(top, $beige, #F6F6F6);
+  background-image: -o-linear-gradient(top, $beige, #F6F6F6);
+  background-image: linear-gradient(top, $beige, #F6F6F6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0ECEB', endColorstr='#F6F6F6', GradientType=0);
+  
+  cursor: pointer;
+  height: 30px;
+  border: 1px solid #FFFFFF;
+  margin: 10px 0 10px 0;
+  padding: 0 10px 0 10px
+  }
+  
+.indent-10-px {
+  padding-left: 15px; 
+  } 
+  
+.bridal_pic {
+  width: 130px;
+  height: 130px;
+  border: 1px solid $gray
+  }
+
+
+/*-------------OUR STORY------------------------*/
+
+.timeline {
+  position: relative;
+  }
+  
+.jpm {
+  position: relative;
+  left: 130px;
+  top: 20px;
+  float:left
+  }
+  
+.nickandming {
+  position: relative;
+  left: 170px;
+  float: left
+  }
+  
+.shesaidyes {
+  position: relative;
+  left: 310px;
+  top: 20px
+  }
+  
+.aloha {
+  position: relative;
+  left: 310px;
+  top: 20px
+  }
+
+.tabs {
+  display: inline;
+  top: -250px
+  }  
+

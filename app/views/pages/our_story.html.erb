@@ -1,0 +1,106 @@
+<script type="text/javascript">
+$(document).ready(function() {
+ 
+	$('.tabs a').click(function(){
+		switch_tabs($(this));
+	});
+ 
+	switch_tabs($('.default'));
+ 
+});
+ 
+function switch_tabs(obj)
+{
+	$('.tab-content').hide();
+	$('.tabs a').removeClass("active");
+	var id = obj.attr("rel");
+ 
+	$('#'+id).show();
+	obj.addClass("active");
+}
+</script>
+
+<div class="container">
+
+<h5 style="text-align: center">Click on the logos to get a detailed his version / her version of our story.</h5>
+
+<div class="timeline">
+  <%= timeline %>
+</div>
+  <div class="tabs">
+    <a href="javascript:void(0)" class="default jpm" rel="tabs1"><%= jpm %></a>
+    <a href="javascript:void(0)" rel="tabs2" class="nickandming"><%= nickming %></a>
+    <a href="javascript:void(0)" rel="tabs3" class="shesaidyes"><%= shesaidyes %></a>
+    <a href="javascript:void(0)" rel="tabs4" class="aloha"><%= aloha %></a>
+  </div>
+
+  
+  <%= hishers %>
+  </br>
+  </br>
+
+  <div class="tab-content" id="tabs1">
+    <div class="row">
+      <div class="span5">
+        <blockquote>His Version1 lets see how much of this is in this part of the site to see if it make sense</blockquote>
+        </div>
+      <div class="span5 offset2" style="margin-left: 155px">
+        <blockquote>My first recollection of Nick was at lunch during analyst training. He didn't remember me because
+          he was too busy interrogating me on why I wanted to do banking. I just thought he was a douche. Second time was
+          during a friend's bday dinner, where he, of course, said he didn't remember meeting me before - ever. Then one day
+          this guy named Nicholas Khuu sametimed (internal JPM instant messaging service) me. At that point, I didn't remember
+          him either. But since he sametimed me, I assumed he wanted to me to get him some SLF league tables so I wanted to
+          ignore him. Luckily for my dependable nature, I responded even though it was 2am. Turned out, he was just bored and
+          wanted to chat. The rest is history.</blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tabs2">
+    <div class="row">
+      <div class="span5">
+        <blockquote>His Version2 lets see how much of this is in this part of the site to see if it make sense</blockquote>
+        </div>
+      <div class="span5 offset2" style="margin-left: 155px">
+        <blockquote>My friend Chris wanted to go to SF to watch a symphony orchestra perform. Since I am such a fan of the arts,
+          I went with him. During my stay there, Nick professed his undying love for me. I don't think I actually agreed to
+          be his girlfriend until after I got back to NYC. Yes, we went straight to being gf/bf. Sounds so HS, but since the
+          distance prohibited normal dating protocol, we went straight for the gold.</blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tabs3">
+    <div class="row">
+      <div class="span5">
+        <blockquote>His Version3 lets see how much of this is in this part of the site to see if it make sense</blockquote>
+        </div>
+      <div class="span5 offset2" style="margin-left: 155px">
+        <blockquote>Since I played a part in the ring selection process, I knew it was coming. He still tried to surprise me
+          by doing it on a weekend trip. When I saw in his email inbox an email from Expedia confirming travel plans, I knew when
+          it was going to happen too (I didn't even need to snoop around since genius boy left his email front and center on the 
+          computer). I teased him that I know all about the "plan," but he denied it. Come that Friday, I already packed my bags
+          and told him "I was ready should we need to go somewhere."</blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tabs4">
+    <div class="row">
+      <div class="span5">
+        <blockquote>His Version4 lets see how much of this is in this part of the site to see if it make sense</blockquote>
+        </div>
+      <div class="span5 offset2" style="margin-left: 155px">
+        <blockquote>We know, we've been really bad about planning the wedding, but now it is officially done and we couldn't
+          be more excited. We hope all of you can come and share this special day with us.</blockquote>
+      </div>
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+</br>
+</br>

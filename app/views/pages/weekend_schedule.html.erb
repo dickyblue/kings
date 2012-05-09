@@ -4,58 +4,32 @@
   
   <div class="accordion">
     
-    <h3>Travel and Lodging</h3>
-    <div>Lorem...</div>
-    
-    
-    <h3>Bridal Party</h3>
-    <div>
-      TBD
+    <h3 class="accordion-tabs">Travel and Lodging</h3>
+    <div class="indent-10-px">
+      <%=  render :template => "galleries/travel_lodging" %>
     </div>
     
     
-    <h3>Wedding Schedule</h3>
-    <div>
-      <div class="row">
-        <div class="span4">
-          <%= sept29 %>
-        </div>
-
-        <div class="span8">
-          <h3>Group Activity: TBD</h3>
-        </div>    
-      </div>
-
-      </br>
-      </br>
-      <div class="row">
-        <div class="span4">
-          <%= sept30 %>
-        </div>
-
-        <div class="span8">
-          <h3>The Big Day!</h3>
-          <h4>Sunday, September 30, 2012 | 5:00pm</h4>
-          <p>Four Seasons Resort Hualālai at Historic Ka'ūpūlehu</br>
-            72-100 Ka`upulehu Drive | Kailua-Kona | Hawaii 96740</p>
-          <p><%= link_to "Four Seasons Website", "http://www.fourseasons.com/hualalai/", :target => false %></p>
-
-          <h4>Sunday, September 30, 2012 | 7:00pm</h4>
-          <p>Four Seasons Resort Hualālai at Historic Ka'ūpūlehu</br>
-            72-100 Ka`upulehu Drive | Kailua-Kona | Hawaii 96740</p>
-          <p><%= link_to "Four Seasons Website", "http://www.fourseasons.com/hualalai/", :target => false %>
-        </div>
-      </div>
+    <h3 class="accordion-tabs">Bridal Party</h3>
+    <div class="indent-10-px">
+      <%=  render "bridal_party" %>
+    </div>
+    
+    
+    <h3 class="accordion-tabs">Wedding Schedule</h3>
+    <div class="indent-10-px">
+      <%=  render "wedding_schedule" %>
     </div>  
       
-      <h3>Recommended Extended Travel Itineraries</h3>
-      <div>
-        TBD
-      </div>
+    <h3 class="accordion-tabs">Recommended Extended Travel Itineraries</h3>
+    <div class="indent-10-px">
+      TBD
+    </div>
       
     
   </div>
   
+  <%= inlove %>
 
   
 </div>

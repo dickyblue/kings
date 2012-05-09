@@ -121,7 +121,7 @@ function gallery() {
 }
 
 
-
+// Accordion
 
 $(document).ready(function() {
   $('div.accordion> div').hide();  
@@ -130,3 +130,22 @@ $(document).ready(function() {
     .siblings('div:visible').slideUp('fast');
   });
 });
+
+
+// SlideGallery
+
+$(function() {
+	
+$(".slide_gallery").hover(function() {
+var image = $(this).attr("rel");	
+$('#slide_gallery').attr('src', $(this).attr('src'));
+$('#slide_gallery').fadeIn('fast');
+$('#slide_gallery').html('<img src="' + image + '"/>');
+return false;
+    });
+});
+
+
+
+// Our Story
+

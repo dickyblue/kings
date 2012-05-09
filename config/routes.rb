@@ -5,15 +5,13 @@ NickMing::Application.routes.draw do
   match '/login', :to => 'sessions#new', :as => :login
   match '/signout', :to => 'sessions#destroy', :as => :sign_out
 
-  match '/pages/how_we_met', :to => 'pages#how_we_met', :as => :how_we_met
-  match '/pages/then_and_now', :to => 'pages#then_and_now', :as => :then_and_now
-  match '/pages/she_said_yes', :to => 'pages#she_said_yes', :as => :she_said_yes
+  match '/pages/our_story', :to => 'pages#our_story', :as => :our_story
   match '/pages/weekend_schedule', :to => 'pages#weekend_schedule', :as => :weekend_schedule
-
 
   match '/welcome', :to => 'galleries#home', :as => :welcome
   match '/galleries/manage', :to => 'galleries#manage', :as => :manage_gallery
   match '/galleries/list', :to => 'galleries#list', :as => :list_gallery
+  match '/galleries/travel_lodging', :to => 'galleries#travel_lodging', :as => :travel_lodging
 
   match '/users/manage', :to => 'users#manage', :as => :manage_user
   match '/users/list', :to => 'users#list', :as => :list_user

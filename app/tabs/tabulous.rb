@@ -54,24 +54,22 @@ Tabulous.setup do |config|
 
   config.tabs do
     [
-      #------------------------------------------------------------------------------------------------------------------------------------------#
-      #    TAB NAME                           |    DISPLAY TEXT                  |    PATH                     |    VISIBLE?    |    ENABLED?    #
-      #------------------------------------------------------------------------------------------------------------------------------------------#
-      [    :home_tab                          ,    'Home'                        ,    welcome_path             ,    true        ,    true        ],
-      [    :the_story_tab                     ,    'The Story'                   ,    how_we_met_path          ,    true        ,    true        ],
-      [    :how_we_met_subtab                 ,    'How We Met'                  ,    how_we_met_path          ,    true        ,    true        ],
-      [    :then_and_now_subtab               ,    'Then and Now'                ,    then_and_now_path        ,    true        ,    true        ],
-      [    :she_said_yes_subtab               ,    'She Said Yes'                ,    she_said_yes_path        ,    true        ,    true        ],
-      [    :wedding_weekend_tab               ,    'Wedding Weekend Schedule'    ,    weekend_schedule_path    ,    true        ,    true        ],
-      [    :travel_and_lodging_subtab         ,    'Travel and Lodging'          ,    '#'                      ,    true        ,    true        ],
-      [    :bridal_party_subtab               ,    'Bridal Party'                ,    '#'                      ,    true        ,    true        ],
-      [    :recommended_itineraries_subtab    ,    'Things To Do'                ,    '#'                      ,    true        ,    true        ],
-      [    :gallery_tab                       ,    'Photo Gallery'               ,    manage_gallery_path      ,    true        ,    true        ],
-      [    :future_plans_tab                  ,    'Future Plans'                ,    '#'                      ,    true        ,    true        ],
-      [    :gift_registries_tab               ,    'Gift Registries'             ,    '#'                      ,    true        ,    true        ],
-      #------------------------------------------------------------------------------------------------------------------------------------------#
-      #    TAB NAME                           |    DISPLAY TEXT                  |    PATH                     |    VISIBLE?    |    ENABLED?    #
-      #------------------------------------------------------------------------------------------------------------------------------------------#
+      #------------------------------------------------------------------------------------------------------------------------------------#
+      #    TAB NAME                           |    DISPLAY TEXT            |    PATH                     |    VISIBLE?    |    ENABLED?    #
+      #------------------------------------------------------------------------------------------------------------------------------------#
+      [    :home_tab                          ,    'Home'                  ,    welcome_path             ,    true        ,    true        ],
+      [    :our_story_tab                     ,    'Our Story'             ,    our_story_path           ,    true        ,    true        ],
+      [    :how_we_met_subtab                 ,    'How We Met'            ,    how_we_met_path          ,    true        ,    true        ],
+      [    :wedding_weekend_tab               ,    'Wedding Weekend'       ,    weekend_schedule_path    ,    true        ,    true        ],
+      [    :travel_and_lodging_subtab         ,    'Travel and Lodging'    ,    '#'                      ,    true        ,    true        ],
+      [    :bridal_party_subtab               ,    'Bridal Party'          ,    '#'                      ,    true        ,    true        ],
+      [    :recommended_itineraries_subtab    ,    'Things To Do'          ,    '#'                      ,    true        ,    true        ],
+      [    :gallery_tab                       ,    'Photo Gallery'         ,    galleries_path           ,    true        ,    true        ],
+      [    :future_plans_tab                  ,    'Future Plans'          ,    '#'                      ,    true        ,    true        ],
+      [    :gift_registries_tab               ,    'Gift Registries'       ,    '#'                      ,    true        ,    true        ],
+      #------------------------------------------------------------------------------------------------------------------------------------#
+      #    TAB NAME                           |    DISPLAY TEXT            |    PATH                     |    VISIBLE?    |    ENABLED?    #
+      #------------------------------------------------------------------------------------------------------------------------------------#
     ]
   end
 
@@ -96,11 +94,10 @@ Tabulous.setup do |config|
       #-------------------------------------------------------------------------#
       [    :users        ,    :all_actions         ,    :home_tab               ],
       [    :pages        ,    :home                ,    :home_tab               ],
-      [    :pages        ,    :how_we_met          ,    :how_we_met_subtab      ],
-      [    :pages        ,    :then_and_now        ,    :then_and_now_subtab    ],
-      [    :pages        ,    :she_said_yes        ,    :she_said_yes_subtab    ],
+      [    :pages        ,    :our_story           ,    :our_story_tab          ],
       [    :pages        ,    :weekend_schedule    ,    :wedding_weekend_tab    ],
       [    :galleries    ,    :home                ,    :home_tab               ],
+      [    :galleries    ,    :index               ,    :gallery_tab            ],
       [    :galleries    ,    :all_actions         ,    :gallery_tab            ],
       #-------------------------------------------------------------------------#
       #    CONTROLLER    |    ACTION               |    TAB                     #

@@ -1,36 +1,36 @@
-<div class="container" style="padding-left: 20px; padding-right: 20px;">
-
-  <h2 style="text-align: center">Welcome, Friends and Family</h2>
-
-  </br>
+<div class="container" style="margin-left: 20px; margin-right: 20px;">
 
   <div class="gallery">
 
     <ul class="slideshow">
         <% @featured_images.each do |feat|%>
         <li>
-            <%= image_tag(feat.image_url(:ex_large), :title => "", :alt => truncate(feat.description, :length => 130) ) %>
+            <%= image_tag(feat.image_url(:featured), :title => "", :alt => truncate(feat.description, :length => 130) ) %>
         </li>
         <% end %>
     </ul>
   </div>
 
   </br>
+  
+  <h2 style="text-align: center"><span style="color: #ED0D42; font-family: pacifico; font-size: 30px">W</span>elcome, Friends and Family</h2>
 
   </br>
 
-  <p>Welcome to our wedding website! Thank you for visiting, we hope that you'll find all the information 
+  <p>Welcome to our TheKhuus! Thank you for visiting, we hope that you'll find all the information 
     you need about our wedding here. Please come back often, as we will be adding new details regularly!</p>
 
   <p>It's hard to believe that we've been engaged for over 6 months now. Thank you for being patient with us
-    as we sort out the wedding venues and dates.</p>
+    as we sort out the wedding venues and dates. It's been an arduous task, but it's done and we are very excited!</p>
   
   <p>This website was built by yours truly and is a labor of love. Here, you will find all you need to know
-    about the wedding, us (maybe a little too much), and of course the amazing Hawaiian island of Kona. We are
-    excited to share our special day with all of you.</p>
+    about the wedding, us (maybe a little too much), and of course the amazing Hawaiian island of Kona, aka The Big Island. 
+    We are excited to share our special day with all of you.</p></br>
   
-  <p>Lots of love,</p>
+  <p class="pull-right">Lots of love,</br></br>
 
-  Nick and Ming
+  <%= signature %></p>
   
 </div>
+
+</br>

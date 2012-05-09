@@ -23,5 +23,37 @@ module ApplicationHelper
   def sept30
     sept30 = image_tag("sept30.png", :att => "September 30")
   end
+  
+  def inlove
+    inlove = image_tag("in-love.png", :att => "In Love")
+  end
+  
+  def signature
+    signature = image_tag("signature.png", :att => "Signature")
+  end
+  
+  def timeline
+    timeline = image_tag("timeline.png", :att => "Our Story")
+  end
+  
+  def aloha
+    aloha = image_tag("aloha.jpg", :att => "Aloha")
+  end
+  
+  def nickming
+    nickming = image_tag("NM.png", :att => "Dating")
+  end
+  
+  def jpm
+    jpm = image_tag("jpm.jpeg", :att => "JPM")
+  end
+  
+  def shesaidyes
+    shesaidyes = image_tag("shesaidyes.jpeg", :att => "She Said Yes")
+  end
+  
+  def hishers
+    hishers = image_tag("HisHers.png", :att => "His Version Her Version")
+  end
 
 end

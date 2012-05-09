@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20120507194326) do
     t.string   "image"
     t.text     "description"
     t.boolean  "featured"
+    t.boolean  "lodging"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

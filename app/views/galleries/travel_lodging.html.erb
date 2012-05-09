@@ -1,0 +1,66 @@
+<h5>Our wedding festivities are held at the Four Seasons Resort Hualālai at Historic Ka'ūpūlehu. The hotel is on the 
+  Conde Nast Travelers Platinum List for 2012, which means it has been on the Gold List for the past 5 years. Hotel 
+  amenities include:</h5></br>
+  
+<div class="row">
+  <div class="span5">  
+    <ul>
+      <li>Six pools</li>
+      <li>Eight tennis courts</li>
+      <li>Golf course</li>
+      <li>Kids For All Seasons program</li>
+      <li>Ka`upulehu Cultural Center</li>
+      <li>Recreational Activities</li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h6><%= link_to 'Tripadvisor Reviews', "http://www.tripadvisor.com/Hotel_Review-g60872-d111582-Reviews-Four_Seasons
+    _Resort_Hualalai_at_Historic_Ka_upulehu-Kailua_Kona_Island_of_Hawaii_Hawaii.html", :target => false %></h6>
+    <blockquote>Outstanding in every regard from the greet upon arrival to the beautiful rooms and lovely amenities to the fantastic 
+    food , there is nothing left to say except everything was overwhelmingly superb and leaves you breathless and totally 
+    relaxed.<small>Tripadvisor</small></blockquote>
+  </div>
+</div>
+
+<h5>We have a room block at the hotel for <span style="color: #ED0D42">$425/night under the group Huang-Khuu Wedding</span>, 
+  but rooms are limited so if you know you are staying there, please try to make the reservations ASAP.</h5></br>
+  
+<p>Four Seasons Resort Hualālai at Historic Ka'ūpūlehu</br>
+  72-100 Ka`upulehu Drive | Kailua-Kona | Hawaii 96740</br>
+  Tel. 1 (808) 325-8000</br>
+  <%= link_to "Four Seasons Website", "http://www.fourseasons.com/hualalai/", :target => false %></p>
+
+<div class="container">
+  <div id ="slide_gallery" >
+    <%= image_tag(@first_image.image_url(:slide_gallery)) %>
+  </div>
+
+
+
+  <div class="slide_gallery">
+    <% @images.each do |image| %> 
+    <ul>         
+        <li>
+        <a href="javascript:void(0)" rel="<%= image.image_url(:slide_gallery) %>" class="slide_gallery">
+          <%= image_tag(image.image_url(:thumb)) %>
+        </a>
+        </li>
+    </ul>
+    <% end %>
+  </div>  
+</div>
+
+</br>
+
+<h5>Alternatively, the <%= link_to 'Sheraton Keauhou Bay Resort & Spa', "http://www.starwoodhotels.com/sheraton/property/
+overview/index.html?propertyID=1469", :target => false %>
+  is also a very nice resort approximately 40 minutes from the Four Seasons. Prices for the wedding weekend currently start
+  at $129/night. The only concern is that they are <span style="color: #ED0D42">currently undergoing construction</span>. 
+  You should ask about that should you stay with them. We did not get a room contract with them because their quoted price 
+  is heaps more expensive than on the internet. Click <%= link_to 'here', "http://www.tripadvisor.com/Hotels-g60872-Kailua_
+  Kona_Island_of_Hawaii_Hawaii-Hotels.html#T_CAT_HOTEL_MOTEL", :target => false %> 
+  for a listing of other hotels in the area.</h5>
+
+
+</br>
+</br>
