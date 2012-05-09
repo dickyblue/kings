@@ -1,7 +1,7 @@
 
 <div class="container">
   <div id ="slide_gallery" >
-    <%= image_tag(@first_image.image_url(:slide_gallery)) %>
+    <%= image_tag @first_image.image_url(:slide_gallery) if @first_image.image? %>
   </div>
 
 
@@ -11,7 +11,7 @@
     <ul>         
         <li>
         <a href="javascript:void(0)" rel="<%= image.image_url(:slide_gallery) %>" class="slide_gallery">
-          <%= image_tag(image.image_url(:thumb)) %>
+          <%= image_tag image.image_url(:thumb) if image.image? %>
         </a>
         </li>
     </ul>

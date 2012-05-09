@@ -32,7 +32,7 @@
 
 <div class="container">
   <div id ="slide_gallery" >
-    <%= image_tag(@first_image.image_url(:slide_gallery)) %>
+    <%= image_tag @first_image.image_url(:slide_gallery) if @first_image.image? %>
   </div>
 
 

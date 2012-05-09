@@ -59,7 +59,6 @@ Tabulous.setup do |config|
       #------------------------------------------------------------------------------------------------------------------------------------#
       [    :home_tab                          ,    'Home'                  ,    welcome_path             ,    true        ,    true        ],
       [    :our_story_tab                     ,    'Our Story'             ,    our_story_path           ,    true        ,    true        ],
-      [    :how_we_met_subtab                 ,    'How We Met'            ,    how_we_met_path          ,    true        ,    true        ],
       [    :wedding_weekend_tab               ,    'Wedding Weekend'       ,    weekend_schedule_path    ,    true        ,    true        ],
       [    :travel_and_lodging_subtab         ,    'Travel and Lodging'    ,    '#'                      ,    true        ,    true        ],
       [    :bridal_party_subtab               ,    'Bridal Party'          ,    '#'                      ,    true        ,    true        ],
@@ -96,6 +95,7 @@ Tabulous.setup do |config|
       [    :pages        ,    :home                ,    :home_tab               ],
       [    :pages        ,    :our_story           ,    :our_story_tab          ],
       [    :pages        ,    :weekend_schedule    ,    :wedding_weekend_tab    ],
+      [    :photo_categories    ,    :all_actions                ,    :home_tab               ],
       [    :galleries    ,    :home                ,    :home_tab               ],
       [    :galleries    ,    :index               ,    :gallery_tab            ],
       [    :galleries    ,    :all_actions         ,    :gallery_tab            ],

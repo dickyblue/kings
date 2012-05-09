@@ -16,7 +16,9 @@ NickMing::Application.routes.draw do
   match '/users/manage', :to => 'users#manage', :as => :manage_user
   match '/users/list', :to => 'users#list', :as => :list_user
   
-  resources :galleries, :sessions, :users
+  match '/photo_categories/manage', :to => 'photo_categories#manage', :as => :manage_photo_categories  
+  
+  resources :galleries, :sessions, :users, :photo_categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

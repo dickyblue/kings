@@ -1,0 +1,15 @@
+<h2 class="span 4 offset4"><%= @page_title = "Creating New Photo Category"%></h2>
+
+
+<%= semantic_form_for(@photo_category) do |f| %>
+  <%= f.inputs do %>
+    <div class="span4 offset4">
+    <%= f.input :name %>
+    </div>
+  <% end %>
+  
+  <div class="span 4 offset4">
+  <%= f.commit_button :button_html => {:class => "primary"} %>
+  </div>
+  
+<% end %>

@@ -30,10 +30,14 @@ class GalleriesController < ApplicationController
     if @image.update_attributes(params[:gallery])
       redirect_to welcome_path
     else
-      render "edit"
+      render "manage"
     end
   end
-  
+
+  def destroy
+    Gallery.find(params[:id]).destroy
+    redirect_to :action => 'list'
+  end  
     
   def index
     @images = Gallery.all
