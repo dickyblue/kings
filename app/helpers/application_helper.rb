@@ -55,5 +55,9 @@ module ApplicationHelper
   def hishers
     hishers = image_tag("HisHers.png", :att => "His Version Her Version")
   end
+  
+  def front_ribbon
+    front_ribbon = image_tag("front-ribbon.png", :att => "NYC Sydney")
+  end
 
 end

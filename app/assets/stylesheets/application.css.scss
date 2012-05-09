@@ -141,14 +141,15 @@ a {
   left: 30px;
   width: 353px;
   height: 450px;
-  z-index: 1;
+  top: -100px;
+  z-index: 0;
   overflow:hidden;
   }
   
 .plus-sign {
   position: relative;
   left: 391px;
-  top: -300px;
+  top: -400px;
   width: 158px;
   overflow:hidden;
   float: left
@@ -158,21 +159,18 @@ a {
   position: relative;
   left: 400px;
   right: 30px;
-  top: -450px;
+  top: -550px;
   width: 353px;
   height: 450px;
-  z-index: 1;
+  z-index: 0;
   overflow:hidden;
   float: left
   } 
   
-.index-pattern {
-  background: url(save-the-date.png) no-repeat;
-  position: relative;
-  top: -60px;
-  height: 400px; 
-  z-index: 0; 
-  }
+.front-ribbon{
+  top: 100px;
+  z-index: 1;
+  }  
 
 
 /*-------------EFFECTS------------------------*/
