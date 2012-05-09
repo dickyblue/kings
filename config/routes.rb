@@ -1,24 +1,24 @@
 NickMing::Application.routes.draw do
 
-  root :to => 'sessions#index'
+  root :to => 'galleries#home'
 
   match '/login', :to => 'sessions#new', :as => :login
   match '/signout', :to => 'sessions#destroy', :as => :sign_out
 
-  match '/pages/our_story', :to => 'pages#our_story', :as => :our_story
-  match '/pages/weekend_schedule', :to => 'pages#weekend_schedule', :as => :weekend_schedule
+  match '/our_story', :to => 'pages#our_story', :as => :our_story
+  match '/weekend_schedule', :to => 'pages#weekend_schedule', :as => :weekend_schedule
+  match '/future_plans', :to => 'pages#future_plans', :as => :future_plans
+  match '/gift_registries', :to => 'pages#gift_registries', :as => :gift_registries
 
-  match '/welcome', :to => 'galleries#home', :as => :welcome
   match '/galleries/manage', :to => 'galleries#manage', :as => :manage_gallery
   match '/galleries/list', :to => 'galleries#list', :as => :list_gallery
-  match '/galleries/travel_lodging', :to => 'galleries#travel_lodging', :as => :travel_lodging
+  match '/travel_lodging', :to => 'galleries#travel_lodging', :as => :travel_lodging
 
   match '/users/manage', :to => 'users#manage', :as => :manage_user
   match '/users/list', :to => 'users#list', :as => :list_user
   
-  match '/photo_categories/manage', :to => 'photo_categories#manage', :as => :manage_photo_categories  
   
-  resources :galleries, :sessions, :users, :photo_categories
+  resources :galleries, :sessions, :users, :admins
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

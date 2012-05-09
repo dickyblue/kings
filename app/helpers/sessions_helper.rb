@@ -8,9 +8,14 @@ module SessionsHelper
     user == current_user
   end
 
+  def admin_user
+    admin = current_user.admin?
+  end
+
   def deny_access
     store_location
-    redirect_to sign_in_path, :notice => "Please sign in to access this page"
+    flash.keep[:notice]="Please sign in as admin to access this page."
+    redirect_to login_path
   end
 
   def redirect_back_or(default)
@@ -22,6 +27,10 @@ module SessionsHelper
   
     def authenticate
       deny_access unless current_user
+    end
+    
+    def authenticate_admin
+      deny_access unless admin_user
     end
 
     def store_location

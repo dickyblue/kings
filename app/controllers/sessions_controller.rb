@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   include SessionsHelper
+  
   layout 'session'
   
   def new

@@ -24,7 +24,7 @@
     <tr>
       <td><%= user.id %></td>
       <td><%= user.name %></td>
-      <td>$<%= user.email %></td>
+      <td><%= user.email %></td>
       <td><%= link_to "Edit", :action => 'manage', :id => user.id %> | <%= link_to "Delete", user, :method => :delete %></td>        
      </tr>
     <% end %>
