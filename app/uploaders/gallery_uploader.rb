@@ -11,7 +11,7 @@ class GalleryUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -45,7 +45,7 @@ class GalleryUploader < CarrierWave::Uploader::Base
   end
   
   version :featured do
-    process :resize_to_fill => [900, 400]
+    process :resize_to_fill => [920, 400]
   end
   
   version :slide_gallery do
