@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
 
   attr_accessor   :password
-  attr_accessible :name, :email, :password, :password_confirmation
-  attr_protected  :admin
+  attr_accessible :name, :email, :password, :password_confirmation, :admin
+
   
   email_regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 
