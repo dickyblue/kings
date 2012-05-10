@@ -18,7 +18,7 @@ NickMing::Application.routes.draw do
   match '/users/list', :to => 'users#list', :as => :list_user
   
   
-  resources :galleries, :sessions, :users, :admins
+  resources :galleries, :sessions, :users, :admins, :comments
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,18 @@
+</br>
+<h5>To rsvp for the wedding, please send an email to <%= mail_to("ming.f.huang@gmail.com", "this") %> account.</h5>
+
+
+<%= semantic_form_for @comment do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :content, :label => "Sign our guestbook", :required => false %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :commenter, :value => current_user.name %>
+  <% end %>
+  <%= f.commit_button :button_html => {:class => "primary"}, :label => "Comment" %>
+<% end %>
+
+
+<% @comments.each do |com| %>
+  <%= com.commenter %>
+  <%= com.content %>
+<% end %>

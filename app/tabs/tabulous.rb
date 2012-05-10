@@ -54,18 +54,18 @@ Tabulous.setup do |config|
 
   config.tabs do
     [
-      #----------------------------------------------------------------------------------------------------------------------#
-      #    TAB NAME                |    DISPLAY TEXT         |    PATH                     |    VISIBLE?    |    ENABLED?    #
-      #----------------------------------------------------------------------------------------------------------------------#
-      [    :home_tab               ,    'Home'               ,    root_path             ,    true        ,    true        ],
-      [    :our_story_tab          ,    'Our Story'          ,    our_story_path           ,    true        ,    true        ],
-      [    :wedding_weekend_tab    ,    'Wedding Weekend'    ,    weekend_schedule_path    ,    true        ,    true        ],
-      [    :gallery_tab            ,    'Photo Gallery'      ,    galleries_path           ,    true        ,    true        ],
-      [    :future_plans_tab       ,    'Future Plans'       ,    future_plans_path        ,    true        ,    true        ],
-      [    :gift_registries_tab    ,    'Gift Registries'    ,    gift_registries_path     ,    true        ,    true        ],
-      #----------------------------------------------------------------------------------------------------------------------#
-      #    TAB NAME                |    DISPLAY TEXT         |    PATH                     |    VISIBLE?    |    ENABLED?    #
-      #----------------------------------------------------------------------------------------------------------------------#
+      #--------------------------------------------------------------------------------------------------------------------------#
+      #    TAB NAME                   |    DISPLAY TEXT          |    PATH                     |    VISIBLE?    |    ENABLED?    #
+      #--------------------------------------------------------------------------------------------------------------------------#
+      [    :home_tab                  ,    'Home'                ,    root_path                ,    true        ,    true        ],
+      [    :our_story_tab             ,    'Our Story'           ,    our_story_path           ,    true        ,    true        ],
+      [    :wedding_weekend_tab       ,    'Wedding Weekend'     ,    weekend_schedule_path    ,    true        ,    true        ],
+      [    :gallery_tab               ,    'Photo Gallery'       ,    galleries_path           ,    true        ,    true        ],
+      [    :RSVP_and_guestbook_tab    ,    'RSVP & Guestbook'    ,    comments_path            ,    true        ,    true        ],
+      [    :gift_registries_tab       ,    'Gift Registries'     ,    gift_registries_path     ,    true        ,    true        ],
+      #--------------------------------------------------------------------------------------------------------------------------#
+      #    TAB NAME                   |    DISPLAY TEXT          |    PATH                     |    VISIBLE?    |    ENABLED?    #
+      #--------------------------------------------------------------------------------------------------------------------------#
     ]
   end
 
@@ -85,23 +85,23 @@ Tabulous.setup do |config|
 
   config.actions do
     [
-      #--------------------------------------------------------------------------------#
-      #    CONTROLLER           |    ACTION               |    TAB                     #
-      #--------------------------------------------------------------------------------#
-      [    :users               ,    :all_actions         ,    :home_tab               ],
-      [    :pages               ,    :home                ,    :home_tab               ],
-      [    :pages               ,    :our_story           ,    :our_story_tab          ],
-      [    :pages               ,    :weekend_schedule    ,    :wedding_weekend_tab    ],
-      [    :pages               ,    :future_plans        ,    :future_plans_tab       ],
-      [    :pages               ,    :gift_registries     ,    :gift_registries_tab    ],
-      [    :photo_categories    ,    :all_actions         ,    :home_tab               ],
-      [    :galleries           ,    :home                ,    :home_tab               ],
-      [    :galleries           ,    :index               ,    :gallery_tab            ],
-      [    :galleries           ,    :all_actions         ,    :gallery_tab            ],
-      [    :admins              ,    :all_actions         ,    :home_tab               ],
-      #--------------------------------------------------------------------------------#
-      #    CONTROLLER           |    ACTION               |    TAB                     #
-      #--------------------------------------------------------------------------------#
+      #----------------------------------------------------------------------------#
+      #    CONTROLLER    |    ACTION               |    TAB                        #
+      #----------------------------------------------------------------------------#
+      [    :users        ,    :all_actions         ,    :home_tab                  ],
+      [    :pages        ,    :home                ,    :home_tab                  ],
+      [    :pages        ,    :our_story           ,    :our_story_tab             ],
+      [    :pages        ,    :weekend_schedule    ,    :wedding_weekend_tab       ],
+      [    :pages        ,    :future_plans        ,    :future_plans_tab          ],
+      [    :pages        ,    :gift_registries     ,    :gift_registries_tab       ],
+      [    :comments     ,    :all_actions         ,    :RSVP_and_guestbook_tab    ],
+      [    :galleries    ,    :home                ,    :home_tab                  ],
+      [    :galleries    ,    :index               ,    :gallery_tab               ],
+      [    :galleries    ,    :all_actions         ,    :gallery_tab               ],
+      [    :admins       ,    :all_actions         ,    :home_tab                  ],
+      #----------------------------------------------------------------------------#
+      #    CONTROLLER    |    ACTION               |    TAB                        #
+      #----------------------------------------------------------------------------#
     ]
   end
 
