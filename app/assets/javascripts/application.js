@@ -77,14 +77,14 @@ function slideShow(speed) {
     var timer = setInterval('gallery()',speed);
      
     //pause the slideshow on mouse over
-    $('ul.slideshow').hover(
-        function () {
-            clearInterval(timer);   
-        },  
-        function () {
-            timer = setInterval('gallery()',speed);         
-        }
-    );
+    //$('ul.slideshow').hover(
+    //  function () {
+    //        clearInterval(timer);   
+    //    },  
+    //    function () {
+    //        timer = setInterval('gallery()',speed);         
+    //    }
+    //);
 }
 
 
