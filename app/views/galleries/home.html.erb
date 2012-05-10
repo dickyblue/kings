@@ -5,7 +5,7 @@
     <ul class="slideshow">
         <% @featured_images.each do |feat|%>
         <li>
-            <%= image_tag(feat.image_url(:featured), :title => "", :alt => truncate(feat.description, :length => 130) ) %>
+            <%= image_tag(feat.image_url(:featured), :title => "", :alt => truncate(feat.description, :length => 330) ) %>
         </li>
         <% end %>
     </ul>
