@@ -42,8 +42,8 @@ class GalleriesController < ApplicationController
   end  
     
   def index
-    @images = Gallery.all
-    @first_image = Gallery.first 
+    @images = Gallery.where(:lodging => false)
+    @first_image = @images.first 
   end
   
   def travel_lodging

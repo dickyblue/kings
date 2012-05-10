@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @comments = Comment.all
     @comment.user_id = current_user.id
     @comment.commenter = current_user.name
+    @comments = Comment.paginate(:page => params[:page], :per_page => 10, :order => "created_at DESC")
   end
   
   def create
