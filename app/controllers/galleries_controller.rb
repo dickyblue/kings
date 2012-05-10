@@ -21,7 +21,7 @@ class GalleriesController < ApplicationController
   def create
     @image = Gallery.new(params[:gallery])
     if @image.save
-      redirect_to root_path
+      redirect_to admins_path
     else
       render "new"
     end
@@ -30,7 +30,7 @@ class GalleriesController < ApplicationController
   def update
     @image = Gallery.find(params[:id])
     if @image.update_attributes(params[:gallery])
-      redirect_to root_path
+      redirect_to admins_path
     else
       render "manage"
     end
