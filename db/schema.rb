@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20120510042628) do
 
   create_table "galleries", :force => true do |t|
     t.string   "image"
+    t.string   "name"
     t.text     "description"
     t.boolean  "featured"
     t.boolean  "lodging"
