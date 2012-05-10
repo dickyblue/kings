@@ -53,7 +53,7 @@ module ApplicationHelper
   end
   
   def hishers
-    hishers = image_tag("hishers.png", :att => "His Version Her Version")
+    hishers = image_tag("HisHers.png", :att => "His Version Her Version")
   end
   
   def front_ribbon
