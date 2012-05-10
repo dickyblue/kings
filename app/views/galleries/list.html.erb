@@ -13,8 +13,10 @@
   <thead>
     <tr>
       <th>ID #</th>
+      <th>Name</th>
       <th>Description</th>
       <th>Featured?</th>
+      <th>Lodging?</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -23,8 +25,10 @@
     <% @galleries.each do |gal| %>
     <tr>
       <td><%= gal.id %></td>
+      <td><%= gal.name %></td>
       <td><%= truncate(gal.description, :length => 50, :separator => " ") %></td>
       <td><%= gal.featured? %></td>
+      <td><%= gal.lodging? %></td>
       <td><%= link_to "Edit", :action => 'manage', :id => gal.id %> | <%= link_to "Delete", gal, :method => :delete %></td>        
      </tr>
     <% end %>
