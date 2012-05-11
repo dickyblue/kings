@@ -12,8 +12,8 @@
 
 
 
-   <div class="slide_gallery scroll-bar">
-     <ul>         
+   <div class="slide_gallery">
+     <ul class="scroll-bar">         
      <% @images.each do |image| %> 
          <li>
           <a href="javascript:void(0)" rel="<%= image.image_url(:slide_gallery) %>" class="slide_gallery" title="<%= image.name %>" alt="<%= truncate(image.description, :length => 300) %>">
