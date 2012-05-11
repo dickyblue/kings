@@ -141,7 +141,6 @@ $(document).ready(function() {
 
       $('#slide_gallery').fadeIn('fast');
       $('#slide_gallery img').attr('src', image)
-      $('#slide_gallery img').attr('alt', title)
       $('#slide_gallery img').attr('title', desc)
 
       $('#slide_gallery div p').html($(this).attr('alt'));
