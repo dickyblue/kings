@@ -120,7 +120,6 @@ function gallery() {
  
 }
 
-
 // Accordion
 
 $(document).ready(function() {
@@ -133,17 +132,27 @@ $(document).ready(function() {
 
 
 // SlideGallery
+ $(function() {
+    $("a.slide_gallery").hover(function() {
 
-$(function() {
-	
-$(".slide_gallery").hover(function() {
-var image = $(this).attr("rel");	
-$('#slide_gallery').attr('src', $(this).attr('src'));
-$('#slide_gallery').fadeIn('fast');
-$('#slide_gallery').html('<img src="' + image + '"/>');
-return false;
+      var image = $(this).attr("rel");
+      var title = $(this).attr("title");
+      var desc = $(this).attr("alt");        
+
+      $('#slide_gallery').fadeIn('fast');
+      $('#slide_gallery img').attr('src', image)
+      $('#slide_gallery img').attr('alt', title)
+      $('#slide_gallery img').attr('title', desc)
+
+      $('#slide_gallery div p').html($(this).attr('alt'));
+
+      // make the caption appear
+      $('#slide_gallery div.gallery-slideshow-caption').fade("slow")
+
+      return false;
     });
 });
+
 
 
 
