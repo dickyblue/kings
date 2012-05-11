@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:session][:email], params[:session][:password])
     if user
       session[:user_id] = user.id
+      user.update_attribute(:lastlogin, Time.now.in_time_zone)
       redirect_to root_path   
     else
       flash.now[:error] = "Invalid email / password combination."

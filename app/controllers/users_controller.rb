@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:id])
+    if @user.update_attributes(params[:user])
       redirect_to :action => 'list'
     else
       render 'manage'
