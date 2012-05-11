@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   attr_accessor   :password
-  attr_accessible :name, :email, :password, :password_confirmation, :admin
+  attr_accessible :name, :email, :password, :admin
 
   has_many :comments
   
@@ -12,17 +12,16 @@ class User < ActiveRecord::Base
                                       :format => { :with => email_regex },
                                       :on => :create
   
-  before_save :encrypt_password
+  before_save :encrypt_password, :unless => "password.blank?"
   
   def has_password?(submitted_password)
     password_hash == encrypt(submitted_password)
   end
   
   def self.authenticate(email, submitted_password)
-      user = find_by_email(email)
-      return nil  if user.nil?
-      return user if user.has_password?(submitted_password)
-    end
+    user = find_by_email(email)
+    (user && user.has_password?(submitted_password)) ? user : nil
+  end
     
   def self.authenticate_with_password_salt(id, cookie_password_salt)
     user = find_by_id(id)
@@ -38,8 +37,8 @@ class User < ActiveRecord::Base
   private
   
     def encrypt_password
-      self.password_salt = make_password_salt if new_record?
-      self.password_hash = encrypt (password)
+      self.password_salt = make_password_salt unless has_password?(password)
+      self.password_hash = encrypt(password)
     end
     
     def encrypt(string)

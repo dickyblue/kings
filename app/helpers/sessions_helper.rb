@@ -22,16 +22,16 @@ module SessionsHelper
     redirect_to(session[:return_to] || default)
     clear_return_to
   end
+  
+  def authenticate
+    deny_access unless current_user
+  end
+  
+  def authenticate_admin
+    deny_access unless admin_user
+  end
 
   private
-  
-    def authenticate
-      deny_access unless current_user
-    end
-    
-    def authenticate_admin
-      deny_access unless admin_user
-    end
 
     def store_location
       session[:return_to] = request.fullpath

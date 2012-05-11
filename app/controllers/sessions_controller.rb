@@ -11,11 +11,11 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate(params[:session][:email], params[:session][:password])
     if user
-      session[:user_id] = user.id
       user.update_attribute(:lastlogin, Time.now.in_time_zone)
+      session[:user_id] = user.id
       redirect_to root_path   
     else
-      flash.now[:error] = "Invalid email / password combination."
+      flash[:notice] = "Invalid email / password combination."
       render "new"
     end
   end
