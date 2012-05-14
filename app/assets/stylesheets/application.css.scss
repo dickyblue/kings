@@ -292,16 +292,25 @@ ul img {
   height: 440px;
   width: 940px;
   padding-left: 35px;
-  padding-top:30px
+  padding-top:30px;
+  clear: both
   }
-  
+
 .slide_gallery li {
   position: relative;
   display: inline;
   margin-right: 9px;
   margin-bottom: 9px;
   float: left;
-  height: 60px
+  height: 60px;
+  }
+  
+.slide_gallery {
+  height: 210px;
+  width: 900px;
+  overflow: auto;
+  padding-left: 0px;
+  clear: right
   }
 
 .slide_gallery2 li {
@@ -314,15 +323,16 @@ ul img {
   }
   
 .gallery-slideshow-caption {
-  position: relative;
+  position: absolute;
   width:300px;
   height:400px;
   float: right;
-  top: -400px;
-  left:-80px; 
+  top: 170px;
+  left:775px; 
   color:#fff;
   background: $red;
   opacity:0.7;
+  clear: both
   }
 
 .gallery-slideshow-caption .slideshow-caption-container {
@@ -434,9 +444,5 @@ hr {
   border-bottom: 2px dashed $light-blue;
   }
   
-.scroll-bar {
-  overflow: auto;
-  height: 210px;
-  width: 915px;
-  padding-left: 0px;
-  }  
+
+  
