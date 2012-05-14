@@ -9,19 +9,17 @@
     </div>
   </div>
 
-
-
-   <div class="slide_gallery">
-     <ul>         
-     <% @images.each do |image| %> 
-         <li>
-          <a href="javascript:void(0)" rel="<%= image.image_url(:slide_gallery) %>" class="slide_gallery" title="<%= image.name %>" alt="<%= truncate(image.description, :length => 300) %>">
-            <%= image_tag(image.image_url(:thumb)) %>
-          </a>
-        </li>
-     <% end %>
+  <div class="slide_gallery">
+    <ul>         
+    <% @images.each do |image| %> 
+       <li>
+        <a href="javascript:void(0)" rel="<%= image.image_url(:slide_gallery) %>" class="slide_gallery" title="<%= image.name %>" alt="<%= image.description %>">
+          <%= image_tag(image.image_url(:thumb)) %>
+        </a>
+       </li>
+    <% end %>
     </ul>
-   </div>
+  </div>
 
 </div>
 </br>

@@ -64,6 +64,11 @@ module ApplicationHelper
     love_note = image_tag("love-note.png", :att => "Guestbook")
   end
   
+  def zank_you
+    zank_you = image_tag("zankyou.jpeg", :att => "Zankyou")
+  end
+  
+  
   class BootstrapLinkRenderer < ::WillPaginate::ActionView::LinkRenderer
     protected
 
@@ -87,6 +92,5 @@ module ApplicationHelper
   def page_navigation_links(pages, anchor)
     will_paginate(pages, :params => {:anchor => anchor }, :class => 'pagination', :inner_window => 2, :outer_window => 0, :renderer => BootstrapLinkRenderer, :previous_label => '&larr;'.html_safe, :next_label => '&rarr;'.html_safe)
   end
-  
 
 end

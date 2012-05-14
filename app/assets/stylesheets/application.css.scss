@@ -293,6 +293,7 @@ ul img {
   width: 940px;
   padding-left: 35px;
   padding-top:30px;
+  position: relative;
   clear: both
   }
 
@@ -306,8 +307,9 @@ ul img {
   }
   
 .slide_gallery {
+  position: relative;
   height: 210px;
-  width: 920px;
+  width: 940px;
   overflow: auto;
   padding-left: 0px;
   }
@@ -322,16 +324,17 @@ ul img {
   }
   
 .gallery-slideshow-caption {
-  position: relative;
   width:860px;
   height:100px;
+  position: absolute;
   float: right;
-  top: -100px;
-  left:-80px; 
+  top: 330px;
+  left:35px; 
   color:#fff;
   background: $red;
   opacity:0.7;
   clear: both;
+  z-index: 500
   }
 
 .gallery-slideshow-caption .slideshow-caption-container {
