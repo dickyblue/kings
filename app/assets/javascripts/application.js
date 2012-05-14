@@ -136,7 +136,6 @@ $(document).ready(function() {
     $("a.slide_gallery").hover(function() {
 
       var image = $(this).attr("rel");
-      var title = $(this).attr("title");
       var desc = $(this).attr("alt");        
 
       $('#slide_gallery').fadeIn('fast');
@@ -154,6 +153,4 @@ $(document).ready(function() {
 
 
 
-
-// Our Story
 
