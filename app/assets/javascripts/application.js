@@ -50,7 +50,7 @@ $(document).ready(function() {
 $(document).ready(function() {      
      
     //Execute the slideShow, set 4 seconds for each images
-    slideShow(3000);
+    slideShow(5000);
  
 });
  
