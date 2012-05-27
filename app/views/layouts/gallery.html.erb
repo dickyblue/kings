@@ -42,14 +42,20 @@
                    
           </li>
         </ul>
-        <div class="sign-out">
-          <% if current_user %>
-            Welcome back, <%= current_user.name %> | <%= link_to "Sign out", sign_out_path %></br>
-          <% else %>
-            
-          <% end %>
-        </div>
+
       </div>
+      
+      <div class="container"> 
+      <div class="sign-out">
+        <% if current_user %>
+          Welcome back, <%= current_user.name %> | <%= link_to "Sign out", sign_out_path %></br>
+        <% else %>
+          
+        <% end %>
+      </div>
+      </div>
+      
+      
     </div>
   </div>
   </div>
