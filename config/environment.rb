@@ -5,6 +5,7 @@ require File.expand_path('../application', __FILE__)
 NickMing::Application.initialize!
 
 
+
 ActionMailer::Base.smtp_settings = {
 :user_name => "minghuang",
 :password => "chicken128",

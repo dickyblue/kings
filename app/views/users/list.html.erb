@@ -5,7 +5,7 @@
 <div>
   <%= semantic_form_for @search, :url => list_user_path do |f| %>
     <%= f.input :name_contains, :label => "Name Search", :required => false %>
-    SORT BY: <%= f.sort_link :id, "ID Order" %> | <%= f.sort_link :name, "Name" %> | <%= f.sort_link :lastlogin, "Last Logged In" %>
+    SORT BY: <%= f.sort_link :id, "ID Order" %> | <%= f.sort_link :name, "Name" %>
   <% end %>
 </div>
 
