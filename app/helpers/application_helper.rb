@@ -68,6 +68,50 @@ module ApplicationHelper
     zank_you = image_tag("zankyou.jpeg", :att => "Zankyou")
   end
   
+  def black_sand_beach
+    black_sand_beach = image_tag("black-sand-beach.jpg", :att => "Black Sand")
+  end
+  
+  def coffee_plantation
+    coffee_plantation = image_tag("coffee-plantation.jpg", :att => "Coffee Plantation")
+  end
+  
+  def kona_volcano
+    kona_volcano = image_tag("kona-volcano.jpg", :att => "Kona Volcano")
+  end
+  
+  def mauna_kea
+    mauna_kea = image_tag("mauna-kea.jpg", :att => "Mauna Kea")
+  end
+  
+  def orchids
+    orchids = image_tag("orchids.jpg", :att => "Orchids")
+  end
+  
+  def ziplining
+    ziplining = image_tag("ziplining.jpg", :att => "Ziplining")
+  end
+  
+  def hana
+    hana = image_tag("HanaHighway.jpg", :att => "Hana Highway")
+  end
+  
+  def kaihalulu
+    kaihalulu = image_tag("kaihalulu.jpg", :att => "Kaihalulu")
+  end
+  
+  def lanai
+    lanai = image_tag("lanai.jpg", :att => "Ferry to Lanai")
+  end
+  
+  def laua
+    laua = image_tag("laua.jpg", :att => "Laua")
+  end
+  
+  def sunrise
+    sunrise = image_tag("sunrise.jpg", :att => "Sunrise Maui")
+  end
+  
   
   class BootstrapLinkRenderer < ::WillPaginate::ActionView::LinkRenderer
     protected

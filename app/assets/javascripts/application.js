@@ -128,6 +128,7 @@ $(document).ready(function() {
     $(this).next('div').slideToggle('fast')
     .siblings('div:visible').slideUp('fast');
   });
+
 });
 
 
