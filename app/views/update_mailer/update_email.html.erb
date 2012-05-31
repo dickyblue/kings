@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hi, <%= @user.name %></h1>
+    <p>
+    Nick and Ming updated their website, <%= link_to "www.thekhuus.com", :target => false %> with the following:
+    <ul>
+      <li>Updated wedding weekend with suggested itineraries for Kona and Maui. Other islands to come.</li>
+      <li>Guestbook</li>
+    </ul>  
+    </p>
+    <p>Counting down to the big day! We are very excited!</p>
+    <%= image_tag("signature.png", :att => "Nick and Ming") %>
+  </body>
+</html>
