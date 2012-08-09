@@ -112,6 +112,25 @@ module ApplicationHelper
     sunrise = image_tag("sunrise.jpg", :att => "Sunrise Maui")
   end
   
+  def surfing
+    surfing = image_tag("surfing.jpg", :att => "Surfing")
+  end
+  
+  def waikiki
+    waikiki = image_tag("waikiki.jpg", :att => "Waikiki")
+  end
+  
+  def pearl_harbor
+    pearl_harbor = image_tag("pearl-harbor.jpg", :att => "Pearl Harbor")
+  end
+  
+  def food
+    food = image_tag("food.jpg", :att => "Food Oahu")
+  end
+  
+  def north_shore
+    north_shore = image_tag("North-Shore.jpg", :att => "North Shore")
+  end
   
   class BootstrapLinkRenderer < ::WillPaginate::ActionView::LinkRenderer
     protected
