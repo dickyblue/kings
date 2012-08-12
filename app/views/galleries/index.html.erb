@@ -9,18 +9,59 @@
     </div>
   </div>
 
-  <div class="slide_gallery">
-    <ul>         
-    <% @images.each do |image| %> 
-       <li>
-        <a href="javascript:void(0)" rel="<%= image.image_url(:slide_gallery) %>" class="slide_gallery" title="<%= image.name %>" alt="<%= image.description %>">
-          <%= image_tag(image.image_url(:thumb)) %>
-        </a>
-       </li>
-    <% end %>
+
+    <ul class="nav nav-pills" id="myTab">
+      <li class="active"><a href="#everyday">Everyday</a></li>
+      <li><a href="#engagement">Engagement</a></li>
     </ul>
-  </div>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="everyday">
+        <div class="slide_gallery">
+          <ul>         
+          <% @images.each do |image| %> 
+             <li>
+              <a href="javascript:void(0)" rel="<%= image.image_url(:slide_gallery) %>" class="slide_gallery" title="<%= image.name %>" alt="<%= image.description %>">
+                <%= image_tag(image.image_url(:thumb)) %>
+              </a>
+             </li>
+          <% end %>
+          </ul>
+        </div>
+      
+      </div>
+      <div class="tab-pane" id="engagement">
+        <div class="slide_gallery">
+          <ul>         
+          <% @engagements.each do |eng| %> 
+             <li>
+              <a href="javascript:void(0)" rel="<%= eng.image_url(:slide_gallery) %>" class="slide_gallery" title="<%= eng.name %>" alt="<%= eng.description %>">
+                <%= image_tag(eng.image_url(:thumb)) %>
+              </a>
+             </li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
 
 </div>
 </br>
 </br>
+
+
+
+<script>
+  $('#myTab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+  
+  $(function () {
+    $('#myTab a:first').tab('show');
+  })
+  
+
+</script>

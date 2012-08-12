@@ -309,11 +309,22 @@ ul img {
   
 .slide_gallery {
   position: relative;
-  height: 210px;
+  height: 160px;
   width: 940px;
   overflow: auto;
   padding-left: 0px;
   }
+  
+.nav-pills {
+  margin-left: 20px;
+  margin-top: -10px
+  }
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  color: #ffffff;
+  background-color: $dark-blue;
+}
 
 .slide_gallery2 li {
   position: relative;
