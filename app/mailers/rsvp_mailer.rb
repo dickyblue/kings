@@ -4,7 +4,7 @@ class RsvpMailer < ActionMailer::Base
   def rsvp_email(user)
     @url = "http://www.thekhuus.com"
     @user = user
-    mail(:to => user.email, :subject => "RSVP Need for Nick and Ming's wedding")   
+    mail(:to => user.email, :subject => "RSVP Needed for Nick and Ming's wedding")   
   end
 
 end
