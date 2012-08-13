@@ -120,6 +120,10 @@ module ApplicationHelper
     waikiki = image_tag("waikiki.jpg", :att => "Waikiki")
   end
   
+  def cliff
+    cliff = image_tag("cliff.jpeg", :att => "Cliff")
+  end
+  
   def pearl_harbor
     pearl_harbor = image_tag("pearl-harbor.jpg", :att => "Pearl Harbor")
   end
