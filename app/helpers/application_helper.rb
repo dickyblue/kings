@@ -132,6 +132,22 @@ module ApplicationHelper
     food = image_tag("food.jpg", :att => "Food Oahu")
   end
   
+  def farid
+    farid = image_tag("Farid.jpg", :att => "Farid")
+  end
+  
+  def charlie
+    charlie = image_tag("Charlie.jpg", :att => "Charlie")
+  end
+  
+  def margery
+    margery = image_tag("Margery.jpg", :att => "Margery")
+  end
+  
+  def rosita
+    rosita = image_tag("Rosita.jpg", :att => "Rosita")
+  end
+  
   def north_shore
     north_shore = image_tag("North-Shore.jpg", :att => "North Shore")
   end
