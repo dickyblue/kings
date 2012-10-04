@@ -52,5 +52,9 @@ class GalleriesController < ApplicationController
     @images = Gallery.where(:lodging => true)
     @first_image = @images.first
   end
+  
+  def friend_upload
+    
+  end
 
 end
