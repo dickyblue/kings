@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class ="span4">
+    <div id ="image" >
+      <%= image_tag(@images.first.image_url(:large_pic)) %>
+    </div>
+    </div>
+
+    <div class="span8">
+    <div class="thumbs">
+      <% @images.each do |image| %>          
+          <a href="javascript:void(0)" rel="<%= image.image_url(:large_pic) %>" class="image">
+            <%= image_tag(image.image_url(:thumb) ) %>
+          </a>
+      <% end %>
+    </div>  
+    </div>
+  </div>
+</div>

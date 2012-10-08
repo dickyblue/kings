@@ -459,8 +459,22 @@ hr {
   }
   
 
+/*-------------FRIEND PHOTOS---------------------*/
 
+#image {
+  height: 280px;
+  }
 
+.thumbs img {
+  border: solid 1px #ccc;
+  height: 90px;
+  width: 90px;
+  padding: 2px;
+  margin: 3px 1px 3px 1px
+  }
 
-
-
+.thumbs {
+  position: relative;
+  height: 590px;
+  overflow: auto;
+  }

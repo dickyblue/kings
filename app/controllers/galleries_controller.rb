@@ -54,7 +54,23 @@ class GalleriesController < ApplicationController
   end
   
   def friend_upload
-    
+    @image = Gallery.new
+    @image.user_id = current_user.id
+    @image.friend_uploader = current_user.name
   end
+  
+  def create_friend_upload
+    @image = Gallery.new(params[:gallery])
+    if @image.save
+      redirect_to friend_photos_path
+    else
+      render "friend_upload"
+    end
+  end
+  
+  def friend_photos
+    @images = Gallery.where(:friend_upload => true)
+  end
+  
 
 end

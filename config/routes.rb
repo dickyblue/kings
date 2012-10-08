@@ -12,6 +12,9 @@ NickMing::Application.routes.draw do
 
   match '/galleries/manage', :to => 'galleries#manage', :as => :manage_gallery
   match '/galleries/list', :to => 'galleries#list', :as => :list_gallery
+  match '/galleries/friend_upload', :to => 'galleries#friend_upload', :as => :friend_upload
+  post  '/galleries/', :to => 'galleries#create_friend_upload', :as => :create_friend_upload
+  match '/galleries/friend_photos', :to => 'galleries#friend_photos', :as => :friend_photos  
   match '/travel_lodging', :to => 'galleries#travel_lodging', :as => :travel_lodging
 
   match '/users/manage', :to => 'users#manage', :as => :manage_user
@@ -19,6 +22,7 @@ NickMing::Application.routes.draw do
   
   
   resources :galleries, :sessions, :users, :admins, :comments
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
