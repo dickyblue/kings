@@ -55,7 +55,6 @@ class GalleriesController < ApplicationController
     
   def create_friend_upload
     @image = Gallery.create(params[:gallery])
-    render :format => :js, :template => "create_friend_upload"
   end
   
   def friend_photos
