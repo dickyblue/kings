@@ -1,6 +1,6 @@
 <h5 class="pacifico-font" style="font-size: 20px; color: #EE3233">Comments</h5></br>
 
-<div class="friends_comment">
+<div id="friends_comment">
   <% if @images.first %>
   <% @images.first.comments.each do |comment| %>
     <blockquote><%= comment.content %></br> by: <%= comment.commenter %></blockquote><hr/>
