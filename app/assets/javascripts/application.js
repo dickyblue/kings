@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require bootstrap
 //= require_tree .
 
@@ -164,6 +166,13 @@ var image = $(this).attr("rel");
 $('#image').hide();
 $('#image').fadeIn('slow');
 $('#image').html('<img src="' + image + '"/>');
-return false;
+
+$('#friends_comment').hide();
+$('#friends_comment').fadeIn('slow');
+$('#commenter').html($(this).attr('alt'));
+$('#friends_comment').html($(this).attr('comments'));
+
+var new_data_id = $(this).attr('data-id');
+$('#comment_gallery_id').attr('value', new_data_id)
     });
 });

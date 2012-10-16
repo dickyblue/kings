@@ -20,6 +20,14 @@ class CommentsController < ApplicationController
     end
   end
   
+  def create_gallery_comment
+    @comment = Comment.create!(params[:comment])
+    respond_to do |format|
+      format.html { redirect_to friend_photos_path }
+      format.js
+    end 
+  end
+  
   def destroy
     Comment.find(params[:id]).destroy
     redirect_to admins_path

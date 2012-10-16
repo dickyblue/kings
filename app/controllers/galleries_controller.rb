@@ -52,24 +52,19 @@ class GalleriesController < ApplicationController
     @images = Gallery.where(:lodging => true)
     @first_image = @images.first
   end
-  
-  def friend_upload
-    @image = Gallery.new
-    @image.user_id = current_user.id
-    @image.friend_uploader = current_user.name
-  end
-  
+    
   def create_friend_upload
-    @image = Gallery.new(params[:gallery])
-    if @image.save
-      redirect_to friend_photos_path
-    else
-      render "friend_upload"
-    end
+    @image = Gallery.create(params[:gallery])
+    render :format => :js, :template => "create_friend_upload"
   end
   
   def friend_photos
+    @image = Gallery.new
+    @image.user_id = current_user.id
+    @image.friend_uploader = current_user.name
     @images = Gallery.where(:friend_upload => true)
+    @comment = @image.comments.build
+    @comments = Comment.where("gallery_id is not null")
   end
   
 
