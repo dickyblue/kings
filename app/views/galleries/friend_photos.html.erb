@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%= form_for(@image, :url => { :action => "create_friend_upload" }, :html => {:multipart => true}) do |f| %>
+  <%= form_for(@image, :url => { :action => "create_friend_upload" }, :html => {:multipart => true}, :html => {:remote => true}) do |f| %>
     <%= f.label :image, "Upload pictures by either choosing the files OR simply dragging the pictures to this window.  Once the status
     bar is complete, just refresh the page." %>
     <%= f.file_field :image, multiple: true, name: "gallery[image]" %>
@@ -45,16 +45,9 @@
     <div class="span8">
       <div id="thumbs">
         <div class="thumbs">
-          <% @images.each do |image| %>          
-              <a href="javascript:void(0)" rel="<%= image.image_url(:large_pic) %>" data-id="<%= image.id %>" 
-                comments="<% image.comments.each do |comment| %>
-                <blockquote><%= comment.content %></br> by: <%= comment.commenter %></blockquote><hr/>
-              <% end %>" 
+          
+          <%= render :partial => "thumbs" %>
 
-              class="image">
-                <%= image_tag(image.image_url(:thumb) ) %>
-              </a>
-          <% end %>
         </div>  
       </div>
     </div>

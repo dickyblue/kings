@@ -1,0 +1,10 @@
+<% @images.each do |image| %>          
+    <a href="javascript:void(0)" rel="<%= image.image_url(:large_pic) %>" data-id="<%= image.id %>" 
+      comments="<% image.comments.each do |comment| %>
+      <blockquote><%= comment.content %></br> by: <%= comment.commenter %></blockquote><hr/>
+    <% end %>" 
+
+    class="image">
+      <%= image_tag(image.image_url(:thumb) ) %>
+    </a>
+<% end %>
