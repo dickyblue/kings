@@ -21,6 +21,7 @@ class CommentsController < ApplicationController
   end
   
   def create_gallery_comment
+    @images = Gallery.where(:friend_upload => true)
     @comment = Comment.create!(params[:comment])
     respond_to do |format|
       format.html { redirect_to friend_photos_path }
