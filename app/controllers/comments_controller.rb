@@ -22,11 +22,12 @@ class CommentsController < ApplicationController
   
   def create_gallery_comment
     @images = Gallery.where(:friend_upload => true)
-    @comment = Comment.create!(params[:comment])
-    respond_to do |format|
-      format.html { redirect_to friend_photos_path }
-      format.js
-    end 
+    @comment = Comment.new(params[:comment])
+    if @comment.save
+      redirect_to friend_photos_path
+    else
+      render friend_photos_path
+    end
   end
   
   def destroy
