@@ -44,7 +44,8 @@ class GalleriesController < ApplicationController
   def index
     @lodgings = Gallery.where(:lodging => true)
     @engagements = Gallery.where(:engagement => true)
-    @images = Gallery.all - @lodgings - @engagements
+    @friends = Gallery.where(:friend_upload => true)
+    @images = Gallery.all - @lodgings - @engagements - @friends 
     @first_image = @images.first 
   end
   
