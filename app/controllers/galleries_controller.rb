@@ -60,8 +60,6 @@ class GalleriesController < ApplicationController
   
   def friend_photos
     @image = Gallery.new
-    @image.user_id = current_user.id
-    @image.friend_uploader = current_user.name
     @images = Gallery.where(:friend_upload => true)
     @comment = @image.comments.build
     @comments = Comment.where("gallery_id is not null")
