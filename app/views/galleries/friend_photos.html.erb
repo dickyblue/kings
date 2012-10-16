@@ -2,7 +2,7 @@
 
   <%= form_for(@image, :url => { :action => "create_friend_upload" }, :html => {:multipart => true}) do |f| %>
     <%= f.label :image, "Upload pictures by either choosing the files OR simply dragging the pictures to this window.  Once the status
-    bare is complete, just refresh the page." %>
+    bar is complete, just refresh the page." %>
     <%= f.file_field :image, multiple: true, name: "gallery[image]" %>
     <%= f.hidden_field :friend_upload, :value => true %>
     <%= f.hidden_field :friend_uploader, :value => current_user.name %>
