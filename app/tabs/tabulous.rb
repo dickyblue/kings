@@ -62,7 +62,7 @@ Tabulous.setup do |config|
       [    :wedding_weekend_tab       ,    'Wedding Weekend'        ,    weekend_schedule_path    ,    false       ,    false       ],
       [    :gallery_tab               ,    'Photo Gallery'          ,    galleries_path           ,    true        ,    true        ],
       [    :RSVP_and_guestbook_tab    ,    'RSVP & Guestbook'       ,    comments_path            ,    false       ,    false       ],
-      [    :friend_photos_tab         ,    'Photos From Friends'    ,    friend_photos_path       ,    true        ,    true        ],
+      [    :friend_photos_tab         ,    'Wedding Photos'         ,    friend_photos_path       ,    true        ,    true        ],
       [    :gift_registries_tab       ,    'Gift Registries'        ,    gift_registries_path     ,    true        ,    true        ],
       #-----------------------------------------------------------------------------------------------------------------------------#
       #    TAB NAME                   |    DISPLAY TEXT             |    PATH                     |    VISIBLE?    |    ENABLED?    #

@@ -2,7 +2,7 @@ class GalleriesController < ApplicationController
   
   before_filter :authenticate_admin, :only => [:list, :manage, :create, :update, :destroy]
   before_filter :authenticate
-  layout "gallery"
+  layout "gallery", :except => :home
 
   def home
     @featured_images = Gallery.where(:featured => true)
