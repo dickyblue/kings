@@ -99,6 +99,8 @@ Tabulous.setup do |config|
       [    :galleries    ,    :home                ,    :home_tab                  ],
       [    :galleries    ,    :index               ,    :gallery_tab               ],
       [    :galleries    ,    :friend_photos       ,    :friend_photos_tab         ],
+      [    :galleries    ,    :list                ,    :gallery_tab               ],
+      [    :galleries    ,    :manage              ,    :gallery_tab               ],
       [    :admins       ,    :all_actions         ,    :home_tab                  ],
       #----------------------------------------------------------------------------#
       #    CONTROLLER    |    ACTION               |    TAB                        #

@@ -1,10 +1,10 @@
 
 <div class="container">
   <div id ="slide_gallery" class="slideshow-caption-container">
-    <%= image_tag(@first_image.image_url(:slide_gallery))  %>
+    <%= image_tag(@first_image.image_url(:slide_gallery)) if @first_image %>
     <div class="gallery-slideshow-caption">
       <div class="slideshow-caption-container">
-        <p><%= @first_image.description %></p>
+        <p><%= @first_image.description if @first_image %></p>
       </div>
     </div>
   </div>
