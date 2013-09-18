@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010213325) do
+ActiveRecord::Schema.define(:version => 20130918195431) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(:version => 20121010213325) do
     t.integer  "user_id"
     t.boolean  "friend_upload"
     t.string   "friend_uploader"
+    t.boolean  "wedding_cruise"
+    t.boolean  "wedding"
   end
 
   create_table "users", :force => true do |t|

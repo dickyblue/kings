@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def logo
-    logo = image_tag("NM Logo.png", :att => "Nick & Ming")
+    logo = image_tag("thekhuus.png", :att => "Nick & Ming")
   end
   
   def liberty2

@@ -65,5 +65,9 @@ class GalleriesController < ApplicationController
     @comments = Comment.where("gallery_id is not null")
   end
   
+  def correct_photos
+    @images = Gallery.where(:friend_upload => true)
+  end
+  
 
 end
