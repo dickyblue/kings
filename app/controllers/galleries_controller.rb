@@ -67,6 +67,7 @@ class GalleriesController < ApplicationController
   
   def correct_photos
     @images = Gallery.where(:friend_upload => true)
+    @image = Gallery.find(params[:id]) if params[:id]
   end
   
 

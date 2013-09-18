@@ -1,4 +1,4 @@
 <% @images.each do |image| %>
   <%= image_tag(image.image_url(:thumb)) %>        
-  <%= link_to "Edit", manage_gallery_path(image)%>
+  <%= link_to "Edit", :action => 'manage', :id => image.id %>
 <% end %>
