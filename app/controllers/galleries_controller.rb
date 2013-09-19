@@ -45,6 +45,8 @@ class GalleriesController < ApplicationController
     @lodgings = Gallery.where(:lodging => true)
     @engagements = Gallery.where(:engagement => true)
     @friends = Gallery.where(:friend_upload => true)
+    @cruise = Gallery.where(:wedding_cruise => true)
+    @wedding = Gallery.where(:wedding => true)
     @images = Gallery.all - @lodgings - @engagements - @friends 
     @first_image = @images.first 
   end
