@@ -1,5 +1,4 @@
-<%= semantic_form_for(@image, :html => {:multipart => true}) do |f| %>
-  <%= f.inputs do %>
+<%= simple_form_for(@image, :html => {:multipart => true}) do |f| %>
     <%= f.input :image %>
     <%= f.input :name %>
     <%= f.input :description %>
@@ -8,8 +7,5 @@
     <%= f.input :engagement, :as => :select %>
     <%= f.input :wedding_cruise, :as => :select %>
     <%= f.input :wedding, :as => :select %>
-  <% end %>
-  <%= f.buttons do %>
-    <%= f.commit_button :button_html => {:class => "primary"} %>
-  <% end %>
+    <%= f.button :submit, :class => "primary" %>
 <% end %>

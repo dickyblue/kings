@@ -1,0 +1,19 @@
+<%= simple_form_for(@travel_blog, :html => {:multipart => true}) do |f| %>
+
+  <%= f.association :travel_images do |builder| %>
+    <%= render 'travel_image_fields', :f => builder %>
+  <% end %>
+
+  <%= link_to_add_fields "Add Image", f, :travel_images %>
+
+  <br><br>
+
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :content %>
+  
+  <br> 
+  
+  <div class="btn primary white-link"><%= link_to "Cancel", list_travel_blogs_path %></div>
+  <%= f.button :submit, :class => "primary" %>
+<% end %>

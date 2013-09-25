@@ -22,8 +22,10 @@ NickMing::Application.routes.draw do
   match '/users/manage', :to => 'users#manage', :as => :manage_user
   match '/users/list', :to => 'users#list', :as => :list_user
   
+  match '/travels/manage', :to => 'travels#manage', :as => :manage_travel
+  match '/travels/list', :to => 'travels#list', :as => :list_travel_blogs
   
-  resources :galleries, :sessions, :users, :admins, :comments
+  resources :galleries, :sessions, :users, :admins, :comments, :travels
   
 
   # The priority is based upon order of creation:

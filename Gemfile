@@ -9,12 +9,11 @@ gem 'mysql2'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'tabulous'
-gem 'formtastic-bootstrap'
-gem 'formtastic', " ~> 2.1.1"
 gem 'heroku'
 gem 'will_paginate'
 gem 'meta_search'
 gem 'fog'
+gem 'simple_form'
 
 
 

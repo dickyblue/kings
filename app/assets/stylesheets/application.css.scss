@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require formtastic-bootstrap
  *= require_tree .
 */
 
@@ -45,6 +44,12 @@ h5 {
   font-size: 14px;
   line-height: 150%
   }  
+  
+h3 {
+  font-size: 38px;
+  line-height: 150%;
+  font-family: 'mathletebulky';
+  }  
 
 a {
   color: $dark-blue;
@@ -79,6 +84,22 @@ a {
   float: right;
   }
 
+.blue-dash-line {
+  /*background: transparent url(dashed-blue.png) 0 100% repeat-x;*/
+  position: relative;
+  padding: 3px;
+  }
+  
+.blue-dash-line:before {
+  content: '';
+  display: block;
+  background: transparent url(dashed-blue.png) 0 100% repeat-x;
+  top: 0;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  }  
+
 /*-------------NAV BAR------------------------*/
   
 .navbar-inner {
@@ -87,8 +108,8 @@ a {
 
 .navbar-inner {
   min-height: 40px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 0px;
+  padding-left: 0px;
   background-image: none;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
@@ -133,7 +154,35 @@ a {
 .pacifico-font {
   font-family: 'PacificoRegular';
   }
-  
+
+
+/*-------------MATHLETE FONT------------------------*/
+
+@font-face {
+  font-family: 'mathleteskinny';
+  src: url('/assets/Mathlete-Skinny-webfont.eot');
+  src: local('mathleteskinny'), url('/assets/Mathlete-Skinny-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/Mathlete-Skinny-webfont.woff') format("woff"), url('/assets/Mathlete-Skinny-webfont.ttf') format("truetype"), url('/assets/Mathlete-Skinny-webfont.svg#mathleteskinny') format("svg");
+  font-weight: normal;
+  font-style: normal;
+  }
+
+.mathlete-font {
+  font-family: 'mathleteskinny';
+  }  
+
+@font-face {
+  font-family: 'mathletebulky';
+  src: url('/assets/Mathlete-Bulky-webfont.eot');
+  src: local('mathletebulky'), url('/assets/Mathlete-Bulky-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/Mathlete-Bulky-webfont.woff') format("woff"), url('/assets/Mathlete-Bulky-webfont.ttf') format("truetype"), url('/assets/Mathlete-Bulky-webfont.svg#mathletebulky') format("svg");
+  font-weight: normal;
+  font-style: normal;
+  }
+
+.mathlete-bulky-font {
+  font-family: 'mathletebulky';
+  }  
+
+
   
 /*-------------OPENING INDEX------------------------*/
 

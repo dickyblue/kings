@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="blue-dash-line">
+    <div class="row">
+      <div class="span2">
+      <%= travel_stamp %>
+      </div>
+      <div class="span7">
+      <h3><%= @travel_blog.title %></h3>
+      Posted By: <%= @travel_blog.author %>  |  Dated: <%= @travel_blog.publish_date.strftime("%B %d, %Y") if @travel_blog.publish_date %> 
+      </div>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="span7 offset2">
+      <%= image_tag(@featured_image.first.image_url(:thumb)) if @featured_image.first %>
+
+      <%= @travel_blog.content %>
+      
+    </div>  
+  </div>  
+</div>
