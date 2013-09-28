@@ -1,16 +1,3 @@
-<script>
-  $('#myTab a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  })
-  
-  $(function () {
-    $('#myTab a:first').tab('show');
-  })
-  
-
-</script>
-
 <div class="container">
   <div id ="slide_gallery" class="slideshow-caption-container">
     <%= image_tag(@first_image.image_url(:slide_gallery)) if @first_image %>
@@ -91,6 +78,17 @@
   </div>  
 </div>
 
+<script>
+  $('#myTab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+  
+  $(function () {
+    $('#myTab a:first').tab('show');
+  })
+  
 
+</script>
 
 

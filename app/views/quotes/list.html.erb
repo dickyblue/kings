@@ -1,0 +1,46 @@
+<p><%= link_to "«« Back to Admin »»", admins_path %></p></br> 
+
+<h4>List of Quotes</h4></br>
+
+<div>
+  <%= simple_form_for @search, :url => list_quotes_path do |f| %>
+    <%= f.input :quote_contains, :label => "Keyword Search", :required => false %>
+    SORT BY: <%= f.sort_link :id, "ID Order" %>
+  <% end %>
+</div>
+
+<table class="table zebra-striped">
+  <thead>
+    <tr>
+      <th>ID #</th>
+      <th>Quote</th>
+      <th>Author</th>
+      <th>Type</th>      
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotes.each do |q| %>
+    <tr>
+      <td><%= q.id %></td>
+      <td><%= truncate(q.quote, :length => 50, :separator => " ") %></td>
+      <td><%= q.author %></td>
+      <td>
+        <% if q.travel %>
+          Travel
+        <% elsif q.food %>
+          Food
+        <% else %>
+        <% end %>
+      </td>
+      <td><%= link_to "Edit", :action => 'manage', :id => q.id %> | <%= link_to "Delete", q, :method => :delete %></td>        
+     </tr>
+    <% end %>
+  </tbody>  
+
+</table>
+
+<%= page_navigation_links @quotes, '#'%>
+
+<div class="btn primary white-link pull-right"><%= link_to "New", :action => 'manage' %></div>

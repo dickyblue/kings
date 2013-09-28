@@ -1,0 +1,14 @@
+<%= simple_form_for(@quote, :html => {:class => "form-horizontal"}) do |f| %>
+
+  <%= f.input :author %>
+  <%= f.input :quote, :input_html => { style: 'height:200px;', :class => "input-xxlarge" } %>
+  <%= f.input :travel, :label => "Travel Quote?", :as => :radio, :collection => [["True", true], ["False", false]] %>
+  <%= f.input :food, :label => "Food Quote?", :as => :radio, :collection => [["True", true], ["False", false]] %>
+  
+  <br> 
+  
+  <div class="pull-right">
+    <div class="btn primary white-link"><%= link_to "Cancel", list_travel_blogs_path %></div>
+    <%= f.button :submit, :class => "primary" %>
+  </div>  
+<% end %>

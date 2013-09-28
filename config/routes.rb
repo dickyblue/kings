@@ -28,8 +28,11 @@ NickMing::Application.routes.draw do
 
   match '/foods/manage', :to => 'foods#manage', :as => :manage_food
   match '/foods/list', :to => 'foods#list', :as => :list_food_blogs
+
+  match '/quotes/manage', :to => 'quotes#manage', :as => :manage_quote
+  match '/quotes/list', :to => 'quotes#list', :as => :list_quotes
   
-  resources :galleries, :sessions, :users, :admins, :comments, :travels, :foods
+  resources :galleries, :sessions, :users, :admins, :comments, :travels, :foods, :quotes
   
 
   # The priority is based upon order of creation:

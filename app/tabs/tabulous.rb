@@ -67,6 +67,7 @@ Tabulous.setup do |config|
       [    :gift_registries_tab       ,    'Gift Registries'     ,    gift_registries_path     ,    false       ,    false       ],
       [    :travel_blog_tab           ,    'The Khuus Travel'    ,    travels_path             ,    true        ,    true        ],
       [    :food_blog_tab             ,    'The Khuus Eat'       ,    foods_path               ,    true        ,    true        ],
+      [    :quotes_tab                ,    'Quotes'              ,    quotes_path              ,    false       ,    false       ],
       #--------------------------------------------------------------------------------------------------------------------------#
       #    TAB NAME                   |    DISPLAY TEXT          |    PATH                     |    VISIBLE?    |    ENABLED?    #
       #--------------------------------------------------------------------------------------------------------------------------#
@@ -108,6 +109,7 @@ Tabulous.setup do |config|
       [    :admins       ,    :all_actions         ,    :home_tab                  ],
       [    :travels      ,    :all_actions         ,    :travel_blog_tab           ],
       [    :foods        ,    :all_actions         ,    :food_blog_tab             ],
+      [    :quotes       ,    :all_actions         ,    :quotes_tab                ],
       #----------------------------------------------------------------------------#
       #    CONTROLLER    |    ACTION               |    TAB                        #
       #----------------------------------------------------------------------------#

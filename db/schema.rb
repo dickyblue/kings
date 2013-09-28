@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130928012310) do
+ActiveRecord::Schema.define(:version => 20130928015937) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -71,6 +71,15 @@ ActiveRecord::Schema.define(:version => 20130928012310) do
     t.string   "quantity_used"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "quotes", :force => true do |t|
+    t.text     "quote"
+    t.string   "author"
+    t.boolean  "travel"
+    t.boolean  "food"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "travel_comments", :force => true do |t|
