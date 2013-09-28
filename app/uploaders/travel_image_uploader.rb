@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class TravelUploader < CarrierWave::Uploader::Base
+class TravelImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -41,7 +41,15 @@ class TravelUploader < CarrierWave::Uploader::Base
   # end
   
   version :thumb do
-    process :resize_to_limit => [90, 90]
+    process :resize_to_fill => [90, 90]
+  end
+
+  version :index do
+    process :resize_to_fill => [620, 400]
+  end
+  
+  version :large do
+    process :resize_to_limit => [900, 540]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -1,9 +1,10 @@
+<div class="container">
 <p><%= link_to "«« Back to Admin »»", admins_path %></p></br> 
 
 <h4>List of Pictures</h4></br>
 
 <div>
-  <%= semantic_form_for @search, :url => list_gallery_path do |f| %>
+  <%= simple_form_for @search, :url => list_gallery_path do |f| %>
     <%= f.input :description_contains, :label => "Keyword Search", :required => false %>
     SORT BY: <%= f.sort_link :id, "ID Order" %>
   <% end %>
@@ -39,3 +40,4 @@
 <%= page_navigation_links @galleries, '#'%>
 
 <div class="btn primary white-link pull-right"><%= link_to "New", :action => 'manage' %></div>
+</div>

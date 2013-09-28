@@ -1,12 +1,12 @@
 class TravelsController < ApplicationController
 
   def index
-    @travel_blogs = Travel.all
+    @travel_blogs = Travel.order('publish_date DESC')
   end
   
   def manage
     @travel_blog = Travel.new if @travel_blog.nil?
-    1.times { @travel_blog.travel_images.build }
+    5.times { @travel_blog.travel_images.build }
     @travel_blog = Travel.find(params[:id]) if params[:id]
   end
   
@@ -17,6 +17,8 @@ class TravelsController < ApplicationController
   
   def show
     @travel_blog = Travel.find(params[:id])
+    @comment = @travel_blog.comments.build
+    @comments = Comment.where(:travel_id => @travel_blog.id)
     @images = @travel_blog.travel_images
     @featured_image = @travel_blog.travel_images.where(:featured => true)
     if request.path != travel_path(@travel_blog)

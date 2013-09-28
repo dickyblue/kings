@@ -27,36 +27,26 @@
   <div class="container">
   <div class="navbar">
     <div class="navbar-inner">
-      <div class="container">
-
+        <div class="container">
           <a class="brand">
-          <% if current_user %>
-            <%= link_to logo, root_path %>
-          <% else %>
-            
-          <% end %>
+            <% if current_user %>
+              <%= link_to logo, root_path %>
+            <% end %>
           </a>
         
-          <ul class="nav pull-right">
-            
+          <ul class="nav pull-right">            
             <%= tabs %>
-
-          </ul>
-            
+          </ul>         
+        </div>
+      
         
+          <div class="sign-out">
+            <% if current_user %>
+              Welcome back, <%= current_user.name %> | <%= link_to "Sign out", sign_out_path %></br>
+            <% end %>
+          </div>
         
-
-      </div>
-      <div class="container"> 
-      <div class="sign-out">
-        <% if current_user %>
-          Welcome back, <%= current_user.name %> | <%= link_to "Sign out", sign_out_path %></br>
-        <% else %>
-          
-        <% end %>
-      </div>
-      </div>
-        
+      
     </div>
   </div>
   </div>
@@ -65,6 +55,12 @@
   <div class="container">
     <%= yield %>
   </div>
+
+
+  <footer>
+    <br>
+    <%= render partial: "layouts/footer" %>
+  </footer>
 
 </body>
 

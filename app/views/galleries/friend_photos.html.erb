@@ -41,14 +41,13 @@
       </div>
       
       <div class="gallery_comment">
-        <%= semantic_form_for(@comment, :url => create_gallery_comment_path) do |f| %>
-          <%= f.inputs do %>
-            <%= f.input :content, :label => false, :required => false %>
-            <%= f.hidden_field :user_id, :value => current_user.id %>
-            <%= f.hidden_field :commenter, :value => current_user.name %>
-            <%= f.hidden_field :gallery_id, :value => @images.first.id if @images.first %>
-          <% end %>
-          <%= f.commit_button :button_html => {:class => "primary"}, :label => "Comment" %>
+        <%= simple_form_for(@comment, :url => create_gallery_comment_path) do |f| %>
+            
+            <%= f.input :content %>
+            <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+            <%= f.input :commenter, :as => :hidden, :input_html => { :value => current_user.name }%>
+            <%= f.input :gallery_id, :as => :hidden, :input_html => { :value => (@images.first.id if @images.first) }%>
+            <div class="pull-right"><%= f.button :submit, 'Submit', :class => "primary" %></div>
         <% end %>
       </div>
       

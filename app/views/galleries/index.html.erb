@@ -1,3 +1,15 @@
+<script>
+  $('#myTab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+  
+  $(function () {
+    $('#myTab a:first').tab('show');
+  })
+  
+
+</script>
 
 <div class="container">
   <div id ="slide_gallery" class="slideshow-caption-container">
@@ -9,11 +21,11 @@
     </div>
   </div>
 
-
+  <div class="white-gallery-box">  
     <ul class="nav nav-pills" id="myTab">
       <li class="active"><a href="#everyday">Everyday</a></li>
       <li><a href="#engagement">Engagement</a></li>
-      <li><a href="#cruise">Wedding Weekend - Boozy Snorkel Cruise</a></li>
+      <li><a href="#cruise">Wedding Snorkel Cruise</a></li>
       <li><a href="#wedding">Wedding</a></li>
     </ul>
 
@@ -76,22 +88,9 @@
       </div>
 
     </div>
-
+  </div>  
 </div>
-</br>
-</br>
 
 
 
-<script>
-  $('#myTab a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  })
-  
-  $(function () {
-    $('#myTab a:first').tab('show');
-  })
-  
 
-</script>

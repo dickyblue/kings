@@ -2,9 +2,6 @@ class PagesController < ApplicationController
 
   before_filter :authenticate
   
-  def home
-  end
-
   def our_story
   end
   

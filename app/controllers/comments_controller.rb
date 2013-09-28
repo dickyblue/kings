@@ -30,6 +30,16 @@ class CommentsController < ApplicationController
     end
   end
   
+  def create_travel_comment
+    @travel_blog = Travel.find(params[:id])
+    @comment = Comment.new(params[:comment])
+    if @comment.save
+      redirect_to travel_path(@travel_blog)
+    else
+      render travel_path(@travel_blog)
+    end
+  end
+  
   def destroy
     Comment.find(params[:id]).destroy
     redirect_to admins_path

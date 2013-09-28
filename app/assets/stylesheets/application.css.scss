@@ -19,13 +19,55 @@ $light-blue:  #CEEBFB;
 $medium-blue: #A3D6F5;
 $dark-blue:   #66A7C5;
 $light-red:   #EE3233;
-$gray: 	      #6C7476;
+$gray: 	      #81857E;
+$turquoise:   #65BEB4;
+$yellow:      #FCFC88;
+$light-turquoise: #88d5c2;
 
 @import 'bootstrap';
 
+[class^="icon-"], [class*=" icon-"] {
+  background-image: url(/assets/glyphicons-halflings.png)
+}
+
+.icon-chevron-left {
+color: $turquoise;
+}
+
 body {
-  padding-top: 10px
+  background: transparent url("background.png") 100% 100% repeat;
+  position: relative;
+  padding-top: 30px;
+  background-color: transparent;
+  background-position: 0 0;
+  height: 100%;
+  font-size: 16px;
+  line-height: 25px;
+  color: $gray;
   }
+  
+html {
+  background: transparent url("background.png") 100% 100% repeat; 
+  }
+  
+.container {
+  margin-bottom: 30px;
+  background: transparent url("background.png") 100% 100% repeat; 
+  }
+
+.white-box {
+  background-color: white;
+  width: 920px;
+  border-radius: 4px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 4px;
+  overflow: hidden;
+  clear:both;
+  padding: 10px;
+  -moz-box-shadow: 5px 5px 5px #D8D8D8;
+  -webkit-box-shadow: 5px 5px 5px #D8D8D8;
+  box-shadow: 5px 5px 5px #D8D8D8;
+  }      
 
 .welcome-pix {
   border: solid 1px #eee;
@@ -52,8 +94,12 @@ h3 {
   }  
 
 a {
-  color: $dark-blue;
+  color: $turquoise;
 }
+
+.row {
+  margin-left: 20;
+  }
 
 .login-container {
   padding-top: 150px
@@ -82,6 +128,7 @@ a {
 .sign-out {
   position: relative;
   float: right;
+  background-color: transparent;
   }
 
 .blue-dash-line {
@@ -98,12 +145,67 @@ a {
   height: 4px;
   width: 100%;
   position: absolute;
-  }  
+  } 
+  
+.round-images {
+  width: 90px;
+	height: 90px;
+	border-radius: 45px;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+  }   
 
+.btn.primary {
+  background-color: $turquoise;
+
+  background-image: -moz-linear-gradient(center top , $light-turquoise, $turquoise);
+  background-image: -khtml-gradient(linear, left top, left bottom, from($light-turquoise), to($turquoise));
+  background-image: -ms-linear-gradient(top, $light-turquoise, $turquoise);
+  background-image: -webkit-gradient(linear, center top, left bottom, color-stop(0%, $light-turquoise), color-stop(100%, $turquoise));
+  background-image: -webkit-linear-gradient(top, $light-turquoise, $turquoise);
+  background-image: -o-linear-gradient(top, $light-turquoise, $turquoise);
+  background-image: linear-gradient(top, $light-turquoise, $turquoise);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9B97', endColorstr='#FF6F6A', GradientType=0);
+
+  background-repeat: repeat-x;
+  border-color: $turquoise $turquoise $light-turquoise;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+
+.pull-right {
+  padding-right: 40px;
+  }
+
+.input-xxlarge {
+  width: 730px;
+  } 
+
+input, textarea {
+  font-size: 15px
+  }   
+
+.no-margin-or-bullet {
+  list-style: none;
+  padding: 0;
+  margin-left: 0px;
+  }
+
+.center-travel-image {
+  padding: 10px;
+  }
+
+.white-link, .white-link a {
+  color: white;
+  }
+  
 /*-------------NAV BAR------------------------*/
   
 .navbar-inner {
-  background: #FFF;
+  background: transparent;
   }
 
 .navbar-inner {
@@ -123,21 +225,35 @@ a {
 
 
 .navbar .nav > li > a {
-  color: #000000;
+  color: $gray;
   text-decoration: none;
-  font-size: 16px;
-  font-family: PacificoRegular
+  font-size: 30px;
+  font-family: mathletebulky
   }
 
 .navbar .nav .active > a, .navbar .nav .active > a:hover {
-  color: $red;
-  background-color: #FFFFFF;
+  color: $turquoise;
+  background-color: transparent;
   }
 
 .navbar .nav > li > a:hover {
-  color: $dark-blue;
-  background-color: #FFFFFF;
+  color: $turquoise;
+  background-color: transparent;
   } 
+
+/*-------------FOOTER------------------------*/
+
+footer, {
+  text-align: center;
+  background: url(footer-bg.jpg) repeat scroll 0 0 transparent;
+  /*background-color: #444;*/
+  clear: both;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+  color: $light-turquoise;
+  width: 100%;
+  }
 
   
 /*-------------PACIFICO FONT------------------------*/
@@ -154,6 +270,23 @@ a {
 .pacifico-font {
   font-family: 'PacificoRegular';
   }
+
+
+/*-------------RALEWAY FONT------------------------*/
+
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/assets/raleway_thin-webfont.eot');
+  src: local('Raleway'), url('/assets/raleway_thin-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/raleway_thin-webfont.woff') format("woff"), url('/assets/raleway_thin-webfont.ttf') format("truetype"), url('/assets/raleway_thin-webfont.svg#Raleway') format("svg");
+  font-weight: normal;
+  font-style: normal;
+  }
+
+.raleway-font {
+  font-family: 'Raleway';
+  }
+
 
 
 /*-------------MATHLETE FONT------------------------*/
@@ -183,6 +316,50 @@ a {
   }  
 
 
+/*-------------FREEBOOTERSCRIPT FONT------------------------*/
+
+@font-face {
+  font-family: 'freebooter_scriptregular';
+  src: url('/assets/freebooterscript-webfont.eot');
+  src: local('freebooter_scriptregular'), url('/assets/freebooterscript-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/freebooterscript-webfont.woff') format("woff"), url('/assets/freebooterscript-webfont.ttf') format("truetype"), url('/assets/freebooterscript-webfont.svg#freebooterscript') format("svg");
+  font-weight: normal;
+  font-style: normal;
+  }
+
+.freebooterscript-font {
+  font-family: 'freebooter_scriptregular';
+  }  
+
+
+
+/*-------------PROMOCYJA FONT------------------------*/
+
+@font-face {
+  font-family: 'promocyjamedium';
+  src: url('/assets/promocyja-webfont.eot');
+  src: local('promocyjamedium'), url('/assets/promocyja-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/promocyja-webfont.woff') format("woff"), url('/assets/promocyja-webfont.ttf') format("truetype"), url('/assets/promocyja-webfont.svg#promocyja') format("svg");
+  font-weight: normal;
+  font-style: normal;
+  }
+
+.promocyja-font {
+  font-family: 'promocyjamedium';
+  }
+  
+  
+/*-------------AARGH FONT------------------------*/
+
+@font-face {
+  font-family: 'aaarghnormal';
+  src: url('/assets/Aaargh-webfont.eot');
+  src: local('aaarghnormal'), url('/assets/Aaargh-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/Aaargh-webfont.woff') format("woff"), url('/assets/Aaargh-webfont.ttf') format("truetype"), url('/assets/Aaargh-webfont.svg#Aaargh') format("svg");
+  font-weight: normal;
+  font-style: normal;
+  }
+
+.aaargh-font {
+  font-family: 'aaarghnormal';
+  }  
   
 /*-------------OPENING INDEX------------------------*/
 
@@ -291,9 +468,9 @@ ul img {
   position:absolute;
   float: right;
   bottom:0;
-  left:620px; 
+  left:640px; 
   color:#fff;
-  background: $red;
+  background: $light-turquoise;
   z-index:500;
   }
 
@@ -335,6 +512,14 @@ ul img {
 	background:#FFF;
   }
 
+.white-gallery-box {
+  background-color: white;
+  width: 900px;
+  margin-left: 20px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  }
 
 /*-------------SLIDE GALLERY------------------------*/
 #slide_gallery {
@@ -360,19 +545,20 @@ ul img {
   position: relative;
   height: 160px;
   width: 940px;
-  overflow: auto;
+  /*overflow: auto; #removed to show all of background for overall site */
   padding-left: 0px;
   }
   
 .nav-pills {
   margin-left: 20px;
-  margin-top: -10px
+  margin-top: -10px;
+  padding-top: 10px;
   }
 
 .nav-pills > .active > a,
 .nav-pills > .active > a:hover {
   color: #ffffff;
-  background-color: $dark-blue;
+  background-color: $turquoise;
 }
 
 .slide_gallery2 li {
@@ -392,7 +578,7 @@ ul img {
   top: 330px;
   left:35px; 
   color:#fff;
-  background: $red;
+  background: $light-turquoise;
   opacity:0.7;
   clear: both;
   z-index: 500
@@ -533,3 +719,33 @@ hr {
   overflow: auto;
   }
 
+
+/*-------------TRAVEL BLOG---------------------*/
+
+.white-box .travel-index-left-column {
+  background-color: $turquoise;
+  padding: 10px;
+  color: white;
+  float: left;
+  margin-left: 10px;
+  margin-top: -10px;
+  padding-bottom: 100000px;
+  margin-bottom:  -100000px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  }
+  
+.travel-index-right-column {
+  padding: 10px;
+  }
+
+.travel-quote {
+  font-size: 28px;
+  text-align: center;
+  line-height: 30px;
+  padding: 10px;
+  }  

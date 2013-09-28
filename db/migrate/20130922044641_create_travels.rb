@@ -6,6 +6,7 @@ class CreateTravels < ActiveRecord::Migration
       t.datetime  :publish_date
       t.string    :author
       t.boolean   :published, :default => false
+      t.string    :destination
       t.timestamps
     end
   end

@@ -1,0 +1,41 @@
+<p><%= link_to "«« Back to Admin »»", admins_path %></p></br> 
+
+<h4>List of Travel Blogs</h4></br>
+
+<div>
+  <%= simple_form_for @search, :url => list_travel_blogs_path do |f| %>
+    <%= f.input :content_contains, :label => "Keyword Search", :required => false %>
+    SORT BY: <%= f.sort_link :id, "ID Order" %>
+  <% end %>
+</div>
+
+<table class="table zebra-striped">
+  <thead>
+    <tr>
+      <th>ID #</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Published Date</th>
+      <th>Author</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @travel_blogs.each do |tb| %>
+    <tr>
+      <td><%= tb.id %></td>
+      <td><%= link_to tb.title, tb %></td>
+      <td><%= truncate(tb.content, :length => 50, :separator => " ") %></td>
+      <td><%= tb.publish_date %></td>
+      <td><%= tb.author %></td>
+      <td><%= link_to "Edit", :action => 'manage', :id => tb.id %> | <%= link_to "Delete", tb, :method => :delete %></td>        
+     </tr>
+    <% end %>
+  </tbody>  
+
+</table>
+
+<%= page_navigation_links @travel_blogs, '#'%>
+
+<div class="btn primary white-link pull-right"><%= link_to "New", :action => 'manage' %></div>

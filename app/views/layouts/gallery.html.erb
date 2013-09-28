@@ -36,33 +36,32 @@
         <% end %>
         </a>
         <ul class="nav pull-right">
-          
-            
           <%= tabs %>
-                   
-          </li>
         </ul>
 
       </div>
       
-      <div class="container"> 
-      <div class="sign-out">
-        <% if current_user %>
-          Welcome back, <%= current_user.name %> | <%= link_to "Sign out", sign_out_path %></br>
-        <% else %>
+        <div class="sign-out">
+          <% if current_user %>
+            Welcome back, <%= current_user.name %> | <%= link_to "Sign out", sign_out_path %></br>
+          <% else %>
           
-        <% end %>
-      </div>
-      </div>
+          <% end %>
+        </div>
       
       
     </div>
   </div>
   </div>
 
-  <div class="fluid">
+  <div class="container">
     <%= yield %>
   </div>
+
+  <footer>
+    <br>
+    <%= render partial: "layouts/footer" %>
+  </footer>
 
 </body>
 

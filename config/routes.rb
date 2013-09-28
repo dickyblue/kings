@@ -15,6 +15,7 @@ NickMing::Application.routes.draw do
   match '/galleries/friend_upload', :to => 'galleries#friend_upload', :as => :friend_upload
   post  '/galleries/create_friend_upload', :to => 'galleries#create_friend_upload', :as => :create_friend_upload
   post  '/galleries/wedding_photos', :to => 'comments#create_gallery_comment', :as => :create_gallery_comment
+  post  '/travels/:id', :to => 'comments#create_travel_comment', :as => :create_travel_comment
   match '/galleries/wedding_photos', :to => 'galleries#friend_photos', :as => :friend_photos  
   match '/galleries/correct_photos', :to => 'galleries#correct_photos', :as => :correct_photos  
   match '/travel_lodging', :to => 'galleries#travel_lodging', :as => :travel_lodging
@@ -24,8 +25,11 @@ NickMing::Application.routes.draw do
   
   match '/travels/manage', :to => 'travels#manage', :as => :manage_travel
   match '/travels/list', :to => 'travels#list', :as => :list_travel_blogs
+
+  match '/foods/manage', :to => 'foods#manage', :as => :manage_food
+  match '/foods/list', :to => 'foods#list', :as => :list_food_blogs
   
-  resources :galleries, :sessions, :users, :admins, :comments, :travels
+  resources :galleries, :sessions, :users, :admins, :comments, :travels, :foods
   
 
   # The priority is based upon order of creation:

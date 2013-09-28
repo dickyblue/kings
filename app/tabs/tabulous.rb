@@ -54,21 +54,22 @@ Tabulous.setup do |config|
 
   config.tabs do
     [
-      #-----------------------------------------------------------------------------------------------------------------------------#
-      #    TAB NAME                   |    DISPLAY TEXT             |    PATH                     |    VISIBLE?    |    ENABLED?    #
-      #-----------------------------------------------------------------------------------------------------------------------------#
-      [    :home_tab                  ,    'Home'                   ,    root_path                ,    true        ,    true        ],
-      [    :our_story_tab             ,    'Our Story'              ,    our_story_path           ,    false       ,    false       ],
-      [    :wedding_weekend_tab       ,    'Wedding Weekend'        ,    weekend_schedule_path    ,    false       ,    false       ],
-      [    :gallery_tab               ,    'Photo Gallery'          ,    galleries_path           ,    true        ,    true        ],
-      [    :RSVP_and_guestbook_tab    ,    'RSVP & Guestbook'       ,    comments_path            ,    false       ,    false       ],
-      [    :friend_photos_tab         ,    'Wedding Photos'         ,    friend_photos_path       ,    false        ,    false        ],
-      [    :correct_photos_tab         ,    'Correct Photos'         ,    correct_photos_path       ,    false        ,    false        ],
-      [    :gift_registries_tab       ,    'Gift Registries'        ,    gift_registries_path     ,    false        ,    false        ],
-      [    :travel_blog_tab       ,    'Travel Blog'        ,    travels_path     ,    true        ,    true        ],
-      #-----------------------------------------------------------------------------------------------------------------------------#
-      #    TAB NAME                   |    DISPLAY TEXT             |    PATH                     |    VISIBLE?    |    ENABLED?    #
-      #-----------------------------------------------------------------------------------------------------------------------------#
+      #--------------------------------------------------------------------------------------------------------------------------#
+      #    TAB NAME                   |    DISPLAY TEXT          |    PATH                     |    VISIBLE?    |    ENABLED?    #
+      #--------------------------------------------------------------------------------------------------------------------------#
+      [    :home_tab                  ,    'Home'                ,    root_path                ,    true        ,    true        ],
+      [    :our_story_tab             ,    'Our Story'           ,    our_story_path           ,    false       ,    false       ],
+      [    :wedding_weekend_tab       ,    'Wedding Weekend'     ,    weekend_schedule_path    ,    false       ,    false       ],
+      [    :gallery_tab               ,    'Photo Gallery'       ,    galleries_path           ,    true        ,    true        ],
+      [    :RSVP_and_guestbook_tab    ,    'RSVP & Guestbook'    ,    comments_path            ,    false       ,    false       ],
+      [    :friend_photos_tab         ,    'Wedding Photos'      ,    friend_photos_path       ,    false       ,    false       ],
+      [    :correct_photos_tab        ,    'Correct Photos'      ,    correct_photos_path      ,    false       ,    false       ],
+      [    :gift_registries_tab       ,    'Gift Registries'     ,    gift_registries_path     ,    false       ,    false       ],
+      [    :travel_blog_tab           ,    'The Khuus Travel'    ,    travels_path             ,    true        ,    true        ],
+      [    :food_blog_tab             ,    'The Khuus Eat'       ,    "#"                      ,    true        ,    true        ],
+      #--------------------------------------------------------------------------------------------------------------------------#
+      #    TAB NAME                   |    DISPLAY TEXT          |    PATH                     |    VISIBLE?    |    ENABLED?    #
+      #--------------------------------------------------------------------------------------------------------------------------#
     ]
   end
 
@@ -101,12 +102,11 @@ Tabulous.setup do |config|
       [    :galleries    ,    :home                ,    :home_tab                  ],
       [    :galleries    ,    :index               ,    :gallery_tab               ],
       [    :galleries    ,    :friend_photos       ,    :friend_photos_tab         ],
-      [    :galleries    ,    :correct_photos       ,    :correct_photos_tab         ],
+      [    :galleries    ,    :correct_photos      ,    :correct_photos_tab        ],
       [    :galleries    ,    :list                ,    :gallery_tab               ],
       [    :galleries    ,    :manage              ,    :gallery_tab               ],
       [    :admins       ,    :all_actions         ,    :home_tab                  ],
-      [    :travels       ,    :all_actions         ,    :travel_blog_tab                  ],
-
+      [    :travels      ,    :all_actions         ,    :travel_blog_tab           ],
       #----------------------------------------------------------------------------#
       #    CONTROLLER    |    ACTION               |    TAB                        #
       #----------------------------------------------------------------------------#

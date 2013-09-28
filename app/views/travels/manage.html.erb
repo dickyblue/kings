@@ -1,19 +1,22 @@
-<%= simple_form_for(@travel_blog, :html => {:multipart => true}) do |f| %>
+<%= simple_form_for(@travel_blog, :html => {:multipart => true, :class => "form-horizontal"}) do |f| %>
 
   <%= f.association :travel_images do |builder| %>
-    <%= render 'travel_image_fields', :f => builder %>
+      <%= render 'travel_image_fields', :f => builder %>
   <% end %>
-
-  <%= link_to_add_fields "Add Image", f, :travel_images %>
+  <p><%= link_to_add_fields "Add Image", f, :travel_images %></p>
 
   <br><br>
-
-  <%= f.input :title %>
-  <%= f.input :author %>
-  <%= f.input :content %>
+  
+  <%= f.input :author, :as => :hidden, :input_html => { :value => current_user.name } %>
+  <%= f.input :title, :input_html => { :class => "input-xxlarge" } %>
+  <%= f.input :destination %>
+  <%= f.input :publish_date, :as => :date, :order => [:month, :day, :year], :start_year => 2013, :end_year => Time.now.year, :input_html => {:class => "input-small"}, :label => "Publish Date" %>
+  <%= f.input :content, :input_html => { style: 'height:200px;', :class => "input-xxlarge" } %>
   
   <br> 
   
-  <div class="btn primary white-link"><%= link_to "Cancel", list_travel_blogs_path %></div>
-  <%= f.button :submit, :class => "primary" %>
+  <div class="pull-right">
+    <div class="btn primary white-link"><%= link_to "Cancel", list_travel_blogs_path %></div>
+    <%= f.button :submit, :class => "primary" %>
+  </div>  
 <% end %>
