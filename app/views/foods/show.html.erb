@@ -7,23 +7,24 @@
       </div>
       
       <div class="span9">
-        <h3><%= @travel_blog.title %></h3>
-        Posted By: <%= @travel_blog.author %>  |  Dated: <%= @travel_blog.publish_date.strftime("%B %d, %Y") if @travel_blog.publish_date %> 
+        <h3><%= @food_blog.title %></h3>
+        Posted By: <%= @food_blog.author %>  |  Dated: <%= @food_blog.publish_date.strftime("%B %d, %Y") if @food_blog.publish_date %> 
       </div>
     </div>
     
     <div class="row">
       <div class="span12 center-travel-image">
-        <%= @travel_blog.content %><br><br>
-      </div>  
-      
-      
-      <% @travel_blog.travel_images.each do |f| %>
+        
+        <%= @food_blog.content %><br><br>
+      </div>
+        
+      <% @food_blog.food_images.each do |f| %>
       <div class="span12 center-travel-image">
         <%= image_tag(f.image_url(:large)) if f.image %><br>
         <em style="font-size: 12px"><strong><%= f.name %>: </strong><%= f.description %></em>
-      </div>
-      <% end %>  
+      </div><br><br>
+      <% end %>
+        
     </div>
     
     <br><br><br>
@@ -34,7 +35,7 @@
         <%= simple_form_for @comment, :url => create_travel_comment_path, :method => :post, :html => {:class => 'form-horizontal'} do |f| %>  
             <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
             <%= f.input :commenter, :as => :hidden, :input_html => { :value => current_user.name } %>
-            <%= f.input :travel_id, :as => :hidden, :input_html => { :value => @travel_blog.id } %>
+            <%= f.input :food_id, :as => :hidden, :input_html => { :value => @food_blog.id } %>
             <%= f.input :content, :label => "Comment", :input_html => { :rows => 6, :class => "input-xxlarge" } %>
           <div class="pull-right"><%= f.button :submit, 'Submit', :class => "primary" %></div>
         <% end %>
@@ -45,7 +46,7 @@
     <div class="row">
       <div class="span12">
         <a name="comments"></a>
-        <h5 class="mathlete-bulky-font" style="font-size:28px"><%= pluralize(@travel_blog.comments.size - 1 , 'Comment') %></h5><br>
+        <h5 class="mathlete-bulky-font" style="font-size:28px"><%= pluralize(@food_blog.comments.size - 1 , 'Comment') %></h5><br>
         <% @comments.each do |comment| %>
           <div class="span2">
             <ul class="no-margin-or-bullet">        

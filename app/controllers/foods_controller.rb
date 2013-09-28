@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
   
   def manage
     @food_blog = Food.new if @food_blog.nil?
-    5.times { @food_blog.food_images.build }
+    1.times { @food_blog.food_images.build }
     @food_blog = Food.find(params[:id]) if params[:id]
   end
   

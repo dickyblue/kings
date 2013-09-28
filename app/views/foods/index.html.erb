@@ -1,8 +1,7 @@
 
 
-<div class="promocyja-font travel-quote">“Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do. 
-  So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.”<br> 
-  <span style="font-size: 22px">– Mark Twain</span></div>
+<div class="promocyja-font travel-quote">“We all eat, and it would be a sad waste of opportunity to eat badly.”<br> 
+  <span style="font-size: 22px">– Anna Thomas</span></div>
   
   <br><br>
   
@@ -20,20 +19,20 @@
             DATE:<br>
             <%= fb.publish_date.strftime("%B %d, %Y") %><br><br>
 
-            DESTINATION:<br>
-            <%= fb.destination %><br><br>
-
+            <% unless fb.restaurant.empty? %>
+            Restaurant:<br>
+            <%= fb.restaurant %><br><br>
+            <% end %>
+            
             COMMENTS:<br>
             <%= pluralize(fb.comments.count, 'Comment') %><br><br>
           </div>
         
           <div class="span8 travel-index-right-column">
-            <p class="mathlete-bulky-font" style="font-size: 38px"><%= link_to fb.title, travel_path(fb) %></p><br>
+            <p class="mathlete-bulky-font" style="font-size: 38px"><%= link_to fb.title, food_path(fb) %></p><br>
             <%= image_tag(fb.food_images.first.image_url(:index)) if fb.food_images.first %><br><br>
             <%= fb.content %>
           </div>    
         </div>
       </div><br><br>    
     <% end %>
-    
-@food_blog
