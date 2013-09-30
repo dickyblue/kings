@@ -156,6 +156,18 @@ module ApplicationHelper
     travel_stamp = image_tag("travel_luggage_stamp.png", :att => "Travel Stamp")
   end  
   
+  def photo_gallery
+    photo_gallery = image_tag("photo_gallery.png", :att => "Photo Gallery")
+  end
+  
+  def travel_photo
+    travel_photo = image_tag("travel.png", :att => "Travel")
+  end
+  
+  def eat_photo
+    eat_photo = image_tag("eats.png", :att => "Food")
+  end
+  
   def link_to_remove_fields(name, f)
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
   end

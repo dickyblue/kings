@@ -1,0 +1,12 @@
+<h2 class="span 4 offset4"><%= @page_title = "Creating New User"%></h2>
+
+
+<%= simple_form_for @user, :html => {:multipart => true} do |f| %>
+    <div class="span4 offset4">
+      <%= render(:partial => 'form', :locals => {:f => f})%>    
+    </div>
+  <div class="span 4 offset4">
+  <%= f.button :submit, 'Submit', :class => "primary" %>
+  </div>
+  
+<% end %>

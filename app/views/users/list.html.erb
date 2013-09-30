@@ -3,7 +3,7 @@
 <h4>List of Users</h4></br>
 
 <div>
-  <%= semantic_form_for @search, :url => list_user_path do |f| %>
+  <%= simple_form_for @search, :url => list_user_path do |f| %>
     <%= f.input :name_contains, :label => "Name Search", :required => false %>
     SORT BY: <%= f.sort_link :id, "ID Order" %> | <%= f.sort_link :name, "Name" %> | <%= f.sort_link :lastlogin, "Last Logged In" %> | <%= f.sort_link :attending, "Attending" %>
   <% end %>
@@ -29,7 +29,7 @@
       <td><%= user.email %></td>
       <td><%= user.lastlogin %></td>
       <td><%= user.attending %></td>
-      <td><%= link_to "Edit", :action => 'manage', :id => user.id %> | <%= link_to "Delete", user, :method => :delete %></td>        
+      <td><%= link_to "Edit", edit_user_path(user), :id => user.id %> | <%= link_to "Delete", user, :method => :delete %></td>        
      </tr>
     <% end %>
   </tbody>  

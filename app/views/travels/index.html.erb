@@ -11,7 +11,7 @@
         <div class="white-box">
           <div class="row">
             <div class="span3 travel-index-left-column">
-              <%= image_tag(tb.travel_images.first.image_url(:thumb), :class => "round-images") if tb.travel_images.first %><br><br>
+              <%= image_tag(current_user.image_url(:thumb), :class => "round-images") if current_user.image %><br><br>
 
               AUTHOR:<br>
               <%= tb.author %><br><br>

@@ -222,24 +222,24 @@ input, textarea {
           box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25), inset 0 0 0 rgba(0, 0, 0, 0.1);
   }
 
-
-
 .navbar .nav > li > a {
   color: $gray;
   text-decoration: none;
   font-size: 30px;
-  font-family: mathletebulky
+  font-family: mathletebulky;
+  background: transparent;
   }
+
 
 .navbar .nav .active > a, .navbar .nav .active > a:hover {
   color: $turquoise;
-  background-color: transparent;
+  background: transparent;
   }
 
 .navbar .nav > li > a:hover {
   color: $turquoise;
-  background-color: transparent;
-  } 
+  background: transparent;
+  }  
 
 /*-------------FOOTER------------------------*/
 
@@ -758,3 +758,55 @@ hr {
   padding-top: 40px;
   padding-left: 20px;
   } 
+
+
+
+.push {
+  height: 20px
+  }
+
+.ca-icon {
+  /*width: 91px;
+  margin-left: 30px;*/
+  width: 50px;
+  height: 50px;
+  background: transparent url(photo_gallery.png) no-repeat; 
+}  
+
+.ca-icon2 {
+  /*width: 102px;
+  margin-left: 45px;*/
+  width: 50px;
+  height: 50px;
+  background: transparent url(travel.png) no-repeat;
+}
+
+.ca-icon3 {
+  /*width: 89px;
+  margin-left: 35px;*/
+  width: 50px;
+  height: 50px;
+  background: transparent url(eats.png) no-repeat;
+}
+
+.navbar .nav .active > .ca-icon, .nav li:hover .ca-icon{
+  background: transparent url(photo_gallery_active.png) no-repeat;
+}
+
+.navbar .nav .active > .ca-icon2, .nav li:hover .ca-icon2{
+  background: transparent url(travel_active.png) no-repeat;
+}
+
+.navbar .nav .active > .ca-icon3, .nav li:hover .ca-icon3{
+  background: transparent url(eats_active.png) no-repeat;
+}
+
+.nav li .ca-icon, .nav li .ca-icon2, .nav li .ca-icon3 {
+    transition: all 400ms linear;
+}
+
+.nav li:hover .ca-icon, .nav li:hover .ca-icon2, .nav li:hover .ca-icon3 {
+    -webkit-transform:rotate(360deg); 
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+}

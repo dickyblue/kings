@@ -36,7 +36,9 @@
         <% end %>
         </a>
         <ul class="nav pull-right">
-          <%= tabs %>
+          <li class="<%= 'active' if controller.is_a?(GalleriesController) %>"><div class="ca-icon"></div><%= link_to " Photo Gallery", galleries_path %></li>
+          <li class="<%= 'active' if controller.is_a?(TravelsController) %>"><div class="ca-icon2"></div><%= link_to " The Khuus Travel", travels_path %></li>
+          <li class="<%= 'active' if controller.is_a?(FoodsController) %>"><div class="ca-icon3"></div><%= link_to " The Khuus Eat", foods_path %></li>
         </ul>
 
       </div>
@@ -57,6 +59,9 @@
   <div class="container">
     <%= yield %>
   </div>
+
+  <div class="push"></div>
+  
 
   <footer>
     <br>
