@@ -41,11 +41,11 @@ class FoodImageUploader < CarrierWave::Uploader::Base
   # end
 
   version :thumb do
-    process :resize_to_fill => [90, 90]
+    process :resize_to_limit => [90, 90]
   end
 
   version :index do
-    process :resize_to_fill => [620, 400]
+    process :resize_to_limit => [620, 400]
   end
   
   version :large do

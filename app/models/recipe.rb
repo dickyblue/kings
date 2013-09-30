@@ -5,6 +5,6 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients
   belongs_to :food
   
-  accepts_nested_attributes_for :ingredients
+  accepts_nested_attributes_for :ingredients, :allow_destroy => true
 
 end

@@ -1,18 +1,41 @@
+
+
 <%= simple_form_for(@food_blog, :html => {:multipart => true, :class => "form-horizontal"}) do |f| %>
 
+  
+  
   <%= f.association :food_images do |builder| %>
       <%= render 'food_image_fields', :f => builder %>
   <% end %>
-  <p><%= link_to_add_fields "Add Image", f, :food_images %></p>
+  <p><%= link_to_add_fields "Add Food Image", f, :food_images %></p>
+
 
   <br><br>
+
+
   
   <%= f.input :author, :as => :hidden, :input_html => { :value => current_user.name } %>
   <%= f.input :title, :input_html => { :class => "input-xxlarge" } %>
   <%= f.input :publish_date, :as => :date, :order => [:month, :day, :year], :start_year => 2013, :end_year => Time.now.year, :input_html => {:class => "input-small"}, :label => "Publish Date" %>
-  <%= f.input :restaurant, :input_html => { :class => "input-xxlarge" } %>
-  <%= f.input :restaurant_location, :input_html => { :class => "input-xxlarge" } %>
-  <%= f.input :content, :input_html => { style: 'height:200px;', :class => "input-xxlarge" } %>
+  <%= f.input :content, :label => 'Blog Content', :input_html => { style: 'height:200px;', :class => "input-xxlarge" } %>
+
+
+  
+  <%= f.input :rest, :as => :boolean, :label => "Restaurant ?" %>
+      <div id="restaurant_details" style="display:none;">
+          <%= f.input :restaurant, :input_html => { :class => "input-xxlarge" } %>
+          <%= f.input :restaurant_location, :input_html => { :class => "input-xxlarge" } %>
+      </div>
+
+
+
+  <%= f.input :recipe, :as => :boolean, :label => "Recipe ?" %>
+      <div id="recipe_details" style="display:none;">
+          <%= f.simple_fields_for :recipes do |builder| %>
+            <%= render 'recipe_fields', :f => builder %><br><br><br><br>
+          <% end %>
+          <p><%= link_to_add_fields "Add New Recipe", f, :recipes %></p>
+      </div>
   
   <br> 
   
@@ -21,3 +44,29 @@
     <%= f.button :submit, :class => "primary" %>
   </div>  
 <% end %>
+
+
+  
+
+<script type="text/javascript">
+  var checkbox = document.getElementById('food_rest');
+  var details_div = document.getElementById('restaurant_details');
+  checkbox.onchange = function() {
+     if(this.checked) {
+       details_div.style['display'] = 'block';
+     } else {
+       details_div.style['display'] = 'none';
+     }
+  };
+  
+  
+  var recipe_checkbox = document.getElementById('food_recipe');
+  var recipe_details_div = document.getElementById('recipe_details');
+  recipe_checkbox.onchange = function() {
+     if(this.checked) {
+       recipe_details_div.style['display'] = 'block';
+     } else {
+       recipe_details_div.style['display'] = 'none';
+     }
+  };
+</script>

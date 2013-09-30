@@ -27,10 +27,31 @@
         
     </div>
     
-    <div class="tape-background">
-      [TO BE UPDATED HERE WITH RECIPE]
-    </div>
-    
+      <% if @food_blog.recipe == true %>        
+        <% @food_blog.recipes.each do |r| %>
+          <div class="tape-background">
+            <p class="mathlete-bulky-font" style="font-size: 35px;"><%= r.name %></p>
+            <div class="span4">
+              <% r.ingredients.each do |i| %>
+                  <p class="mathlete-bulky-font" style="font-size: 35px;">Ingredients:</p>  
+                  <ul class="no-margin-or-bullet">
+                    <li>  
+                      <%= i.quantity_used %>
+                      <%= i.ingredient_name %>
+                    </li>
+                  </ul>              
+              <% end %>
+            </div>
+
+            <div class="span6" style="margin-left: 50px;">
+              <p class="mathlete-bulky-font" style="font-size: 35px;">Recipe:</p>
+              <%= r.recipe_instructions %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      
+      
     <br><br><br>
     
     <div class="row">

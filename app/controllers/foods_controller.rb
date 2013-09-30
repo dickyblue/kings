@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
 
   def index
-    @food_blogs = Food.order('publish_date DESC')
+    @food_blogs = Food.paginate(:page => params[:page], :per_page => 5, :order => "publish_date DESC")
     quotes = Quote.where(:food => true).pluck(:id)
     @quote = Quote.where(:id => quotes.sample).first.quote if Quote.where(:id => quotes.sample).first
     @author = Quote.where(:id => quotes.sample).first.author if Quote.where(:id => quotes.sample).first
@@ -10,6 +10,8 @@ class FoodsController < ApplicationController
   def manage
     @food_blog = Food.new if @food_blog.nil?
     1.times { @food_blog.food_images.build }
+    recipe = @food_blog.recipes.build
+    recipe.ingredients.build
     @food_blog = Food.find(params[:id]) if params[:id]
   end
   

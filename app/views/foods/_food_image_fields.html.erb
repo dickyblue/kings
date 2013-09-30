@@ -1,7 +1,15 @@
-<div class="fields">
+<div class="row fields">
+  <div class="span5">
   <%= f.input :image, :as => :file %>
   <%= f.input :name %>
-  <%= f.input :description %>
   <%= f.input :featured, :as => :select %>
-  <%= link_to_remove_fields "Remove", f %>
+  </div>
+  
+  <div class="span4">
+  <%= f.input :description %>
+  </div>
+  
+  <div class="span1 offset2">
+  <p><%= link_to_remove_fields "Delete Food Image", f %></p>
+  </div>
 </div>
