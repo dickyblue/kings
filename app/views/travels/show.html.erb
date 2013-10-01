@@ -36,7 +36,7 @@
             <%= f.input :commenter, :as => :hidden, :input_html => { :value => current_user.name } %>
             <%= f.input :travel_id, :as => :hidden, :input_html => { :value => @travel_blog.id } %>
             <%= f.input :content, :label => "Comment", :input_html => { :rows => 6, :class => "input-xxlarge" } %>
-          <div class="pull-right"><%= f.button :submit, 'Submit', :class => "primary" %></div>
+          <div class="submit-btn-pull-right"><%= f.button :submit, 'Submit', :class => "primary" %></div>
         <% end %>
       </div>  
     </div>

@@ -28,16 +28,14 @@
   <div class="navbar">
     <div class="navbar-inner">
         <div class="container">
-          <a class="brand">
             <% if current_user %>
               <%= link_to logo, root_path %>
             <% end %>
-          </a>
         
           <ul class="nav pull-right">            
-            <li class="<%= 'active' if controller.is_a?(GalleriesController) %>"><div class="ca-icon"></div><%= link_to " Photo Gallery", galleries_path %></li>
-            <li class="<%= 'active' if controller.is_a?(TravelsController) %>"><div class="ca-icon2"></div><%= link_to " The Khuus Travel", travels_path %></li>
-            <li class="<%= 'active' if controller.is_a?(FoodsController) %>"><div class="ca-icon3"></div><%= link_to " The Khuus Eat", foods_path %></li>
+            <li class="<%= 'active' if controller.is_a?(GalleriesController) %>"  style="width: 185px;"><%= link_to galleries_path do %> <div class="ca-icon"></div><% end %><%= link_to "Photo Gallery", galleries_path %></li>
+            <li class="<%= 'active' if controller.is_a?(TravelsController) %>" style="width: 210px;"><%= link_to travels_path do %> <div class="ca-icon2"></div><% end %><%= link_to "The Khuus Travel", travels_path %></li>
+            <li class="<%= 'active' if controller.is_a?(FoodsController) %>" style="width: 185px;"><%= link_to foods_path do %> <div class="ca-icon3"></div><% end %><%= link_to "The Khuus Eat", foods_path %></li>
           </ul>         
         </div>
       

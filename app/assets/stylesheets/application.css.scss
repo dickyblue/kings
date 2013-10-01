@@ -176,8 +176,9 @@ a {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   }
 
-.pull-right {
+.submit-btn-pull-right {
   padding-right: 40px;
+  float: right;
   }
 
 .input-xxlarge {
@@ -767,39 +768,56 @@ hr {
   height: 20px
   }
 
+
+
+
+
+.nav li {
+  overflow: hidden;
+  position: relative;
+  }
+
+.nav li:hover > a {
+  color: $turquoise;
+  }  
+
 .ca-icon {
-  /*width: 91px;
-  margin-left: 30px;*/
+  margin-right: 10px;
   width: 50px;
   height: 50px;
-  background: transparent url(photo_gallery.png) no-repeat; 
-}  
+  background: transparent url(photo_gallery.png) no-repeat;
+  display: inline-block; /* Added display and float to make it on the same line*/
+  float: left;     
+}
 
 .ca-icon2 {
-  /*width: 102px;
-  margin-left: 45px;*/
   width: 50px;
   height: 50px;
+  margin-right: 10px;
   background: transparent url(travel.png) no-repeat;
+  display: inline-block; /* Added display and float to make it on the same line*/
+  float: left;
 }
 
 .ca-icon3 {
-  /*width: 89px;
-  margin-left: 35px;*/
   width: 50px;
   height: 50px;
+  margin-right: 10px;
   background: transparent url(eats.png) no-repeat;
+  display: inline-block; /* Added display and float to make it on the same line*/
+  float: left;
 }
 
-.navbar .nav .active > .ca-icon, .nav li:hover .ca-icon{
+
+.navbar .nav .active > a .ca-icon, .nav li:hover .ca-icon{
   background: transparent url(photo_gallery_active.png) no-repeat;
 }
 
-.navbar .nav .active > .ca-icon2, .nav li:hover .ca-icon2{
+.navbar .nav .active > a .ca-icon2, .nav li:hover .ca-icon2{
   background: transparent url(travel_active.png) no-repeat;
 }
 
-.navbar .nav .active > .ca-icon3, .nav li:hover .ca-icon3{
+.navbar .nav .active > a .ca-icon3, .nav li:hover .ca-icon3{
   background: transparent url(eats_active.png) no-repeat;
 }
 
