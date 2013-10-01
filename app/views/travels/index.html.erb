@@ -11,10 +11,10 @@
         <div class="white-box">
           <div class="row">
             <div class="span3 travel-index-left-column">
-              <%= image_tag(current_user.image_url(:thumb), :class => "round-images") if current_user.image %><br><br>
+              <%= image_tag(tb.user.image_url(:thumb), :class => "round-images") if tb.user.image %><br><br>
 
               AUTHOR:<br>
-              <%= tb.author %><br><br>
+              <%= tb.user.name %><br><br>
 
               DATE:<br>
               <%= tb.publish_date.strftime("%B %d, %Y") %><br><br>

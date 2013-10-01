@@ -28,7 +28,7 @@
       <td><%= link_to tb.title, tb %></td>
       <td><%= truncate(tb.content, :length => 50, :separator => " ") %></td>
       <td><%= tb.publish_date %></td>
-      <td><%= tb.author %></td>
+      <td><%= tb.user.name %></td>
       <td><%= link_to "Edit", :action => 'manage', :id => tb.id %> | <%= link_to "Delete", tb, :method => :delete %></td>        
      </tr>
     <% end %>

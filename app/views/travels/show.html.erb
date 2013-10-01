@@ -8,7 +8,7 @@
       
       <div class="span9">
         <h3><%= @travel_blog.title %></h3>
-        Posted By: <%= @travel_blog.author %>  |  Dated: <%= @travel_blog.publish_date.strftime("%B %d, %Y") if @travel_blog.publish_date %> 
+        Posted By: <%= @travel_blog.user.name %>  |  Dated: <%= @travel_blog.publish_date.strftime("%B %d, %Y") if @travel_blog.publish_date %> 
       </div>
     </div>
     

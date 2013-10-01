@@ -11,10 +11,10 @@
       <div class="white-box">
         <div class="row">
           <div class="span3 travel-index-left-column">
-            <%= image_tag(fb.food_images.first.image_url(:thumb), :class => "round-images") if fb.food_images.first %><br><br>
+            <%= image_tag(fb.user.image_url(:thumb), :class => "round-images") if fb.user %><br><br>
 
             AUTHOR:<br>
-            <%= fb.author %><br><br>
+            <%= fb.user.name %><br><br>
 
             DATE:<br>
             <%= fb.publish_date.strftime("%B %d, %Y") %><br><br>

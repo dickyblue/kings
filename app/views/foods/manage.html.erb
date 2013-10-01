@@ -14,7 +14,7 @@
 
 
   
-  <%= f.input :author, :as => :hidden, :input_html => { :value => current_user.name } %>
+  <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
   <%= f.input :title, :input_html => { :class => "input-xxlarge" } %>
   <%= f.input :publish_date, :as => :date, :order => [:month, :day, :year], :start_year => 2013, :end_year => Time.now.year, :input_html => {:class => "input-small"}, :label => "Publish Date" %>
   <%= f.input :content, :label => 'Blog Content', :input_html => { style: 'height:200px;', :class => "input-xxlarge" } %>

@@ -1,11 +1,12 @@
 class Food < ActiveRecord::Base
 
-  attr_accessible :title, :content, :publish_date, :author, :published, :food_images_attributes, :restaurant, :restaurant_location, :rest, :recipe,
+  attr_accessible :title, :content, :publish_date, :user_id, :published, :food_images_attributes, :restaurant, :restaurant_location, :rest, :recipe,
   :recipes_attributes
   
   has_many :food_images
   has_many :comments
   has_many :recipes
+  belongs_to :user
   
   accepts_nested_attributes_for :food_images, :reject_if => lambda { |g| g[:image].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :comments
