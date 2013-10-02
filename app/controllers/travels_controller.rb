@@ -6,8 +6,7 @@ class TravelsController < ApplicationController
   def index
     @travel_blogs = Travel.order('publish_date DESC')
     quotes = Quote.where(:travel => true).pluck(:id) 
-    @quote = Quote.where(:id => quotes.sample).first.quote if Quote.where(:id => quotes.sample).first
-    @author = Quote.where(:id => quotes.sample).first.author if Quote.where(:id => quotes.sample).first
+    @quote = Quote.where(:id => quotes.sample).first if Quote.where(:id => quotes.sample).first
   end
   
   def manage

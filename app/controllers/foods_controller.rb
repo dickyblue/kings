@@ -6,8 +6,7 @@ class FoodsController < ApplicationController
   def index
     @food_blogs = Food.paginate(:page => params[:page], :per_page => 5, :order => "publish_date DESC")
     quotes = Quote.where(:food => true).pluck(:id)
-    @quote = Quote.where(:id => quotes.sample).first.quote if Quote.where(:id => quotes.sample).first
-    @author = Quote.where(:id => quotes.sample).first.author if Quote.where(:id => quotes.sample).first
+    @quote = Quote.where(:id => quotes.sample).first if Quote.where(:id => quotes.sample).first
   end
   
   def manage
