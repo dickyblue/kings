@@ -1,4 +1,6 @@
 class QuotesController < ApplicationController
+  
+  before_filter :authenticate_admin
 
   def manage
     @quote = Quote.new if @quote.nil?

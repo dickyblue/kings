@@ -1,5 +1,8 @@
 class FoodsController < ApplicationController
 
+  before_filter :authenticate_admin, :only => [:manage, :list, :create, :update, :destroy]
+  before_filter :authenticate
+
   def index
     @food_blogs = Food.paginate(:page => params[:page], :per_page => 5, :order => "publish_date DESC")
     quotes = Quote.where(:food => true).pluck(:id)

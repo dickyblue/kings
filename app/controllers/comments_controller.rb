@@ -40,6 +40,16 @@ class CommentsController < ApplicationController
     end
   end
   
+  def create_food_comment
+    @food_blog = Food.find(params[:id])
+    @comment = Comment.new(params[:comment])
+    if @comment.save
+      redirect_to food_path(@food_blog)
+    else
+      render food_path(@food_blog)
+    end
+  end
+  
   def destroy
     Comment.find(params[:id]).destroy
     redirect_to admins_path

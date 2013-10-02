@@ -1,4 +1,7 @@
 class TravelsController < ApplicationController
+  
+  before_filter :authenticate_admin, :only => [:manage, :list, :create, :update, :destroy]
+  before_filter :authenticate
 
   def index
     @travel_blogs = Travel.order('publish_date DESC')

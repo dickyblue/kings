@@ -16,6 +16,7 @@ NickMing::Application.routes.draw do
   post  '/galleries/create_friend_upload', :to => 'galleries#create_friend_upload', :as => :create_friend_upload
   post  '/galleries/wedding_photos', :to => 'comments#create_gallery_comment', :as => :create_gallery_comment
   post  '/travels/:id', :to => 'comments#create_travel_comment', :as => :create_travel_comment
+  post  '/foods/:id', :to => 'comments#create_food_comment', :as => :create_food_comment
   match '/galleries/wedding_photos', :to => 'galleries#friend_photos', :as => :friend_photos  
   match '/galleries/correct_photos', :to => 'galleries#correct_photos', :as => :correct_photos  
   match '/travel_lodging', :to => 'galleries#travel_lodging', :as => :travel_lodging
