@@ -4,18 +4,6 @@ module ApplicationHelper
     logo = image_tag("thekhuus.png", :att => "Nick & Ming")
   end
   
-  def liberty2
-    liberty2 = image_tag("liberty 2.jpg", :att => "New York")
-  end
-  
-  def opera
-    opera = image_tag("opera.png", :att => "Sydney")
-  end
-  
-  def plus
-    plus = image_tag("plus.png", :att => "Plus")
-  end
-  
   def sept29
     sept29 = image_tag("sept29.png", :att => "September 29")
   end
@@ -171,6 +159,11 @@ module ApplicationHelper
   def link_to_remove_fields(name, f)
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
   end
+  
+  def randomized_background_image
+    images = ["thekhuus_login.png", "thekhuus_login_elephant.png", "thekhuus_login_sailing.png", "thekhuus_login_stars.png", "thekhuus_login_travel.png"]
+    images[rand(images.size)]
+  end  
 
   def link_to_add_fields(name, f, association)
     new_object = f.object.class.reflect_on_association(association).klass.new

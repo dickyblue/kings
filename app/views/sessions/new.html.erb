@@ -1,19 +1,9 @@
-  
-    
-  <div class="nyc"><%= liberty2 %></div> 
-
-
-  <div class="plus-sign login_btn"><%= link_to plus, '#' %> </div>
-  <div id="login_box">
-       <div id="login_form">
-         <%= simple_form_for(:session, :url => sessions_path) do |f| %>
-             <div class="span4 offset4 login effect6">
-             <%= f.input :email, :required => false %>
-             <%= f.input :password, :required => false %>
-             <%= f.button :submit, :class => "primary" %>
-             </div>
-         <% end %>
-       </div>
-  </div>
-      
-  <div class="sydney"><%= opera %></div>
+    <%= image_tag(randomized_background_image, :id => "full-screen-background-image")%>
+    <div id="login_wrapper">
+      <%= simple_form_for(:session, :url => sessions_path, :html => {:class => 'simple_form_session'}) do |f| %>
+         <span style="font-family: PacificoRegular; font-size: 28px; color: #65BEB4">Welcome!</span><br><br>
+         <%= f.input :email, :required => false %>
+         <%= f.input :password, :required => false %>
+         <%= f.submit "Log In", :class => "btn primary" %>
+       <% end %>
+    </div>

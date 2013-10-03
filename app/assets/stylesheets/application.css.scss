@@ -121,8 +121,7 @@ a {
   width: 265px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  
+  -moz-border-radius: 6px;  
 }
 
 .sign-out {
@@ -830,3 +829,32 @@ hr {
     -moz-transform:rotate(360deg);
     -o-transform:rotate(360deg);
 }
+
+
+#full-screen-background-image {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#login_wrapper {
+  position: relative;
+  width: 800px;
+  min-height: 200px;
+  margin: 25px;
+
+}
+
+.simple_form_session {
+  width: 220px;
+  padding: 20px;
+  background: transparent url(background.png) repeat;
+  border: 3px solid $turquoise;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  }
