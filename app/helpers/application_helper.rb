@@ -161,7 +161,9 @@ module ApplicationHelper
   end
   
   def randomized_background_image
-    images = ["thekhuus_login.png", "thekhuus_login_elephant.png", "thekhuus_login_sailing.png", "thekhuus_login_stars.png", "thekhuus_login_travel.png"]
+    images = ["thekhuus_login.png", "thekhuus_login_elephant.png", "thekhuus_login_sailing.png", 
+      "thekhuus_login_stars.png", "thekhuus_login_travel.png", "thekhuus_login_bike.png", 
+      "thekhuus_login_moon.png", "thekhuus_login_rain_shine.png"]
     images[rand(images.size)]
   end  
 
