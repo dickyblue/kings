@@ -37,6 +37,18 @@
 
 </table>
 
+
+<div>
+  <% @galleries.each do |g| %>
+  <ul>
+    <li>
+    <%= image_tag(g.image_url(:thumb)) if g.image %><br>
+    <%= link_to "Edit", :action => 'manage', :id => g.id %> | <%= link_to "Delete", g, :method => :delete %>
+    </li>
+  </ul>
+  <% end %>
+</div>
+
 <%= page_navigation_links @galleries, '#'%>
 
 <div class="btn primary white-link pull-right"><%= link_to "New", :action => 'manage' %></div>
