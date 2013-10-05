@@ -26,6 +26,11 @@ $light-turquoise: #88d5c2;
 
 @import 'bootstrap';
 
+[class^="icon-"], [class*=" icon-"] {
+  background-image: url(/assets/glyphicons-halflings.png)
+}
+
+
 body {
   background: transparent url("background.png") 100% 100% repeat;
   position: relative;
