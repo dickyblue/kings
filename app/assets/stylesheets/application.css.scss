@@ -26,14 +26,6 @@ $light-turquoise: #88d5c2;
 
 @import 'bootstrap';
 
-[class^="icon-"], [class*=" icon-"] {
-  background-image: url(/assets/glyphicons-halflings.png)
-}
-
-.icon-chevron-left {
-color: $turquoise;
-}
-
 body {
   background: transparent url("background.png") 100% 100% repeat;
   position: relative;
