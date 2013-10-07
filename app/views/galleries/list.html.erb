@@ -30,7 +30,7 @@
       <td><%= truncate(gal.description, :length => 50, :separator => " ") %></td>
       <td><%= gal.featured? %></td>
       <td><%= gal.lodging? %></td>
-      <td><%= link_to "Edit", :action => 'manage', :id => gal.id %> | <%= link_to "Delete", gal, :method => :delete %></td>        
+      <td><%= link_to "Edit", :action => 'edit', :id => gal.id %> | <%= link_to "Delete", gal, :method => :delete %></td>        
      </tr>
     <% end %>
   </tbody>  
@@ -43,7 +43,7 @@
   <ul>
     <li>
     <%= image_tag(g.image_url(:thumb)) if g.image %><br>
-    <%= link_to "Edit", :action => 'manage', :id => g.id %> | <%= link_to "Delete", g, :method => :delete %>
+    <%= link_to "Edit", :action => 'edit', :id => g.id %> | <%= link_to "Delete", g, :method => :delete %>
     </li>
   </ul>
   <% end %>
@@ -51,5 +51,5 @@
 
 <%= page_navigation_links @galleries, '#'%>
 
-<div class="btn primary white-link pull-right"><%= link_to "New", :action => 'manage' %></div>
+<div class="btn primary white-link pull-right"><%= link_to "New", :action => 'new' %></div>
 </div>

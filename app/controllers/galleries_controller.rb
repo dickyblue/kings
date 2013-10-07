@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   
-  before_filter :authenticate_admin, :only => [:list, :manage, :create, :update, :destroy]
+  before_filter :authenticate_admin, :only => [:list, :new, :edit, :create, :update, :destroy]
   before_filter :authenticate
   layout "gallery", :except => :home
 
@@ -13,8 +13,11 @@ class GalleriesController < ApplicationController
     @galleries = @search.paginate(:page => params[:page], :per_page => 10, :order => "created_at DESC")
   end
   
-  def manage
+  def new
     @image = Gallery.new if @image.nil?
+  end
+  
+  def edit
     @image = Gallery.find(params[:id]) if params[:id]
   end
   
