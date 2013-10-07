@@ -2,7 +2,7 @@ production:
   bucket: nm-gallery
 
 staging:
-  bucket: nm.gallery  
+  bucket: nm.staging  
   
 development:
   bucket: nm.gallery
