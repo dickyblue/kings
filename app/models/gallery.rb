@@ -7,5 +7,9 @@ class Gallery < ActiveRecord::Base
   
   mount_uploader :image, GalleryUploader
   
+  Gallery.all.each do |gal|
+    gal.image.recreate_versions!(:thumb_2)
+    gal.save
+  end
   
 end

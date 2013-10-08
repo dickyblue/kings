@@ -1,15 +1,6 @@
 # encoding: utf-8
 
-Gallery.all.each do |g| 
-  begin
-    g.your_uploader.cache_stored_file! 
-    g.your_uploader.retrieve_from_cache!(ym.your_uploader.cache_name) 
-    g.your_uploader.recreate_versions!(:thumb_2)
-    g.save! 
-  rescue => e
-    puts  "ERROR: #{CLASS}: #{object.id} -> #{e.to_s}"
-  end
-end
+
 
 class GalleryUploader < CarrierWave::Uploader::Base
 
