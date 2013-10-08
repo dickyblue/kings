@@ -14,17 +14,17 @@ class GalleriesController < ApplicationController
   end
   
   def new
-    @image = Gallery.new if @image.nil?
+    @image = Gallery.new 
   end
   
   def edit
-    @image = Gallery.find(params[:id]) if params[:id]
+    @image = Gallery.find(params[:id]) 
   end
   
   def create
     @image = Gallery.new(params[:gallery])
     if @image.save
-      redirect_to admins_path
+      redirect_to :action => 'list'
     else
       render "new"
     end
@@ -35,7 +35,7 @@ class GalleriesController < ApplicationController
     if @image.update_attributes(params[:gallery])
       redirect_to admins_path
     else
-      render "manage"
+      render "edit"
     end
   end
 
@@ -59,9 +59,9 @@ class GalleriesController < ApplicationController
     @first_image = @images.first
   end
     
-  def create_friend_upload
-    @image = Gallery.create(params[:gallery])
-  end
+  # def create_friend_upload
+  #   @image = Gallery.create(params[:gallery])
+  # end
   
   def friend_photos
     @image = Gallery.new

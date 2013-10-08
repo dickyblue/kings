@@ -158,24 +158,24 @@ $(document).ready(function() {
 
 
 //Friends Photos
-
-$(function() {
-	
-$(".image").click(function() {
-var image = $(this).attr("rel");	
-$('#image').hide();
-$('#image').fadeIn('slow');
-$('#image').html('<img src="' + image + '"/>');
-
-$('#friends_comment').hide();
-$('#friends_comment').fadeIn('slow');
-$('#commenter').html($(this).attr('alt'));
-$('#friends_comment').html($(this).attr('comments'));
-
-var new_data_id = $(this).attr('data-id');
-$('#comment_gallery_id').attr('value', new_data_id)
-    });
-});
+// 
+// $(function() {
+// 	
+// $(".image").click(function() {
+// var image = $(this).attr("rel");	
+// $('#image').hide();
+// $('#image').fadeIn('slow');
+// $('#image').html('<img src="' + image + '"/>');
+// 
+// $('#friends_comment').hide();
+// $('#friends_comment').fadeIn('slow');
+// $('#commenter').html($(this).attr('alt'));
+// $('#friends_comment').html($(this).attr('comments'));
+// 
+// var new_data_id = $(this).attr('data-id');
+// $('#comment_gallery_id').attr('value', new_data_id)
+//     });
+// });
 
 
 //add and remove links for travel photos

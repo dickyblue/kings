@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to :action => 'list'
     else
-      render 'manage'
+      render 'new'
     end
   end
   
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       redirect_to :action => 'list'
     else
-      render 'manage'
+      render 'edit'
     end
   end
   
