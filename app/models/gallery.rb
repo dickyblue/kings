@@ -12,4 +12,5 @@ class Gallery < ActiveRecord::Base
     gal.save
   end
   
+  
 end

@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-
-
 class GalleryUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -63,7 +61,7 @@ class GalleryUploader < CarrierWave::Uploader::Base
   end
   
   version :thumb_2 do
-    process :resize_to_fill => [390, 390]
+    process :resize_to_fill => [300, 180]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
