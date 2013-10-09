@@ -1,8 +1,4 @@
-
-
 <%= simple_form_for(@food_blog, :html => {:multipart => true, :class => "form-horizontal"}) do |f| %>
-
-  
   
   <%= f.association :food_images do |builder| %>
       <%= render 'food_image_fields', :f => builder %>
@@ -41,7 +37,7 @@
   <br> 
   
   <div class="submit-btn-pull-right">
-    <div class="btn primary white-link"><%= link_to "Cancel", list_travel_blogs_path %></div>
+    <div class="btn primary white-link"><%= link_to "Cancel", list_food_blogs_path %></div>
     <%= f.button :submit, :class => "primary" %>
   </div>  
 <% end %>

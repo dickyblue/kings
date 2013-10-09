@@ -9,8 +9,12 @@ class Travel < ActiveRecord::Base
   accepts_nested_attributes_for :travel_images, :reject_if => lambda { |g| g[:image].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :comments
   
+  scope :featured_blogs, where(:featured_blog => true).order('publish_date DESC').limit(6)
+  
   def self.featured_travel_image(t)
     t.travel_images.where(:featured => true)
   end
+  
+  
     
 end

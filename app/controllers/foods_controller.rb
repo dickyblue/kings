@@ -7,7 +7,8 @@ class FoodsController < ApplicationController
     @food_blogs = Food.paginate(:page => params[:page], :per_page => 5, :order => "publish_date DESC")
     quotes = Quote.where(:food => true).pluck(:id)
     @quote = Quote.where(:id => quotes.sample).first if Quote.where(:id => quotes.sample).first
-    @featured_blogs = Food.where(:featured_blog => true).order('publish_date DESC')
+    @featured_blogs_one = Food.featured_blogs.in_groups_of(3, false).first
+    @featured_blogs_two = Food.featured_blogs.in_groups_of(3, false).last
   end
   
   def manage

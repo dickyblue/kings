@@ -3,12 +3,12 @@
     <span style="font-size: 22px">– <%= @quote.author %></span>
   </div>
 
-<% if @featured_blogs.count > 0 %> 
+<% if Travel.featured_blogs.count > 0 %> 
   <div class="carousel slide" id="myCarousel">
   <div class="carousel-inner">
     <div class="item active">
           <ul class="thumbnails">
-                  <% @featured_blogs.each do |fb| %>
+                  <% @featured_blogs_one.each do |fb| %>
                   <li class="index-pages-li">
 
                   <%= link_to image_tag(fb.travel_images.first.image_url(:list)), travel_path(fb) if fb.travel_images.first %>
@@ -20,9 +20,13 @@
     </div>
     <div class="item">
           <ul class="thumbnails">
-              <li class="span2">
-                  <img src="http://placehold.it/260x180" alt="">
+              <% @featured_blogs_two.each do |fb| %>
+              <li class="index-pages-li">
+
+              <%= link_to image_tag(fb.travel_images.first.image_url(:list)), travel_path(fb) if fb.travel_images.first %>
+              <span class="index-pages-li-title"><%= fb.title %></span>
               </li>
+              <% end %>
           </ul>
     </div>
   </div>

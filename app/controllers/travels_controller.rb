@@ -7,7 +7,8 @@ class TravelsController < ApplicationController
     @travel_blogs = Travel.paginate(:page => params[:page], :per_page => 5, :order => "created_at DESC")
     quotes = Quote.where(:travel => true).pluck(:id) 
     @quote = Quote.where(:id => quotes.sample).first if Quote.where(:id => quotes.sample).first
-    @featured_blogs = Travel.where(:featured_blog => true).order('publish_date DESC')
+    @featured_blogs_one = Travel.featured_blogs.in_groups_of(3, false).first
+    @featured_blogs_two = Travel.featured_blogs.in_groups_of(3, false).last
   end
   
   def manage
