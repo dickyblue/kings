@@ -903,9 +903,22 @@ hr.dotted {
 height: 180px;
 }
 
+.thumbnails li img {
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
+  }
+
 .thumbnails li:hover img {
-  opacity:0.2;
-  filter:alpha(opacity=20); /* For IE8 and earlier */
+  opacity:0.3;
+  filter:alpha(opacity=30); /* For IE8 and earlier */
+  -webkit-filter: grayscale(80%);
+  /*-moz-transform: rotate(-5deg);  
+  -o-transform: rotate(-5deg);  
+  -webkit-transform: rotate(-5deg);  
+  transform: rotate(-5deg);*/
   }
   
 .index-pages-li-title {
@@ -922,4 +935,8 @@ height: 180px;
     
 .thumbnails li:hover > .index-pages-li-title {
   opacity: 1;
-  }  
+  } 
+  
+.carousel-control {   
+  top: 50%
+  }
