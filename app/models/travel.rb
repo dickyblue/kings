@@ -1,6 +1,6 @@
 class Travel < ActiveRecord::Base
   
-  attr_accessible :title, :content, :publish_date, :user_id, :published, :travel_images_attributes, :destination
+  attr_accessible :title, :content, :publish_date, :user_id, :published, :travel_images_attributes, :destination, :featured_blog
   
   belongs_to :user
   has_many :travel_images

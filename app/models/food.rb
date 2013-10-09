@@ -1,7 +1,7 @@
 class Food < ActiveRecord::Base
 
   attr_accessible :title, :content, :publish_date, :user_id, :published, :food_images_attributes, :restaurant, :restaurant_location, :rest, :recipe,
-  :recipes_attributes
+  :recipes_attributes, :featured_blog
   
   has_many :food_images
   has_many :comments

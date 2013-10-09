@@ -2,16 +2,16 @@
 <div class="promocyja-font travel-quote">“<%= @quote.quote %>”<br> 
   <span style="font-size: 22px">– <%= @quote.author %></span></div>
   
-  
+<% if @featured_blogs.count > 0 %>  
   <div class="carousel slide" id="myCarousel">
   <div class="carousel-inner">
     <div class="item active">
           <ul class="thumbnails">
-                  <% @food_blogs.each do |f| %>
+                  <% @featured_blogs.each do |fb| %>
                   <li class="index-pages-li">
 
-                  <%= link_to image_tag(f.food_images.first.image_url(:list)), food_path(f) if f.food_images.first %>
-                  <span class="index-pages-li-title"><%= f.title %></span>
+                  <%= link_to image_tag(fb.food_images.first.image_url(:list)), food_path(fb) if fb.food_images.first %>
+                  <span class="index-pages-li-title"><%= fb.title %></span>
                 </li>
 
                   <% end %>
@@ -28,7 +28,7 @@
   <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
   <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
   </div>
-
+<% end %>
 
   <br><br>
 
@@ -63,3 +63,6 @@
         </div>
       </div><br><br>    
     <% end %>
+    
+    <div class="pull-right"><%= page_navigation_links @food_blogs, '#' %></div>    
+    
