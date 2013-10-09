@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   def list
     @search = User.search(params[:search])
-    @users = @search.paginate(:page => params[:page], :per_page => 10, :order => "created_at DESC")
+    @users = @search.paginate(:page => params[:page], :per_page => 15, :order => "created_at DESC")
   end
   
   def new

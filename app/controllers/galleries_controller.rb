@@ -10,7 +10,7 @@ class GalleriesController < ApplicationController
   
   def list
     @search = Gallery.search(params[:search])
-    @galleries = @search.paginate(:page => params[:page], :per_page => 10, :order => "created_at DESC")
+    @galleries = @search.paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
   end
   
   def new

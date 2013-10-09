@@ -19,7 +19,7 @@ class FoodsController < ApplicationController
   
   def list
     @search = Food.search(params[:search])
-    @food_blogs = @search.paginate(:page => params[:page], :per_page => 10, :order => "created_at DESC")
+    @food_blogs = @search.paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
   end
   
   def show

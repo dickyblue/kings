@@ -9,5 +9,8 @@ class Travel < ActiveRecord::Base
   accepts_nested_attributes_for :travel_images, :reject_if => lambda { |g| g[:image].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :comments
   
-  
+  def self.featured_travel_image(t)
+    t.travel_images.where(:featured => true)
+  end
+    
 end

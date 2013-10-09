@@ -11,13 +11,13 @@ class TravelsController < ApplicationController
   
   def manage
     @travel_blog = Travel.new if @travel_blog.nil?
-    5.times { @travel_blog.travel_images.build }
+    @travel_blog.travel_images.build
     @travel_blog = Travel.find(params[:id]) if params[:id]
   end
   
   def list
     @search = Travel.search(params[:search])
-    @travel_blogs = @search.paginate(:page => params[:page], :per_page => 10, :order => "created_at DESC")
+    @travel_blogs = @search.paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
   end
   
   def show

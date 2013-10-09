@@ -1,12 +1,14 @@
-<h2 class="span 4 offset4"><%= @page_title = "Creating New User"%></h2>
+<h2><%= @page_title = "Creating User"%></h2>
 
 
 <%= simple_form_for @user, :html => {:multipart => true} do |f| %>
-    <div class="span4 offset4">
-      <%= render(:partial => 'form', :locals => {:f => f})%>    
+    <div class="span3">
+      <%= image_tag(@user.image_url(:thumb)) if @user.image %>
+      <%= f.input :image, :label => "Photo", :as => :file %>
     </div>
-  <div class="span 4 offset4">
-  <%= f.button :submit, 'Submit', :class => "primary" %>
+  <div class="span6">
+    <%= render(:partial => 'form', :locals => {:f => f})%>    
+    <%= f.button :submit, 'Submit', :class => "primary" %>
   </div>
   
 <% end %>

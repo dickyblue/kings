@@ -1,42 +1,16 @@
 <div class="container">
-<p><%= link_to "«« Back to Admin »»", admins_path %></p></br> 
-
 <h4>List of Pictures</h4></br>
 
-<div>
-  <%= simple_form_for @search, :url => list_gallery_path do |f| %>
-    <%= f.input :description_contains, :label => "Keyword Search", :required => false %>
-    SORT BY: <%= f.sort_link :id, "ID Order" %>
-  <% end %>
-</div>
+<div class="display-inline">
+  <%= link_to "«« Back to Admin »»", admins_path %>
 
-<table class="table zebra-striped">
-  <thead>
-    <tr>
-      <th>ID #</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Featured?</th>
-      <th>Lodging?</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @galleries.each do |gal| %>
-    <tr>
-      <td><%= gal.id %></td>
-      <td><%= gal.name %></td>
-      <td><%= truncate(gal.description, :length => 50, :separator => " ") %></td>
-      <td><%= gal.featured? %></td>
-      <td><%= gal.lodging? %></td>
-      <td><%= link_to "Edit", :action => 'edit', :id => gal.id %> | <%= link_to "Delete", gal, :method => :delete %></td>        
-     </tr>
+  <div>
+    <%= simple_form_for @search, :url => list_gallery_path do |f| %>
+      Keyword search: <%= f.input :name_or_description_contains, :label => false %>
+      SORT BY: <%= f.sort_link :id, "ID Order" %>
     <% end %>
-  </tbody>  
-
-</table>
-
+  </div>
+</div>
 
 <div style="margin-left: -20px;">
   <% @galleries.each do |g| %>
@@ -44,8 +18,9 @@
     <li class="list-pages-li">
     <%= image_tag(g.image_url(:thumb_2)) if g.image %><br>
       <div class="list-pages-text">
-        <%= g.featured? ? 'Featured': '' %> <%= g.engagement? ? 'Engagement': '' %> <%= g.wedding_cruise? ? 'Wedding Cruise': '' %> <%= g.wedding? ? 'Wedding': '' %><hr class="dotted">
-        <%= truncate(g.description, :length => 50) %><br>
+        <h4 style="color: #aaa"><%= g.featured? ? 'FEATURED,': '' %> <%= g.engagement? ? 'ENGAGEMENT': '' %> <%= g.wedding_cruise? ? 'WEDDING CRUISE': '' %> <%= g.wedding? ? 'WEDDING': '' %></h4><hr class="dotted">
+        <h4 style="color: black; margin-bottom: 12px"><%= truncate(g.name, :length => 30) %></h4>
+        <p style="font-family: Helvetica Neue, font-size: 10px;"><%= truncate(g.description, :length => 100) %></p>
         <%= link_to "Edit", :action => 'edit', :id => g.id %> | <%= link_to "Delete", g, :method => :delete %>
       </div>
     </li>

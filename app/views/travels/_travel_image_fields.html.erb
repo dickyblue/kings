@@ -1,11 +1,11 @@
 <div class="row fields">
   <div class="span5">
-  <%= f.input :image, :as => :file %>
+  <%= f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url(:thumb)) %>
   <%= f.input :name %>
-  <%= f.input :featured, :as => :select %>
   </div>
   
   <div class="span4">
+  <%= f.input :featured, :as => :select %>
   <%= f.input :description %>
   </div>
   
@@ -14,3 +14,4 @@
   </div>
   
 </div>
+<br><br>

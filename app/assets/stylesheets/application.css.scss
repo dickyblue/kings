@@ -48,7 +48,6 @@ html {
   }
   
 .container {
-  margin-bottom: 30px;
   background: transparent url("background.png") 100% 100% repeat; 
   }
 
@@ -93,6 +92,11 @@ h3 {
 a {
   color: $turquoise;
 }
+
+a:hover {
+  color: $turquoise;
+  text-decoration: none;
+  }
 
 .row {
   margin-left: 20;
@@ -333,6 +337,7 @@ footer, {
   background: url(footer-bg.jpg) repeat scroll 0 0 transparent;
   /*background-color: #444;*/
   clear: both;
+  margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 20px;
   margin-bottom: 0px;
@@ -875,10 +880,46 @@ hr {
   }
 
 .list-pages-text {
-  padding: 10px;
+  padding: 15px 10px 10px 10px;
+  width: 280px;
   }
 
 hr.dotted {
  border-bottom: 1px dotted $gray;
- margin: 5px 0;
+ margin: 12px 0;
  }
+ 
+.display-inline div {
+  display: inline-block;
+  padding: 0 20px 0 20px;
+  } 
+
+
+
+  
+
+
+.carousel, .carousel-inner {
+height: 180px;
+}
+
+.thumbnails li:hover img {
+  opacity:0.2;
+  filter:alpha(opacity=20); /* For IE8 and earlier */
+  }
+  
+.index-pages-li-title {
+  position: absolute;
+  width: 300px;
+  opacity: 0;
+  font-family: 'mathletebulky';
+  font-size: 30px;
+  color: black;
+  top: 60px;
+  line-height: 35px;
+  text-align: center;
+  }
+    
+.thumbnails li:hover > .index-pages-li-title {
+  opacity: 1;
+  }  

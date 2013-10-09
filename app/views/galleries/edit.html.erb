@@ -1,9 +1,4 @@
 <%= simple_form_for @image, :html => {:multipart => true} do |f| %>
-
-
-      <%= render(:partial => 'form', :locals => {:f => f})%>    
-      <%= f.button :submit, 'Submit', :class => "primary" %>
-
-
-
+  <%= render(:partial => 'form', :locals => {:f => f})%>    
+  <%= f.button :submit, 'Submit', :class => "primary" %>
 <% end %>

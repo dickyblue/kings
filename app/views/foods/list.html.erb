@@ -1,40 +1,32 @@
-<p><%= link_to "«« Back to Admin »»", admins_path %></p></br> 
-
 <h4>List of Food Blogs</h4></br>
 
-<div>
-  <%= simple_form_for @search, :url => list_food_blogs_path do |f| %>
-    <%= f.input :content_contains, :label => "Keyword Search", :required => false %>
-    SORT BY: <%= f.sort_link :id, "ID Order" %>
+<div class="display-inline">
+  <%= link_to "«« Back to Admin »»", admins_path %>
+
+  <div>
+    <%= simple_form_for @search, :url => list_food_blogs_path do |f| %>
+      Keyword Search: <%= f.input :title_or_content_contains, :label => false %>
+      SORT BY: <%= f.sort_link :id, "ID Order" %>
+    <% end %>
+  </div>
+</div>
+
+<div style="margin-left: -20px;">
+  <% @food_blogs.each do |f| %>
+  <ul class="no-margin-or-bullet list-pages-grid">
+    <li class="list-pages-li">
+    <%= image_tag(Food.featured_food_image(f).first.image_url(:list))  %><br>
+      <div class="list-pages-text">
+        <h4 style="color: #aaa"><%= f.rest? ? 'RESTAURANT': '' %> <%= f.recipe? ? 'RECIPE': '' %> </h4><hr class="dotted">
+        <h4 style="color: black; margin-bottom: 12px"><%= truncate(f.title, :length => 30) %></h4>
+        <p style="font-family: Helvetica Neue, font-size: 10px;"><%= truncate(f.content, :length => 100) %></p>
+        <%= link_to "Edit", :action => 'manage', :id => f.id %> | <%= link_to "Delete", f, :method => :delete %>
+      </div>
+    </li>
+  </ul>
   <% end %>
 </div>
 
-<table class="table zebra-striped">
-  <thead>
-    <tr>
-      <th>ID #</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Published Date</th>
-      <th>Author</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @food_blogs.each do |fb| %>
-    <tr>
-      <td><%= fb.id %></td>
-      <td><%= link_to fb.title, fb %></td>
-      <td><%= truncate(fb.content, :length => 50, :separator => " ") %></td>
-      <td><%= fb.publish_date %></td>
-      <td><%= fb.user.name %></td>
-      <td><%= link_to "Edit", :action => 'manage', :id => fb.id %> | <%= link_to "Delete", fb, :method => :delete %></td>        
-     </tr>
-    <% end %>
-  </tbody>  
-
-</table>
 
 <%= page_navigation_links @food_blogs, '#'%>
 

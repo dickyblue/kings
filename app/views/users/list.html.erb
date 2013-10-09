@@ -1,22 +1,24 @@
-<p><%= link_to "«« Back to Admin »»", admins_path %></p></br> 
-
 <h4>List of Users</h4></br>
 
-<div>
-  <%= simple_form_for @search, :url => list_user_path do |f| %>
-    <%= f.input :name_contains, :label => "Name Search", :required => false %>
-    SORT BY: <%= f.sort_link :id, "ID Order" %> | <%= f.sort_link :name, "Name" %> | <%= f.sort_link :lastlogin, "Last Logged In" %> | <%= f.sort_link :attending, "Attending" %>
-  <% end %>
+<div class="display-inline">
+  <%= link_to "«« Back to Admin »»", admins_path %>
+
+  <div>
+    <%= simple_form_for @search, :url => list_user_path do |f| %>
+      Keyword search: <%= f.input :name_contains, :label => false %>
+      SORT BY: <%= f.sort_link :id, "ID Order" %> | <%= f.sort_link :name, "Name" %> | <%= f.sort_link :lastlogin, "Last Logged In" %>
+    <% end %>
+  </div>
 </div>
 
 <table class="table zebra-striped">
   <thead>
     <tr>
+      <th>Image</th>
       <th>ID #</th>
       <th>Name</th>
       <th>Email</th>
       <th>Last Login</th>
-      <th>Attending?</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -24,11 +26,11 @@
   <tbody>
     <% @users.each do |user| %>
     <tr>
+      <td><%= image_tag(user.image_url(:thumb), :class => "round-images") if user.image %></td>
       <td><%= user.id %></td>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
-      <td><%= user.lastlogin %></td>
-      <td><%= user.attending %></td>
+      <td><%= user.lastlogin.strftime("%b %d, %Y") if user.lastlogin %></td>
       <td><%= link_to "Edit", edit_user_path(user), :id => user.id %> | <%= link_to "Delete", user, :method => :delete %></td>        
      </tr>
     <% end %>

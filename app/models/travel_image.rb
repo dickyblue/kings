@@ -5,5 +5,7 @@ class TravelImage < ActiveRecord::Base
   belongs_to :travel, :foreign_key => 'travel_id'
 
   mount_uploader :image, TravelImageUploader
+
+  
   
 end
