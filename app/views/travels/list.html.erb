@@ -18,7 +18,7 @@
     <%= image_tag(Travel.featured_travel_image(t).first.image_url(:list))  %><br>
       <div class="list-pages-text">
         <h4 style="color: #aaa"><%= t.destination.upcase %></h4><hr class="dotted">
-        <h4 style="color: black; margin-bottom: 12px"><%= truncate(t.title, :length => 28) %></h4>
+        <h4 style="color: black; margin-bottom: 12px"><%= truncate(t.title, :length => 30) %></h4>
         <p style="font-family: Helvetica Neue, font-size: 10px;"><%= truncate(t.content, :length => 100) %></p>
         <%= link_to "Edit", :action => 'manage', :id => t.id %> | <%= link_to "Delete", t, :method => :delete %>
       </div>
