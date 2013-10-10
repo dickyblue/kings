@@ -54,6 +54,17 @@ class GalleriesController < ApplicationController
     @first_image = @images.first 
   end
   
+  def index2
+    @lodgings = Gallery.where(:lodging => true)
+    @engagements = Gallery.where(:engagement => true)
+    @friends = Gallery.where(:friend_upload => true)
+    @cruise = Gallery.where(:wedding_cruise => true)
+    @wedding = Gallery.where(:wedding => true)
+    @images = Gallery.all - @lodgings - @engagements - @cruise - @wedding 
+    @first_image = @images.first 
+    @all_images = Gallery.all
+  end
+  
   def travel_lodging
     @images = Gallery.where(:lodging => true)
     @first_image = @images.first

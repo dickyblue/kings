@@ -940,3 +940,67 @@ height: 180px;
 .carousel-control {   
   top: 50%
   }
+
+
+
+
+/*-------------GALLERY INDEX 2---------------------*/
+
+.test-pages-li {
+  position: relative;
+  margin-right: 20px; 
+  overflow: show;
+  }
+  
+.test-pages-grid img{
+-webkit-transition: all .5s ease;
+-moz-transition: all .5s ease;
+-o-transition: all .5s ease;
+-ms-transition: all .5s ease;
+transition: all .5s ease;
+  }  
+
+.test-pages-grid li:hover img {
+  /*-moz-transform: rotate(-5deg);  
+  -o-transform: rotate(-5deg);  
+  -webkit-transform: rotate(-5deg);  
+  transform: rotate(-5deg);*/
+  transform:scale(1.5);
+  -ms-transform:scale(1.5); /* IE 9 */
+  -moz-transform:scale(1.5); /* Firefox */
+  -webkit-transform:scale(1.5); /* Safari and Chrome */
+  -o-transform:scale(1.5); /* Opera */
+  -webkit-filter: grayscale(100%);
+  opacity:0.3;
+  filter:alpha(opacity=30); /* For IE8 and earlier */
+  }
+
+.test-pages-grid {
+  height: 180px;
+  width: 300px;
+  float: left;
+  background: white;
+  overflow: hidden;
+  margin: 0 0 20px 20px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  }
+
+.test-pages-text {
+  padding: 15px 10px 10px 10px;
+  width: 280px;
+  position: absolute;
+  opacity: 0;
+  font-family: 'mathletebulky';
+  font-size: 30px;
+  color: black;
+  top: 10px;
+  line-height: 35px;
+  text-align: center;
+  }
+
+.test-pages-grid li:hover > .test-pages-text {
+  opacity: 1;
+  }
