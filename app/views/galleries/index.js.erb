@@ -1,6 +1,7 @@
 $('#wedding').append('<%= j render('wedding') %>');
 <% if @wedding.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@wedding) %>');
+  $('.pagination').hide();
 <% else %>
   $('.pagination').remove();
 <% end %>
