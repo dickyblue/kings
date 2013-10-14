@@ -15,6 +15,7 @@
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require bootstrap
+//= require fancybox
 //= require_tree .
 
 
@@ -189,3 +190,9 @@ function add_fields(link, association, content) {
   var regexp = new RegExp("new_" + association, "g")
   $(link).parent().before(content.replace(regexp, new_id));
 }
+
+
+//fancybox, just add the class fancybox to the a link
+$(document).ready(function() {
+  $("a.fancybox").fancybox();
+});

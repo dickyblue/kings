@@ -11,6 +11,11 @@ NickMing::Application.routes.draw do
   match '/gift_registries', :to => 'pages#gift_registries', :as => :gift_registries
 
   match '/galleries/index2', :to => 'galleries#index2', :as => :index2_gallery
+  match '/galleries/engagement', :to => 'galleries#engagement', :as => :engagement
+  match '/galleries/travel', :to => 'galleries#travel_images', :as => :travel_images
+  match '/galleries/wedding', :to => 'galleries#wedding', :as => :wedding
+
+
   match '/galleries/manage', :to => 'galleries#manage', :as => :manage_gallery
   match '/galleries/list', :to => 'galleries#list', :as => :list_gallery
   match '/galleries/friend_upload', :to => 'galleries#friend_upload', :as => :friend_upload

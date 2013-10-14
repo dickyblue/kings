@@ -57,17 +57,21 @@ Tabulous.setup do |config|
       #--------------------------------------------------------------------------------------------------------------------------#
       #    TAB NAME                   |    DISPLAY TEXT          |    PATH                     |    VISIBLE?    |    ENABLED?    #
       #--------------------------------------------------------------------------------------------------------------------------#
-      [    :home_tab                  ,    'Home'                ,    root_path                ,    true        ,    true        ],
+      [    :home_tab                  ,    'Home'                ,    root_path                ,    false        ,    false        ],
       [    :our_story_tab             ,    'Our Story'           ,    our_story_path           ,    false       ,    false       ],
       [    :wedding_weekend_tab       ,    'Wedding Weekend'     ,    weekend_schedule_path    ,    false       ,    false       ],
-      [    :gallery_tab               ,    'Photo Gallery'       ,    galleries_path           ,    true        ,    true        ],
+      [    :gallery_tab               ,    'Photo Gallery'       ,    galleries_path           ,    false        ,    false        ],
       [    :RSVP_and_guestbook_tab    ,    'RSVP & Guestbook'    ,    comments_path            ,    false       ,    false       ],
       [    :friend_photos_tab         ,    'Wedding Photos'      ,    friend_photos_path       ,    false       ,    false       ],
       [    :correct_photos_tab        ,    'Correct Photos'      ,    correct_photos_path      ,    false       ,    false       ],
       [    :gift_registries_tab       ,    'Gift Registries'     ,    gift_registries_path     ,    false       ,    false       ],
-      [    :travel_blog_tab           ,    'The Khuus Travel'    ,    travels_path             ,    true        ,    true        ],
-      [    :food_blog_tab             ,    'The Khuus Eat'       ,    foods_path               ,    true        ,    true        ],
+      [    :travel_blog_tab           ,    'The Khuus Travel'    ,    travels_path             ,    false        ,    false        ],
+      [    :food_blog_tab             ,    'The Khuus Eat'       ,    foods_path               ,    false        ,    false        ],
       [    :quotes_tab                ,    'Quotes'              ,    quotes_path              ,    false       ,    false       ],
+      [    :engagement_tab                ,    'Engagement'              ,    engagement_path              ,    true       ,    true       ],
+      [    :wedding_tab                ,    'Wedding'              ,    wedding_path              ,    true       ,    true       ],
+      [    :travel_tab                ,    'Travel'              ,    travel_images_path              ,    true       ,    true       ],
+
       #--------------------------------------------------------------------------------------------------------------------------#
       #    TAB NAME                   |    DISPLAY TEXT          |    PATH                     |    VISIBLE?    |    ENABLED?    #
       #--------------------------------------------------------------------------------------------------------------------------#
@@ -110,6 +114,11 @@ Tabulous.setup do |config|
       [    :travels      ,    :all_actions         ,    :travel_blog_tab           ],
       [    :foods        ,    :all_actions         ,    :food_blog_tab             ],
       [    :quotes       ,    :all_actions         ,    :quotes_tab                ],
+      [    :galleries       ,    :engagement         ,    :engagement_tab                ],
+      [    :galleries       ,    :engagement         ,    :engagement_tab                ],
+      [    :galleries       ,    :travel_images         ,    :travel_tab                ],
+      [    :galleries       ,    :wedding         ,    :wedding_tab                ],
+
       #----------------------------------------------------------------------------#
       #    CONTROLLER    |    ACTION               |    TAB                        #
       #----------------------------------------------------------------------------#

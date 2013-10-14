@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require fancybox
+ *= require font-awesome
  *= require_tree .
 */
 
@@ -25,10 +27,6 @@ $yellow:      #FCFC88;
 $light-turquoise: #88d5c2;
 
 @import 'bootstrap';
-
-[class^="icon-"], [class*=" icon-"] {
-  background-image: url(/assets/glyphicons-halflings.png)
-}
 
 
 body {
@@ -965,14 +963,13 @@ transition: all .5s ease;
   -o-transform: rotate(-5deg);  
   -webkit-transform: rotate(-5deg);  
   transform: rotate(-5deg);*/
-  transform:scale(1.5);
-  -ms-transform:scale(1.5); /* IE 9 */
-  -moz-transform:scale(1.5); /* Firefox */
-  -webkit-transform:scale(1.5); /* Safari and Chrome */
-  -o-transform:scale(1.5); /* Opera */
-  -webkit-filter: grayscale(100%);
-  opacity:0.3;
-  filter:alpha(opacity=30); /* For IE8 and earlier */
+  transform:scale(1.1);
+  -ms-transform:scale(1.1); /* IE 9 */
+  -moz-transform:scale(1.1); /* Firefox */
+  -webkit-transform:scale(1.1); /* Safari and Chrome */
+  -o-transform:scale(1.1); /* Opera */
+  opacity:0.1;
+  filter:alpha(opacity=10); /* For IE8 and earlier */
   }
 
 .test-pages-grid {
@@ -985,7 +982,6 @@ transition: all .5s ease;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
   }
 
 .test-pages-text {
@@ -993,6 +989,7 @@ transition: all .5s ease;
   width: 280px;
   position: absolute;
   opacity: 0;
+  filter:alpha(opacity=0); /* For IE8 and earlier */
   font-family: 'mathletebulky';
   font-size: 30px;
   color: black;
@@ -1003,4 +1000,23 @@ transition: all .5s ease;
 
 .test-pages-grid li:hover > .test-pages-text {
   opacity: 1;
+  filter:alpha(opacity=100); /* For IE8 and earlier */
+  }
+  
+
+.enlarge-fancybox {
+  background-color: $turquoise;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: 0px;
+  top: 120px;
+  opacity:0.8;
+  padding: 10px 0 10px 0;
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+  font-family: 'mathletebulky';
+  }
+  
+.icon-zoom-in {
+color: white;
   }

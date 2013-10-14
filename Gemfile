@@ -15,8 +15,8 @@ gem 'will_paginate'
 gem 'meta_search'
 gem 'fog'
 gem 'simple_form'
-
-
+gem 'fancybox2-rails', '~> 0.2.4'
+gem "font-awesome-rails"
 
 # Gems used only for assets and not required
 # in production environments by default.
