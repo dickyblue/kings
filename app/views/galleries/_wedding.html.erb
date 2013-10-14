@@ -1,6 +1,8 @@
+<div style="margin-left: -20px;">
+
 <% @wedding.each do |w| %>
-<ul class="no-margin-or-bullet test-pages-grid">
-  <li class="test-pages-li" style="margin-left: -20px;">
+<ul class="test-pages-grid">
+  <li class="test-pages-li">
   <%= image_tag(w.image_url(:thumb_2)) if w.image %><br>
     <div class="test-pages-text">
       <h4 style="font-size: 28px; color: #756e6b; padding-bottom: 5px; border-bottom: 1px solid #aaa"><%= w.name %></h4>
@@ -10,3 +12,5 @@
   </li>
 </ul>
 <% end %>
+
+</div>
