@@ -55,12 +55,12 @@ class GalleriesController < ApplicationController
   end
   
   def index
-    @engagement = Gallery.where(:engagement => true).paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
-    @cruise = Gallery.where(:wedding_cruise => true).page(params[:page]).per_page(2)
-    @wedding = Gallery.where(:wedding => true).page(params[:page]).per_page(2)
+    @engagement = Gallery.where(:engagement => true).page(params[:page]).per_page(12)
+    @cruise = Gallery.where(:wedding_cruise => true).page(params[:page]).per_page(12)
+    @wedding = Gallery.where(:wedding => true).page(params[:page]).per_page(12)
     # @all_images = Gallery.paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
-    @travel_images = TravelImage.page(params[:page]).per_page(2)
-    @food_images = FoodImage.page(params[:page]).per_page(2)
+    @travel_images = TravelImage.page(params[:page]).per_page(12)
+    @food_images = FoodImage.page(params[:page]).per_page(12)
     @image_type = params[:image_type]
     if @image_type == 'engagement'
       @images = @engagement
