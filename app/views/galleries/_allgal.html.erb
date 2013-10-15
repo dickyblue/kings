@@ -1,0 +1,12 @@
+<% images.each do |w| %>
+<ul class="test-pages-grid">
+  <li class="test-pages-li">
+  <%= image_tag(w.image_url(:thumb_2)) if w.image %><br>
+    <div class="test-pages-text">
+      <h4 style="font-size: 28px; color: #756e6b; padding-bottom: 5px; border-bottom: 1px solid #aaa"><%= w.name %></h4>
+      <p style="font-family: 'Helvetica Neue', font-size: 12px; margin-top: 5px; color: #756e6b;"><%= w.description %></p>
+      <p class="enlarge-fancybox"><%= link_to raw("<i class=\"icon-zoom-in icon-2x\"></i>"), w.image_url(:slide_gallery), { :class => "fancybox", :rel => "wedding", :title => "#{w.description}" } %></p>
+    </div>
+  </li>
+</ul>
+<% end %>
