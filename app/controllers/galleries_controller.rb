@@ -58,7 +58,6 @@ class GalleriesController < ApplicationController
     @engagement = Gallery.where(:engagement => true).page(params[:page]).per_page(12)
     @cruise = Gallery.where(:wedding_cruise => true).page(params[:page]).per_page(12)
     @wedding = Gallery.where(:wedding => true).page(params[:page]).per_page(12)
-    # @all_images = Gallery.paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
     @travel_images = TravelImage.page(params[:page]).per_page(12)
     @food_images = FoodImage.page(params[:page]).per_page(12)
     @image_type = params[:image_type]

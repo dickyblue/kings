@@ -3,7 +3,7 @@
   <% images.each do |t| %>
   <ul class="no-margin-or-bullet test-pages-grid">
     <li class="test-pages-li">
-    <%= image_tag(t.image_url(:index)) if t.image %><br>
+    <%= image_tag(t.image_url(:list)) if t.image %><br>
       <div class="test-pages-text">
         <h4 style="font-size: 28px; color: #756e6b; padding-bottom: 5px; border-bottom: 1px solid #aaa"><%= t.name %></h4>
         <p style="font-family: 'Helvetica Neue', font-size: 12px; margin-top: 5px; color: #756e6b;"><%= t.description %></p>
