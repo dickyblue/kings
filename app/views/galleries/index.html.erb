@@ -1,5 +1,73 @@
-  <div class="tab-pane" id="wedding">  
-      <%= render :partial => 'wedding' %>
-    </div>
-    <div><%= will_paginate(@wedding) %></div>
   
+<ul class="nav nav-pills" id="myTab">
+  <li class="active"><a href="#engagement">Engagement</a></li>
+  <li><a href="#cruise">Wedding Snorkel Cruise</a></li>
+  <li><a href="#wedding">Wedding</a></li>
+  <li><a href="#travel">Travel</a></li>
+</ul>
+
+
+<div class="tab-content">
+  <div class="tab-pane" id="engagement">  
+    <div style="margin-left: -20px;">
+      <% @engagements.each do |eng| %>
+      <ul class="no-margin-or-bullet test-pages-grid">
+        <li class="test-pages-li">
+        <%= image_tag(eng.image_url(:thumb_2)) if eng.image %><br>
+          <div class="test-pages-text">
+            <h4 style="font-size: 28px; color: #756e6b; padding-bottom: 5px; border-bottom: 1px solid #aaa"><%= eng.name %></h4>
+            <p style="font-family: 'Helvetica Neue', font-size: 12px; margin-top: 5px; color: #756e6b;"><%= eng.description %></p>
+            <p class="enlarge-fancybox"><%= link_to raw("<i class=\"icon-zoom-in icon-2x\"></i>"), eng.image_url(:slide_gallery), { :class => "fancybox", :rel => "engagements", :title => "#{eng.description}" } %></p>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+    <div class="pull-right"><%= page_navigation_links @engagements, '#' %></div>
+  </div>  
+
+  <div class="tab-pane" id="cruise">  
+      <%= render :partial => 'cruise', :locals => {images: @cruise} %>
+      
+  </div>
+
+
+  <div class="tab-pane" id="wedding">  
+      <%= render :partial => 'wedding', :locals => {images: @wedding} %>
+      
+  </div>
+
+
+  <div class="tab-pane" id="travel">  
+    <div style="margin-left: -20px;">
+      <% @travel_images.each do |t| %>
+      <ul class="no-margin-or-bullet test-pages-grid">
+        <li class="test-pages-li">
+        <%= image_tag(t.image_url(:index)) if t.image %><br>
+          <div class="test-pages-text">
+            <h4 style="font-size: 28px; color: #756e6b; padding-bottom: 5px; border-bottom: 1px solid #aaa"><%= t.name %></h4>
+            <p style="font-family: 'Helvetica Neue', font-size: 12px; margin-top: 5px; color: #756e6b;"><%= t.description %></p>
+            <p class="enlarge-fancybox"><%= link_to raw("<i class=\"icon-zoom-in icon-2x\"></i>"), t.image_url(:large), { :class => "fancybox", :rel => "travel images", :title => "#{t.name}" } %></p>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+    <div class="pull-right"><%= page_navigation_links @travel_images, '#' %></div>
+  </div>
+
+
+</div>
+
+<script>
+  $('#myTab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
+
+  $(function () {
+    $('#myTab a:first').tab('show');
+  })
+
+
+</script>

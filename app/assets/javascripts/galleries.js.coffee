@@ -34,8 +34,9 @@
 jQuery ->
   if $('.pagination').length
     $(window).scroll ->
-      url = $('.pagination .next_page').attr('href')
+      image_type = $('.tab-pane.active .pagination').attr('image_type')
+      url = $('.tab-pane.active .pagination .next_page').attr('href')
       if url && $(window).scrollTop() > $(document).height() - $(window).height() - 100
-        $('.pagination').text("Fetching more pictures...")
-        $.getScript(url)
+        $('.tab-pane.active .pagination').text("Fetching more pictures...")
+        jQuery.ajax url: url, dataType: "script", data: {image_type: image_type}
     $(window).scroll()

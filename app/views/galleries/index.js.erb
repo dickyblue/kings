@@ -1,7 +1,7 @@
-$('#wedding').append('<%= j render('wedding') %>');
-<% if @wedding.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate(@wedding) %>');
-  $('.pagination').hide();
+$('.tab-pane.active').append('<%= j render(@image_type, images: @images) %>');
+<% if @images.next_page %>
+  $('.tab-pane.active .pagination').replaceWith('<%= j will_paginate(@images, image_type: @image_type) %>');
+  $('.tab-pane.active .pagination').hide();
 <% else %>
-  $('.pagination').remove();
+  $('.tab-pane.active .pagination').remove();
 <% end %>

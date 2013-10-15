@@ -11,6 +11,11 @@ class Gallery < ActiveRecord::Base
   #   gal.image.recreate_versions!(:thumb_2)
   #   gal.save
   # end
-  
+
+  # def self.images_for_type(img_type)
+  #   if img_type == 'wedding'
+  #    where(wedding: true).paginate(...)
+  #   end
+  # end
   
 end
