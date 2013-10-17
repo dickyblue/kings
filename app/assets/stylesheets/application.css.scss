@@ -35,14 +35,23 @@ body {
   padding-top: 30px;
   background-color: transparent;
   background-position: 0 0;
-  height: 100%;
   font-size: 16px;
   line-height: 25px;
   color: $gray;
+  padding-bottom: 85px;
   }
   
 html {
   background: transparent url("background.png") 100% 100% repeat; 
+  }
+  
+body > #container { 
+  height: auto; min-height: 100%; 
+  }  
+
+#container, html, body {
+  height: 100%;
+  min-height:100%;  
   }
   
 .container {
@@ -124,9 +133,10 @@ a:hover {
 }
 
 .sign-out {
-  position: relative;
-  float: right;
+  position: absolute;
+  right: 10px;
   background-color: transparent;
+  text-align: center;
   }
 
 .blue-dash-line {
@@ -249,6 +259,14 @@ input, textarea {
   color: $turquoise;
   }  
 
+ul {
+  margin: 0 0 9px 10px;
+  } 
+
+.nav {
+  margin-bottom: 5px;
+  } 
+  
 .ca-icon {
   margin-right: 10px;
   width: 50px;
@@ -335,6 +353,7 @@ footer, {
   background: url(footer-bg.jpg) repeat scroll 0 0 transparent;
   /*background-color: #444;*/
   clear: both;
+  position: relative;
   margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 20px;
@@ -642,13 +661,17 @@ ul img {
 .nav-pills {
   margin-left: 0px;
   margin-top: -10px;
-  padding-top: 10px;
+  padding-top: 12px;
+  font-size: 12px;
   }
 
 .nav-pills > .active > a,
 .nav-pills > .active > a:hover {
   color: #ffffff;
   background-color: $turquoise;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 
 .slide_gallery2 li {
@@ -842,21 +865,13 @@ hr {
   } 
   
 .tape-background {
-  background-image: url("stapled_note_on_note.png");
+  background-image: url("recipe.png");
   width: 954px;
   height: 550px;
   background-repeat: no-repeat;
   padding-top: 40px;
   padding-left: 20px;
   } 
-
-
-
-.push {
-  height: 20px
-  }
-
-
 
 .list-pages-li {
   position: relative;
@@ -968,8 +983,8 @@ transition: all .5s ease;
   -moz-transform:scale(1.1); /* Firefox */
   -webkit-transform:scale(1.1); /* Safari and Chrome */
   -o-transform:scale(1.1); /* Opera */
-  opacity:0.1;
-  filter:alpha(opacity=10); /* For IE8 and earlier */
+  opacity:0.2;
+  filter:alpha(opacity=20); /* For IE8 and earlier */
   }
 
 .test-pages-grid {
@@ -1019,4 +1034,16 @@ transition: all .5s ease;
   
 .icon-zoom-in {
 color: white;
+  }
+  
+hr.subnav-top {
+  border: 1px dashed $gray;
+  margin-bottom: 1px;
+  margin-top: 2px
+  }
+
+hr.subnav-bottom {
+  border: 1px dashed $gray;
+  margin-top: 5px;
+  z-index: 1;
   }

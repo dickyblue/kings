@@ -25,7 +25,7 @@ class TravelsController < ApplicationController
   def show
     @travel_blog = Travel.find(params[:id])
     @comment = @travel_blog.comments.build
-    @comments = Comment.where(:travel_id => @travel_blog.id)
+    @comments = Comment.where(:travel_id => @travel_blog.id).order('created_at DESC')
     @images = @travel_blog.travel_images
     @featured_image = @travel_blog.travel_images.where(:featured => true)
     if request.path != travel_path(@travel_blog)

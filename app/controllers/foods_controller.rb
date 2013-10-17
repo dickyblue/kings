@@ -27,7 +27,7 @@ class FoodsController < ApplicationController
   def show
     @food_blog = Food.find(params[:id])
     @comment = @food_blog.comments.build
-    @comments = Comment.where(:food_id => @food_blog.id)
+    @comments = Comment.where(:food_id => @food_blog.id).order('created_at DESC')
     @images = @food_blog.food_images
     @featured_image = @food_blog.food_images.where(:featured => true)
     if request.path != food_path(@food_blog)

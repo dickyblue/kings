@@ -47,10 +47,14 @@
         <a name="comments"></a>
         <h5 class="mathlete-bulky-font" style="font-size:28px"><%= pluralize(@travel_blog.comments.size - 1 , 'Comment') %></h5><br>
         <% @comments.each do |comment| %>
+        <div class="row">
           <div class="span2">
             <ul class="no-margin-or-bullet">        
-              <li><strong><%= comment.commenter %></strong><br>
-              <p style="font-size: 12px; font-style: italic"><%= comment.created_at.strftime("%b %d, %Y")%></p></li>
+              <li>
+                <span style="float: left; margin-right: 5px"><%= image_tag(comment.user.image_url(:sm_thumb))%></span>
+                <span style="font-size: 14px; font-weight: bold; float: left; color: #65BEB4"><%= comment.commenter %></span><br>
+                <span style="font-size: 12px; font-style: italic; float: left"><%= comment.created_at.strftime("%b %d, %Y")%></span>
+              </li>
             </ul>
           </div>
 
@@ -59,7 +63,7 @@
               <li><%= comment.content %></li><br>
             </ul>
           </div>
-          
+        </div><br>  
         <% end %>
       </div>  
     </div>

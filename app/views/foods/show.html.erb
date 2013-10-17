@@ -3,7 +3,7 @@
   <div class="white-box">
     <div class="row">
       <div class="span2">
-        <%= travel_stamp %>
+        <%= food_logo %>
       </div>
       
       <div class="span9">
@@ -30,10 +30,10 @@
       <% if @food_blog.recipe == true %>        
         <% @food_blog.recipes.each do |r| %>
           <div class="tape-background">
-            <p class="mathlete-bulky-font" style="font-size: 35px;"><%= r.name %></p>
-            <div class="span4">
-              <% r.ingredients.each do |i| %>
-                  <p class="mathlete-bulky-font" style="font-size: 35px;">Ingredients:</p>  
+            <p class="mathlete-bulky-font span11" style="font-size: 35px;"><%= r.name %></p>
+            <div class="span4 offset1">
+              <p class="mathlete-bulky-font" style="font-size: 35px;">Ingredients:</p><br><br> 
+              <% r.ingredients.each do |i| %> 
                   <ul class="no-margin-or-bullet">
                     <li>  
                       <%= i.quantity_used %>
@@ -43,7 +43,7 @@
               <% end %>
             </div>
 
-            <div class="span6" style="margin-left: 50px;">
+            <div class="span5" style="margin-left: 50px;">
               <p class="mathlete-bulky-font" style="font-size: 35px;">Recipe:</p>
               <%= r.recipe_instructions %>
             </div>
@@ -75,8 +75,11 @@
         <% @comments.each do |comment| %>
           <div class="span2">
             <ul class="no-margin-or-bullet">        
-              <li><strong><%= comment.commenter %></strong><br>
-              <p style="font-size: 12px; font-style: italic"><%= comment.created_at.strftime("%b %d, %Y")%></p></li>
+              <li>
+                <%= image_tag(comment.user.image_url(:sm_thumb))%>
+                <strong><%= comment.commenter %></strong><br>
+                <p style="font-size: 12px; font-style: italic"><%= comment.created_at.strftime("%b %d, %Y")%></p>
+              </li>
             </ul>
           </div>
 
