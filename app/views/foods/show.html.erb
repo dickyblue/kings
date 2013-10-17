@@ -76,9 +76,9 @@
           <div class="span2">
             <ul class="no-margin-or-bullet">        
               <li>
-                <%= image_tag(comment.user.image_url(:sm_thumb))%>
-                <strong><%= comment.commenter %></strong><br>
-                <p style="font-size: 12px; font-style: italic"><%= comment.created_at.strftime("%b %d, %Y")%></p>
+                <span style="float: left; margin-right: 5px"><%= image_tag(comment.user.image_url(:sm_thumb))%></span>
+                <span style="font-size: 14px; font-weight: bold; float: left; color: #65BEB4"><%= comment.commenter %></span><br>
+                <span style="font-size: 12px; font-style: italic; float: left"><%= comment.created_at.strftime("%b %d, %Y")%></span>
               </li>
             </ul>
           </div>
