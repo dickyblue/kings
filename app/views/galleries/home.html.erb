@@ -1,16 +1,36 @@
 <div class="container row">
 
-  <div class="gallery">
-
-    <ul class="slideshow">
-        <% @featured_images.each do |feat|%>
-        <li>
-            <%= image_tag(feat.image_url(:featured), :title => "", :alt => truncate(feat.description, :length => 330) ) %>
-        </li>
-        <% end %>
-    </ul>
+  <div class="carousel slide" id="myCarouselMain">
+    <div class="carousel-inner main-carousel-height">
+      <div class="item active">
+        <ul>
+          <li class="slide_gallery">
+          <%= image_tag(@first_image.image_url(:featured)) %>
+          <span class="gallery-slideshow-caption"><%= @first_image.description %></span>
+          </li>
+        </ul>
+      </div>
+    
+      <% @featured_images.each do |fb| %>
+      <div class="item">
+        <ul>
+          <li class="slide_gallery">
+          <%= image_tag(fb.image_url(:featured))%>
+          <span class="gallery-slideshow-caption"><%= fb.description %></span>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+    
+    </div>
+      <a data-slide="prev" href="#myCarouselMain" class="left carousel-control">‹</a>
+      <a data-slide="next" href="#myCarouselMain" class="right carousel-control">›</a>
   </div>
 
+<script>
+  $('#myCarouselMain').carousel();
+</script>
+ 
   <br>
   
   <h2 style="text-align: center">Hi, we are The Khuus!</h2>

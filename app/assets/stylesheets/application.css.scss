@@ -684,14 +684,15 @@ ul img {
   }
   
 .gallery-slideshow-caption {
-  width:860px;
+  width:900px;
   height:100px;
   position: absolute;
   float: right;
-  top: 330px;
-  left:35px; 
+  padding: 10px;
+  left:0;
+  top: 300px; 
   color:#fff;
-  background: $light-turquoise;
+  background: $turquoise;
   opacity:0.7;
   clear: both;
   z-index: 500
@@ -909,12 +910,28 @@ hr.dotted {
 
 
 
-  
+#myCarouselMain {
+  height: 400px;
+  }  
 
-
-.carousel, .carousel-inner {
-height: 180px;
+#myCarousel2 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 400px;
 }
+
+.main-carousel-height {
+  height: 400px;
+  }
+
+.thumb-carousel-height {
+  height: 180px;
+  }
+
+/*.carousel, .carousel-inner {
+height: 180px;
+}*/
 
 .thumbnails li img {
   -webkit-transition: all .5s ease;
