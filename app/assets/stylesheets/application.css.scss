@@ -1060,7 +1060,11 @@ transition: all .5s ease;
   filter:alpha(opacity=80); /* For IE8 and earlier */
   font-family: 'mathletebulky';
   }
-  
+
+.fancybox-title {
+  text-align: center;
+  }
+
 .icon-zoom-in {
 color: white;
   }

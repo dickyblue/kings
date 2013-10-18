@@ -194,5 +194,12 @@ function add_fields(link, association, content) {
 
 //fancybox, just add the class fancybox to the a link
 $(document).ready(function() {
-  $("a.fancybox").fancybox();
+  $("a.fancybox").fancybox({
+	helpers: {
+	 title: {
+	 type: "inside",
+	 position: "bottom"
+	 },
+	},
+});
 });
