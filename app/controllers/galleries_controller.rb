@@ -51,10 +51,10 @@ class GalleriesController < ApplicationController
   
   def index
     @engagement = Gallery.where(:engagement => true).page(params[:page]).per_page(12)
-    @cruise = Gallery.where(:wedding_cruise => true).page(params[:page]).per_page(12)
-    @wedding = Gallery.where(:wedding => true).page(params[:page]).per_page(12)
-    @travel_images = TravelImage.page(params[:page]).per_page(12)
-    @food_images = FoodImage.page(params[:page]).per_page(12)
+    @cruise = Gallery.where(:wedding_cruise => true).page(params[:page]).per_page(12).order('id ASC')
+    @wedding = Gallery.where(:wedding => true).page(params[:page]).per_page(12).order('id ASC')
+    @travel_images = TravelImage.page(params[:page]).per_page(12).order('id DESC')
+    @food_images = FoodImage.page(params[:page]).per_page(12).order('id DESC')
     @image_type = params[:image_type]
     if @image_type == 'engagement'
       @images = @engagement
