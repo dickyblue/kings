@@ -1,6 +1,6 @@
 NickMing::Application.routes.draw do
 
-  root :to => 'galleries#home'
+  root :to => 'pages#home'
 
   match '/login', :to => 'sessions#new', :as => :login
   match '/signout', :to => 'sessions#destroy', :as => :sign_out

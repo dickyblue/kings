@@ -2,13 +2,7 @@ class GalleriesController < ApplicationController
   
   before_filter :authenticate_admin, :only => [:list, :new, :edit, :create, :update, :destroy]
   before_filter :authenticate
-  layout "gallery", :except => :home
 
-  def home
-    @first_image = Gallery.where(:featured => true).first 
-    @featured_images = Gallery.where(:featured => true) - [@first_image] 
-  end
-  
   def list
     @search = Gallery.search(params[:search])
     @galleries = @search.paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")

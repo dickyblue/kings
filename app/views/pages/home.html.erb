@@ -1,0 +1,52 @@
+<div class="container row">
+
+  <div class="carousel slide" id="myCarouselMain">
+    <div class="carousel-inner main-carousel-height">
+      <div class="item active">
+        <ul>
+          <li class="slide_gallery">
+          <%= image_tag(@first_image.image_url(:featured)) %>
+          <span class="gallery-slideshow-caption"><%= @first_image.description %></span>
+          </li>
+        </ul>
+      </div>
+    
+      <% @featured_images.each do |fb| %>
+      <div class="item">
+        <ul>
+          <li class="slide_gallery">
+          <%= image_tag(fb.image_url(:featured))%>
+          <span class="gallery-slideshow-caption"><%= fb.description %></span>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+    
+    </div>
+      <a data-slide="prev" href="#myCarouselMain" class="left carousel-control">‹</a>
+      <a data-slide="next" href="#myCarouselMain" class="right carousel-control">›</a>
+  </div>
+
+<script>
+  $('#myCarouselMain').carousel();
+</script>
+ 
+  <br>
+  
+  <h2 class="promocyja-font" style="text-align: center; font-size: 38px;">Welcome, we are <span style="font-size: 45px;">The Khuus!</span></h2>
+
+  <br>
+    
+  <span>Since establishing ourselves as a family in Sept. 2012, we built this website as a forum for our family to share our lives with those
+    closest and dearest to us.</span><br><br>
+  
+  <span>As a family, we are humbled by experiences afforded through our travels and blessed with good times shared with loved ones through 
+    our mutual love of food.  That is why we wanted to maintain a family website to chronicle our journeys, friends and happy memories.</span><br><br>
+
+  <span>We hope that as you read through this website, that you feel as though you have been a part of our journey all along.</span><br><br>
+    
+  <span class="pull-right">Lots of love,<br><br>
+
+  <%= signature %></span>
+  
+</div>
