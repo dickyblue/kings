@@ -5,7 +5,7 @@
     <div class="test-pages-text">
       <h4 style="font-size: 28px; color: #756e6b; padding-bottom: 5px; border-bottom: 1px solid #aaa"><%= t.name %></h4>
       <p style="font-family: 'Helvetica Neue', font-size: 12px; margin-top: 5px; color: #756e6b;"><%= t.description %></p>
-      <p class="enlarge-fancybox"><%= link_to raw("<i class=\"icon-zoom-in icon-2x\"></i>"), t.image_url(:large), { :class => "fancybox", :rel => "travel images", :title => "#{t.name}" } %></p>
+      <p class="enlarge-fancybox"><%= link_to raw("<i class=\"icon-zoom-in icon-2x\"></i>"), t.image_url(:large), { :class => "fancybox", :rel => "#{images}", :title => "#{t.name}" } %></p>
     </div>
   </li>
 </ul>
