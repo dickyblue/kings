@@ -189,10 +189,22 @@ a:hover {
   float: right;
   }
 
+.input-xlarge {
+  width: 650px;
+  }
+  
 .input-xxlarge {
   width: 730px;
-  } 
-
+  }  
+  
+.form-horizontal .label-html{
+  float: left;
+  width: 230px;
+  padding-right: 10px;
+  padding-top: 5px;
+  text-align: right;
+  }  
+  
 input, textarea {
   font-size: 15px
   }   
@@ -1064,3 +1076,5 @@ hr.subnav-bottom {
   margin-top: 5px;
   z-index: 1;
   }
+  
+

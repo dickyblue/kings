@@ -32,10 +32,8 @@
       <div class="span12">
         <h5 class="mathlete-bulky-font" style="font-size:28px">Leave a comment</h5>
         <%= simple_form_for @comment, :url => create_travel_comment_path, :method => :post, :html => {:class => 'form-horizontal'} do |f| %>  
-            <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
-            <%= f.input :commenter, :as => :hidden, :input_html => { :value => current_user.name } %>
             <%= f.input :travel_id, :as => :hidden, :input_html => { :value => @travel_blog.id } %>
-            <%= f.input :content, :label => "Comment", :input_html => { :rows => 6, :class => "input-xxlarge" } %>
+            <%= render :partial => "shared/comment_form", :locals => {f: f} %>
           <div class="submit-btn-pull-right"><%= f.button :submit, 'Submit', :class => "primary" %></div>
         <% end %>
       </div>  
@@ -48,7 +46,7 @@
         <h5 class="mathlete-bulky-font" style="font-size:28px"><%= pluralize(@travel_blog.comments.size - 1 , 'Comment') %></h5><br>
         <% @comments.each do |comment| %>
         <div class="row">
-          <div class="span2">
+          <div class="span3">
             <ul class="no-margin-or-bullet">        
               <li>
                 <span style="float: left; margin-right: 5px"><%= image_tag(comment.user.image_url(:sm_thumb))%></span>
@@ -58,7 +56,7 @@
             </ul>
           </div>
 
-          <div class="span9">
+          <div class="span8">
             <ul class="no-margin-or-bullet">
               <li><%= comment.content %></li><br>
             </ul>
