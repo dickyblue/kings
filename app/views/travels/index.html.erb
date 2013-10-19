@@ -60,7 +60,7 @@
           
             <div class="span8 travel-index-right-column">
               <p class="mathlete-bulky-font" style="font-size: 38px"><%= link_to tb.title, travel_path(tb) %></p><br>
-              <%= image_tag(tb.travel_images.first.image_url(:index)) if tb.travel_images.first %><br><br>
+              <%= image_tag(Travel.featured_travel_image(tb).first.image_url(:index))%><br><br>
               <%= truncate(tb.content, :length => 200) %>
             </div>    
           </div>

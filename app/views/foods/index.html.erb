@@ -58,7 +58,7 @@
         
           <div class="span8 travel-index-right-column">
             <p class="mathlete-bulky-font" style="font-size: 38px"><%= link_to fb.title, food_path(fb) %></p><br>
-            <%= image_tag(fb.food_images.first.image_url(:index)) if fb.food_images.first %><br><br>
+            <%= image_tag(Food.featured_food_image(fb).first.image_url(:index))%><br><br>
             <%= fb.content %>
           </div>    
         </div>
