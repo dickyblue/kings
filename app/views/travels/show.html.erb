@@ -14,7 +14,7 @@
     
     <div class="row">
       <div class="span11 center-travel-image">
-        <%= image_tag(@featured_image.first.image_url(:index)) %><br>
+        <%= image_tag(@featured_image.first.image_url(:large)) %><br>
         <em style="font-size: 12px"><strong><%= @featured_image.first.name %>: </strong><%= @featured_image.first.description %></em><br><br>
         <%= simple_format(@travel_blog.content) %><br><br>
       </div>  
