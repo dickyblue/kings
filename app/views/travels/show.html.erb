@@ -19,7 +19,7 @@
       
       
       <% @travel_blog.travel_images.each do |f| %>
-      <div class="span12 center-travel-image">
+      <div class="span11 center-travel-image">
         <%= image_tag(f.image_url(:large)) if f.image %><br>
         <em style="font-size: 12px"><strong><%= f.name %>: </strong><%= f.description %></em>
       </div>
@@ -41,7 +41,7 @@
     
         
     <div class="row">
-      <div class="span12">
+      <div class="span11">
         <a name="comments"></a>
         <h5 class="mathlete-bulky-font" style="font-size:28px"><%= pluralize(@travel_blog.comments.size - 1 , 'Comment') %></h5><br>
         <% @comments.each do |comment| %>
