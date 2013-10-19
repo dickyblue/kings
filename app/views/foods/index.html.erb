@@ -10,7 +10,7 @@
               <% @featured_blogs_one.each do |fb| %>
               <li class="index-pages-li">
                 <%= link_to image_tag(fb.food_images.first.image_url(:list)), food_path(fb) if fb.food_images.first %>
-                <span class="index-pages-li-title"><%= fb.title %></span>
+                <span class="index-pages-li-title"><%= link_to fb.title, food_path(fb) %></span>
               </li>
               <% end %>
           </ul>

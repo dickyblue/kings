@@ -25,6 +25,7 @@ $gray: 	      #81857E;
 $turquoise:   #65BEB4;
 $yellow:      #FCFC88;
 $light-turquoise: #88d5c2;
+$dark-gray:   #756e6b;
 
 @import 'bootstrap';
 
@@ -954,10 +955,10 @@ height: 180px;
   }
 
 .thumbnails li:hover img {
-  opacity:0.3;
-  filter:alpha(opacity=30); /* For IE8 and earlier */
-  -webkit-filter: grayscale(80%);
-  /*-moz-transform: rotate(-5deg);  
+  opacity:0.2;
+  filter:alpha(opacity=20); /* For IE8 and earlier */
+  /*-webkit-filter: grayscale(80%);
+  -moz-transform: rotate(-5deg);  
   -o-transform: rotate(-5deg);  
   -webkit-transform: rotate(-5deg);  
   transform: rotate(-5deg);*/
@@ -969,11 +970,14 @@ height: 180px;
   opacity: 0;
   font-family: 'mathletebulky';
   font-size: 30px;
-  color: black;
   top: 60px;
   line-height: 35px;
   text-align: center;
   }
+  
+.index-pages-li-title a {
+  color: $dark-gray;
+  }  
     
 .thumbnails li:hover > .index-pages-li-title {
   opacity: 1;
