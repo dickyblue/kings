@@ -15,7 +15,7 @@
   <% @travel_blogs.each do |t| %>
   <ul class="no-margin-or-bullet list-pages-grid">
     <li class="list-pages-li">
-    <%= image_tag(Travel.featured_travel_image(t).first.image_url(:list))  %><br>
+    <%= link_to image_tag(Travel.featured_travel_image(t).first.image_url(:list)), travel_path(t)  %><br>
       <div class="list-pages-text">
         <h4 style="color: #aaa"><%= t.destination.upcase %></h4><hr class="dotted">
         <h4 style="color: black; margin-bottom: 12px"><%= truncate(t.title, :length => 30) %></h4>

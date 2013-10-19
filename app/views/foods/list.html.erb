@@ -15,7 +15,7 @@
   <% @food_blogs.each do |f| %>
   <ul class="no-margin-or-bullet list-pages-grid">
     <li class="list-pages-li">
-    <%= image_tag(Food.featured_food_image(f).first.image_url(:list))  %><br>
+    <%= link_to image_tag(Food.featured_food_image(f).first.image_url(:list)), food_path(f)  %><br>
       <div class="list-pages-text">
         <h4 style="color: #aaa"><%= f.rest? ? 'RESTAURANT': '' %> <%= f.recipe? ? 'RECIPE': '' %> </h4><hr class="dotted">
         <h4 style="color: black; margin-bottom: 12px"><%= truncate(f.title, :length => 30) %></h4>
