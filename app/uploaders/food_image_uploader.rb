@@ -21,7 +21,7 @@ class FoodImageUploader < CarrierWave::Uploader::Base
   end
   
   def default_url
-    ["recipe.png"].compact.join('_')
+    ["thekhuus_eat.png"].compact.join('_')
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
