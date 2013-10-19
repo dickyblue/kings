@@ -28,6 +28,7 @@ class TravelsController < ApplicationController
     @comments = Comment.where(:travel_id => @travel_blog.id).order('created_at DESC')
     @images = @travel_blog.travel_images
     @featured_image = @travel_blog.travel_images.where(:featured => true)
+    @all_but_featured_image = @images - [@featured_image.first]
     if request.path != travel_path(@travel_blog)
       redirect_to @travel_blog, status: :moved_permanently
     end

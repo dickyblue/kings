@@ -30,6 +30,7 @@ class FoodsController < ApplicationController
     @comments = Comment.where(:food_id => @food_blog.id).order('created_at DESC')
     @images = @food_blog.food_images
     @featured_image = @food_blog.food_images.where(:featured => true)
+    @all_but_featured_image = @images - [@featured_image.first]
     if request.path != food_path(@food_blog)
       redirect_to @food_blog, status: :moved_permanently
     end

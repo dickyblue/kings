@@ -8,7 +8,8 @@ class Food < ActiveRecord::Base
   has_many :recipes
   belongs_to :user
   
-  accepts_nested_attributes_for :food_images, :reject_if => lambda { |g| g[:image].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :food_images, :allow_destroy => true
+  # accepts_nested_attributes_for :food_images, :reject_if => lambda { |g| g[:image].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :comments
   accepts_nested_attributes_for :recipes, :allow_destroy => true
 
