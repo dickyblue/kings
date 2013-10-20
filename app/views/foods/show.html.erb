@@ -15,14 +15,14 @@
     <div class="row">
       <div class="span11 center-travel-image">
         <%= image_tag(@featured_image.first.image_url(:large)) %><br>
-        <em style="font-size: 12px"><strong><%= @featured_image.first.name %>: </strong><%= @featured_image.first.description %></em><br><br>
+        <em style="font-size: 12px; line-height: 100%"><strong><%= @featured_image.first.name %>: </strong><%= @featured_image.first.description %></em><br><br>
         <%= simple_format(@food_blog.content) %><br><br>
       </div>
         
       <% @all_but_featured_image.each do |f| %>
       <div class="span11 center-travel-image">
         <%= image_tag(f.image_url(:large)) if f.image %><br>
-        <em style="font-size: 12px"><strong><%= f.name %>: </strong><%= f.description %></em>
+        <em style="font-size: 12px; line-height: 100%"><strong><%= f.name %>: </strong><%= f.description %></em>
       </div><br><br>
       <% end %>
         
