@@ -11,7 +11,7 @@
                   <% @featured_blogs_one.each do |fb| %>
                   <li class="index-pages-li">
 
-                  <%= link_to image_tag(fb.travel_images.first.image_url(:list)), travel_path(fb) if fb.travel_images.first %>
+                  <%= link_to image_tag(Travel.featured_travel_image(fb).first.image_url(:list)), travel_path(fb) if Travel.featured_travel_image(fb).first %>                 
                   <span class="index-pages-li-title"><%= link_to fb.title, travel_path(fb) %></span>
                 </li>
 
@@ -23,7 +23,7 @@
               <% @featured_blogs_two.each do |fb| %>
               <li class="index-pages-li">
 
-              <%= link_to image_tag(fb.travel_images.first.image_url(:list)), travel_path(fb) if fb.travel_images.first %>
+              <%= link_to image_tag(Travel.featured_travel_image(fb).first.image_url(:list)), travel_path(fb) if Travel.featured_travel_image(fb).first %>
               <span class="index-pages-li-title"><%= fb.title %></span>
               </li>
               <% end %>

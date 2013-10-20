@@ -9,7 +9,7 @@
           <ul class="thumbnails">
               <% @featured_blogs_one.each do |fb| %>
               <li class="index-pages-li">
-                <%= link_to image_tag(fb.food_images.first.image_url(:list)), food_path(fb) if fb.food_images.first %>
+                <%= link_to image_tag(Food.featured_food_image(fb).first.image_url(:list)), food_path(fb) if Food.featured_food_image(fb).first %>
                 <span class="index-pages-li-title"><%= link_to fb.title, food_path(fb) %></span>
               </li>
               <% end %>
@@ -19,7 +19,7 @@
           <ul class="thumbnails">
               <% @featured_blogs_two.each do |fb| %>
               <li class="index-pages-li">
-                <%= link_to image_tag(fb.food_images.first.image_url(:list)), food_path(fb) if fb.food_images.first %>
+                <%= link_to image_tag(Food.featured_food_image(fb).first.image_url(:list)), food_path(fb) if Food.featured_food_image(fb).first %>
                 <span class="index-pages-li-title"><%= fb.title %></span>
               </li>
               <% end %>
