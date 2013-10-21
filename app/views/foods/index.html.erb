@@ -1,34 +1,10 @@
 
-<div class="promocyja-font travel-quote">“<%= @quote.quote %>”<br> 
-  <span style="font-size: 22px">– <%= @quote.author %></span></div>
+  <div class="promocyja-font food-quote">“<%= @quote.quote %>”<br> 
+    <span style="font-size: 22px">– <%= @quote.author %></span>
+  </div>
   
 <% if Food.featured_blogs.count > 0 %> 
-  <div class="carousel slide" id="myCarousel">
-  <div class="carousel-inner thumb-carousel-height">
-    <div class="item active">
-          <ul class="thumbnails">
-              <% @featured_blogs_one.each do |fb| %>
-              <li class="index-pages-li">
-                <%= link_to image_tag(Food.featured_food_image(fb).first.image_url(:list)), food_path(fb) if Food.featured_food_image(fb).first %>
-                <span class="index-pages-li-title"><%= link_to fb.title, food_path(fb) %></span>
-              </li>
-              <% end %>
-          </ul>
-    </div>
-    <div class="item">
-          <ul class="thumbnails">
-              <% @featured_blogs_two.each do |fb| %>
-              <li class="index-pages-li">
-                <%= link_to image_tag(Food.featured_food_image(fb).first.image_url(:list)), food_path(fb) if Food.featured_food_image(fb).first %>
-                <span class="index-pages-li-title"><%= fb.title %></span>
-              </li>
-              <% end %>
-          </ul>
-    </div>
-  </div>
-  <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
-  <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
-  </div>
+  <%= render :partial => 'shared/blog_index_carousel', :locals => {the_model: Food}%>
 <% end %>
 
   <br><br>
@@ -58,8 +34,8 @@
         
           <div class="span8 travel-index-right-column">
             <p class="mathlete-bulky-font" style="font-size: 38px"><%= link_to fb.title, food_path(fb) %></p><br>
-            <%= image_tag(Food.featured_food_image(fb).first.image_url(:index))%><br><br>
-            <%= fb.content %>
+            <%= image_tag(Food.featured_image(fb).first.image_url(:index))%><br><br>
+            <%= truncate(fb.content, :length => 200) %>
           </div>    
         </div>
       </div><br><br>    

@@ -852,7 +852,7 @@ hr {
   }
 
 
-/*-------------TRAVEL BLOG---------------------*/
+/*-------------BLOGS---------------------*/
 
 .white-box .travel-index-left-column {
   background-color: $turquoise;
@@ -875,7 +875,7 @@ hr {
   padding: 10px;
   }
 
-.travel-quote {
+.travel-quote, .food_quote {
   font-size: 28px;
   text-align: center;
   line-height: 30px;
@@ -925,7 +925,7 @@ hr.dotted {
   padding: 0 20px 0 20px;
   } 
 
-
+/*-------------CAROUSEL---------------------*/
 
 #myCarouselMain {
   height: 400px;
@@ -945,10 +945,6 @@ hr.dotted {
 .thumb-carousel-height {
   height: 180px;
   }
-
-/*.carousel, .carousel-inner {
-height: 180px;
-}*/
 
 .thumbnails li img {
   -webkit-transition: all .5s ease;
@@ -992,17 +988,15 @@ height: 180px;
   }
 
 
-
-
 /*-------------GALLERY INDEX---------------------*/
 
-.test-pages-li {
+.index-gal-li {
   position: relative;
   margin-left: 0px; 
   overflow: show;
   }
   
-.test-pages-grid img{
+.index-gal-grid img{
 -webkit-transition: all .5s ease;
 -moz-transition: all .5s ease;
 -o-transition: all .5s ease;
@@ -1010,7 +1004,7 @@ height: 180px;
 transition: all .5s ease;
   }  
 
-.test-pages-grid li:hover img {
+.index-gal-grid li:hover img {
   /*-moz-transform: rotate(-5deg);  
   -o-transform: rotate(-5deg);  
   -webkit-transform: rotate(-5deg);  
@@ -1024,7 +1018,7 @@ transition: all .5s ease;
   filter:alpha(opacity=20); /* For IE8 and earlier */
   }
 
-.test-pages-grid {
+.index-gal-grid {
   height: 180px;
   width: 300px;
   float: left;
@@ -1036,7 +1030,7 @@ transition: all .5s ease;
   -moz-border-radius: 3px;
   }
 
-.test-pages-text {
+.index-gal-text {
   padding: 15px 10px 10px 10px;
   width: 280px;
   position: absolute;
@@ -1050,12 +1044,11 @@ transition: all .5s ease;
   text-align: center;
   }
 
-.test-pages-grid li:hover > .test-pages-text {
+.index-gal-grid li:hover > .index-gal-text {
   opacity: 1;
   filter:alpha(opacity=100); /* For IE8 and earlier */
   }
   
-
 .enlarge-fancybox {
   background-color: $turquoise;
   height: 50px;
@@ -1088,5 +1081,16 @@ hr.subnav-bottom {
   margin-top: 5px;
   z-index: 1;
   }
-  
 
+.gallery-title {
+  font-size: 28px; 
+  color: $dark-gray; 
+  padding-bottom: 5px; 
+  border-bottom: 1px solid #aaa
+  }  
+
+.gallery-text {
+  font-size: 14px; 
+  margin-top: 5px; 
+  color: $dark-gray;
+  }

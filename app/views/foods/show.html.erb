@@ -6,27 +6,7 @@
         <%= food_logo %>
       </div>
       
-      <div class="span9">
-        <h3><%= @food_blog.title %></h3>
-        Posted By: <%= @food_blog.user.name %>  |  Dated: <%= @food_blog.publish_date.strftime("%B %d, %Y") if @food_blog.publish_date %> 
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="span11 center-travel-image">
-        <%= image_tag(@featured_image.first.image_url(:large)) %><br>
-        <em style="font-size: 12px; line-height: 100%"><strong><%= @featured_image.first.name %>: </strong><%= @featured_image.first.description %></em><br><br>
-        <%= simple_format(@food_blog.content) %><br><br>
-      </div>
-        
-      <% @all_but_featured_image.each do |f| %>
-      <div class="span11 center-travel-image">
-        <%= image_tag(f.image_url(:large)) if f.image %><br>
-        <em style="font-size: 12px; line-height: 100%"><strong><%= f.name %>: </strong><%= f.description %></em>
-      </div><br><br>
-      <% end %>
-        
-    </div>
+      <%= render :partial => 'shared/show_blog_content', :locals => {blog: @food_blog}%>
     
       <% if @food_blog.recipe == true %>        
         <% @food_blog.recipes.each do |r| %>
@@ -68,28 +48,7 @@
     
         
     <div class="row">
-      <div class="span11">
-        <a name="comments"></a>
-        <h5 class="mathlete-bulky-font" style="font-size:28px"><%= pluralize(@food_blog.comments.size - 1 , 'Comment') %></h5><br>
-        <% @comments.each do |comment| %>
-          <div class="span3">
-            <ul class="no-margin-or-bullet">        
-              <li>
-                <span style="float: left; margin-right: 5px"><%= image_tag(comment.user.image_url(:sm_thumb))%></span>
-                <span style="font-size: 14px; font-weight: bold; float: left; color: #65BEB4"><%= comment.commenter %></span><br>
-                <span style="font-size: 12px; font-style: italic; float: left"><%= comment.created_at.strftime("%b %d, %Y")%></span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="span8">
-            <ul class="no-margin-or-bullet">
-              <li><%= comment.content %></li><br>
-            </ul>
-          </div>
-          
-        <% end %>
-      </div>  
+      <%= render :partial => 'shared/show_blog_comment', :locals => {blog: @food_blog}%>
     </div>
 
     

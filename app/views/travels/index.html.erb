@@ -4,35 +4,7 @@
   </div>
 
 <% if Travel.featured_blogs.count > 0 %> 
-  <div class="carousel slide" id="myCarousel">
-  <div class="carousel-inner thumb-carousel-height">
-    <div class="item active">
-          <ul class="thumbnails">
-                  <% @featured_blogs_one.each do |fb| %>
-                  <li class="index-pages-li">
-
-                  <%= link_to image_tag(Travel.featured_travel_image(fb).first.image_url(:list)), travel_path(fb) if Travel.featured_travel_image(fb).first %>                 
-                  <span class="index-pages-li-title"><%= link_to fb.title, travel_path(fb) %></span>
-                </li>
-
-                  <% end %>
-          </ul>
-    </div>
-    <div class="item">
-          <ul class="thumbnails">
-              <% @featured_blogs_two.each do |fb| %>
-              <li class="index-pages-li">
-
-              <%= link_to image_tag(Travel.featured_travel_image(fb).first.image_url(:list)), travel_path(fb) if Travel.featured_travel_image(fb).first %>
-              <span class="index-pages-li-title"><%= fb.title %></span>
-              </li>
-              <% end %>
-          </ul>
-    </div>
-  </div>
-  <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
-  <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
-  </div>
+  <%= render :partial => 'shared/blog_index_carousel', :locals => {the_model: Travel}%>
 <% end %>
     
     <br><br>
@@ -60,7 +32,7 @@
           
             <div class="span8 travel-index-right-column">
               <p class="mathlete-bulky-font" style="font-size: 38px"><%= link_to tb.title, travel_path(tb) %></p><br>
-              <%= image_tag(Travel.featured_travel_image(tb).first.image_url(:index))%><br><br>
+              <%= image_tag(Travel.featured_image(tb).first.image_url(:index))%><br><br>
               <%= truncate(tb.content, :length => 200) %>
             </div>    
           </div>

@@ -12,7 +12,7 @@ class Travel < ActiveRecord::Base
   
   scope :featured_blogs, where(:featured_blog => true).order('publish_date DESC').limit(6)
   
-  def self.featured_travel_image(t)
+  def self.featured_image(t)
     t.travel_images.where(:featured => true)
   end
   
