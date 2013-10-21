@@ -101,6 +101,10 @@ a {
   color: $turquoise;
 }
 
+.gray-font a, .gray-font a:hover {
+  color: $dark-gray;
+  }
+
 a:hover {
   color: $turquoise;
   text-decoration: none;
@@ -990,7 +994,7 @@ height: 180px;
 
 
 
-/*-------------GALLERY INDEX 2---------------------*/
+/*-------------GALLERY INDEX---------------------*/
 
 .test-pages-li {
   position: relative;
