@@ -15,12 +15,12 @@
   <% @food_blogs.each do |f| %>
   <ul class="no-margin-or-bullet list-pages-grid">
     <li class="list-pages-li">
-    <%= link_to image_tag(Food.featured_food_image(f).first.image_url(:list)), food_path(f)  %><br>
+    <%= link_to image_tag(Food.featured_image(f).first.image_url(:list)), food_path(f)  %><br>
       <div class="list-pages-text">
         <h4 style="color: #aaa"><%= f.rest? ? 'RESTAURANT': '' %> <%= f.recipe? ? 'RECIPE': '' %> </h4><hr class="dotted">
         <h4 style="color: black; margin-bottom: 12px"><%= truncate(f.title, :length => 30) %></h4>
         <p style="font-family: Helvetica Neue, font-size: 10px;"><%= truncate(f.content, :length => 100) %></p>
-        <%= link_to "Edit", :action => 'manage', :id => f.id %> | <%= link_to "Delete", f, :method => :delete %>
+        <%= link_to "Edit", :action => 'edit', :id => f.id %> | <%= link_to "Delete", f, :method => :delete %>
       </div>
     </li>
   </ul>
@@ -30,4 +30,4 @@
 
 <%= page_navigation_links @food_blogs, '#'%>
 
-<div class="btn primary white-link pull-right"><%= link_to "New", :action => 'manage' %></div>
+<div class="btn primary white-link pull-right"><%= link_to "New", :action => 'new' %></div>

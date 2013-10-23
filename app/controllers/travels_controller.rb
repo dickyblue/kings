@@ -11,10 +11,13 @@ class TravelsController < ApplicationController
     @featured_blogs_two = Travel.featured_blogs.in_groups_of(3, false).last
   end
   
-  def manage
-    @travel_blog = Travel.new if @travel_blog.nil?
+  def new
+    @travel_blog = Travel.new
     @travel_blog.travel_images.build
-    @travel_blog = Travel.find(params[:id]) if params[:id]
+  end
+  
+  def edit
+    @travel_blog = Travel.find(params[:id])    
   end
   
   def list

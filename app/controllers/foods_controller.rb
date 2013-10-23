@@ -11,12 +11,15 @@ class FoodsController < ApplicationController
     @featured_blogs_two = Food.featured_blogs.in_groups_of(3, false).last
   end
   
-  def manage
-    @food_blog = Food.new if @food_blog.nil?
+  def new
+    @food_blog = Food.new
     1.times { @food_blog.food_images.build }
     recipe = @food_blog.recipes.build
     recipe.ingredients.build
-    @food_blog = Food.find(params[:id]) if params[:id]
+  end
+  
+  def edit
+    @food_blog = Food.find(params[:id])    
   end
   
   def list

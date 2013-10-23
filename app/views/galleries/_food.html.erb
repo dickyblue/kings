@@ -1,6 +1,6 @@
 <div style="margin-left: -20px;">
 
-  <%= render :partial => 'foodtravel', :locals => {images: @food_images, path: 'food'} %>
+  <%= render :partial => 'foodtravel', :locals => {images: @food_images, path: 'food', edit: method(:edit_food_path) } %>
 
   <%= will_paginate(images, image_type: 'food') %>
 

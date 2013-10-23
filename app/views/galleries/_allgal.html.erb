@@ -5,6 +5,7 @@
     <div class="index-gal-text">
       <h4 class="gallery-title"><%= w.name %></h4>
       <p class="gallery-text"><%= w.description %></p>
+      <% if current_user.admin %><p class="edit-gallery"><%= link_to raw("<i class=\"icon-edit icon-2x\"></i>"), edit_gallery_path(w) %></p><% end %>
       <p class="enlarge-fancybox"><%= link_to raw("<i class=\"icon-zoom-in icon-2x\"></i>"), w.image_url(:slide_gallery), { :class => "fancybox", :rel => "#{images}", :title => "#{w.description}" } %></p>
     </div>
   </li>
