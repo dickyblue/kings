@@ -41,6 +41,7 @@ class FoodsController < ApplicationController
   
   def create
     @food_blog = Food.new(params[:food])
+    @food_blog.user_id = current_user.id
     if @food_blog.save
       redirect_to(:action => 'list')
     else

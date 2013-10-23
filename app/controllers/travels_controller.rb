@@ -39,6 +39,7 @@ class TravelsController < ApplicationController
   
   def create
     @travel_blog = Travel.new(params[:travel])
+    @travel_blog.user_id = current_user.id
     if @travel_blog.save
       redirect_to(:action => 'list')
     else

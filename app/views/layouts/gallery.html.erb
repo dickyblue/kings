@@ -49,7 +49,7 @@
   
   <div class="ribbon"><br><br>
     <% if current_user %>
-    <span style="font-family: 'PacificoRegular'; font-size: 22px; "><%= current_user.name %></span><br>
+    <span style="font-family: 'PacificoRegular'; font-size: 22px; line-height: 200%"><%= current_user.name %></span><br>
     <%= link_to "Sign Out", sign_out_path %>
       <div class="sign-out">
         <%= image_tag(current_user.image_url(:thumb), :class => "round-images")%><br>
