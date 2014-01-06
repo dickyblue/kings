@@ -5,7 +5,7 @@
     <div class="index-gal-text">
       <h4 class="gray-font gallery-title"><%= link_to t.name, t.send(path) %></h4>
       <p class="gray-font gallery-text"><%= link_to t.description, t.send(path) %></p>
-      <% if current_user.admin %><p class="edit-gallery"><%= link_to raw("<i class=\"icon-edit icon-2x\"></i>"), edit.call(t.send(path)) %></p><% end %>
+      <% if current_user.admin %><p class="edit-gallery"><%= link_to raw("<i class=\"icon-edit icon-2x\"></i>"), t.send(path) %></p><% end %>
       <p class="enlarge-fancybox"><%= link_to raw("<i class=\"icon-zoom-in icon-2x\"></i>"), t.image_url(:large), { :class => "fancybox", :rel => "#{images}", :title => "#{t.description}" } %></p>
     </div>
   </li>
