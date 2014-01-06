@@ -3,7 +3,7 @@ class Travel < ActiveRecord::Base
   attr_accessible :title, :content, :publish_date, :user_id, :published, :travel_images_attributes, :destination, :featured_blog
   
   belongs_to :user
-  has_many :travel_images
+  has_many :travel_images, dependent: :destroy
   has_many :comments
   
   accepts_nested_attributes_for :travel_images, :allow_destroy => true
