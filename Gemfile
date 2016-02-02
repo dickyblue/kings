@@ -1,15 +1,14 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.3.0'
 
-gem 'rails', '3.2.0'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'pg'
 gem 'rmagick'
 gem 'carrierwave'
-gem 'tabulous'
 gem 'heroku'
 gem 'will_paginate'
 gem 'meta_search'
@@ -17,6 +16,9 @@ gem 'fog'
 gem 'simple_form'
 gem 'fancybox2-rails', '~> 0.2.4'
 gem "font-awesome-rails"
+gem "rename"
+gem "figaro"
+gem 'test-unit', '~> 3.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -35,7 +37,6 @@ end
 # added thin and pg for heroku
 group :production do
   gem 'thin'
-  gem 'pg'
 end  
 
 gem 'jquery-rails'

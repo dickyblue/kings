@@ -5,8 +5,8 @@
       <div class="item active">
         <ul>
           <li class="slide_gallery">
-          <%= image_tag(@first_image.image_url(:featured)) %>
-          <span class="gallery-slideshow-caption"><%= @first_image.description %></span>
+          <%= image_tag(@first_image.image_url(:featured)) if @first_image %>
+          <span class="gallery-slideshow-caption"><%= @first_image.description if @first_image%></span>
           </li>
         </ul>
       </div>
@@ -33,13 +33,10 @@
  
   <br>
   
-  <h2 class="promocyja-font" style="text-align: center; font-size: 38px;">Welcome, we are <span style="font-size: 45px;">The Khuus!</span></h2>
+  <h2 class="promocyja-font" style="text-align: center; font-size: 38px;">Welcome, we are <span style="font-size: 45px;">The Smiths!</span></h2>
 
   <br>
     
-  <span>Since establishing ourselves as a family in Sept. 2012, we built this website as a forum for our family to share our lives with those
-    closest and dearest to us.</span><br><br>
-  
   <span>As a family, we are humbled by experiences afforded through our travels and blessed with good times shared with loved ones through 
     our mutual love of food.  That is why we wanted to maintain a family website to chronicle our journeys, friends and happy memories.</span><br><br>
 
@@ -47,6 +44,6 @@
     
   <span class="pull-right">Lots of love,<br><br>
 
-  <%= signature %></span>
+	  The Smiths</span>
   
 </div>

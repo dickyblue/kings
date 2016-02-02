@@ -1,10 +1,10 @@
 class TravelsController < ApplicationController
   
   before_filter :authenticate_admin, :only => [:manage, :list, :create, :update, :destroy]
-  before_filter :authenticate
+  # before_filter :authenticate
 
   def index
-    @travel_blogs = Travel.paginate(:page => params[:page], :per_page => 5, :order => "created_at DESC")
+    @travel_blogs = Travel.reorder("publish_date DESC").page(params[:page]).per_page(5)
     quotes = Quote.where(:travel => true).pluck(:id) 
     @quote = Quote.where(:id => quotes.sample).first if Quote.where(:id => quotes.sample).first
     @featured_blogs_one = Travel.featured_blogs.in_groups_of(3, false).first

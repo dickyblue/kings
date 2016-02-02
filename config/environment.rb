@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-NickMing::Application.initialize!
+Kings::Application.initialize!
 
 
 ActionMailer::Base.delivery_method = :smtp

@@ -30,12 +30,14 @@
         <div class="container">
             <% if current_user %>
               <%= link_to logo, root_path %>
+			  <% else %>
+			  <%= link_to logo, root_path %>
             <% end %>
         
           <ul class="nav pull-right">            
             <li class="<%= 'active' if controller.is_a?(GalleriesController) %>"  style="width: 185px;"><%= link_to galleries_path do %> <div class="ca-icon"></div><% end %><%= link_to "Photo Gallery", galleries_path %></li>
-            <li class="<%= 'active' if controller.is_a?(TravelsController) %>" style="width: 210px;"><%= link_to travels_path do %> <div class="ca-icon2"></div><% end %><%= link_to "The Khuus Travel", travels_path %></li>
-            <li class="<%= 'active' if controller.is_a?(FoodsController) %>" style="width: 185px;"><%= link_to foods_path do %> <div class="ca-icon3"></div><% end %><%= link_to "The Khuus Eat", foods_path %></li>
+            <li class="<%= 'active' if controller.is_a?(TravelsController) %>" style="width: 210px;"><%= link_to travels_path do %> <div class="ca-icon2"></div><% end %><%= link_to "Our Travels", travels_path %></li>
+            <li class="<%= 'active' if controller.is_a?(FoodsController) %>" style="width: 185px;"><%= link_to foods_path do %> <div class="ca-icon3"></div><% end %><%= link_to "Our Eats", foods_path %></li>
           </ul>         
         </div>
       
@@ -43,15 +45,6 @@
   </div>
   </div>
 
-  <div class="ribbon"><br><br>
-    <% if current_user %>
-    <span style="font-family: 'PacificoRegular'; font-size: 18px; line-height: 200%"><%= current_user.name %></span><br>
-    <%= link_to "Sign Out", sign_out_path %>
-      <div class="sign-out">
-        <%= image_tag(current_user.image_url(:thumb), :class => "round-images")%><br>
-      </div>
-    <% end %>
-  </div>
 
   <div class="container">
     <%= yield %>

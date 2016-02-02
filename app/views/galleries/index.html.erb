@@ -1,23 +1,12 @@
 <hr class="subnav-top">
 <ul class="nav nav-pills" id="myTab">
-  <li class="active"><a href="#engagement">ENGAGEMENT</a></li>
-  <li><a href="#cruise">WEDDING CRUISE</a></li>
-  <li><a href="#wedding">WEDDING</a></li>
+  <li class="active"><a href="#wedding">WEDDING</a></li>
   <li><a href="#travel">TRAVEL</a></li>
   <li><a href="#food">FOOD</a></li>
 </ul>
 <hr class="subnav-bottom">
 
 <div class="tab-content">
-  <div class="tab-pane active" id="engagement">  
-    <%= render :partial => 'engagement', :locals => {images: @engagement} %>
-  </div>  
-
-  <div class="tab-pane" id="cruise">  
-    <%= render :partial => 'cruise', :locals => {images: @cruise} %>
-  </div>
-
-
   <div class="tab-pane" id="wedding">  
     <%= render :partial => 'wedding', :locals => {images: @wedding} %>      
   </div>

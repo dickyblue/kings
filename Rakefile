@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-NickMing::Application.load_tasks
+Kings::Application.load_tasks

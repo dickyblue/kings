@@ -1,6 +1,6 @@
   
-  <div class="promocyja-font travel-quote">“<%= @quote.quote %>”<br> 
-    <span style="font-size: 22px">– <%= @quote.author %></span>
+  <div class="promocyja-font travel-quote">“<%= @quote.quote if @quote %>”<br> 
+    <span style="font-size: 22px">– <%= @quote.author if @quote %></span>
   </div>
 
 <% if Travel.featured_blogs.count > 0 %> 

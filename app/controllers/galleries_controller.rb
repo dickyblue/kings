@@ -1,7 +1,7 @@
 class GalleriesController < ApplicationController
   
   before_filter :authenticate_admin, :only => [:list, :new, :edit, :create, :update, :destroy]
-  before_filter :authenticate
+  # before_filter :authenticate
 
   def list
     @search = Gallery.search(params[:search])

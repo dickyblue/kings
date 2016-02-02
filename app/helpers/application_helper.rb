@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def logo
-    logo = image_tag("thekhuus.png", :att => "Nick & Ming")
+    logo = image_tag("kings.png", :att => "The Kings")
   end
   
   # def sept29
@@ -141,7 +141,7 @@ module ApplicationHelper
   # end
   
   def travel_stamp
-    travel_stamp = image_tag("travel_luggage_stamp.png", :att => "Travel Stamp")
+    travel_stamp = image_tag("kings_travel.png", :att => "Travel Stamp")
   end
   
   def food_logo
@@ -165,9 +165,7 @@ module ApplicationHelper
   end
   
   def randomized_background_image
-    images = ["thekhuus_login.png", "thekhuus_login_elephant.png", "thekhuus_login_sailing.png", 
-      "thekhuus_login_stars.png", "thekhuus_login_travel.png", "thekhuus_login_bike.png", 
-      "thekhuus_login_moon.png", "thekhuus_login_rain_shine.png"]
+    images = ["kings_login_rain.png", "kings_login_sail.png"]
     images[rand(images.size)]
   end  
 

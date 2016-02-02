@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_filter :authenticate
+  # before_filter :authenticate
 
   def home
     @first_image = Gallery.where(:featured => true).first 

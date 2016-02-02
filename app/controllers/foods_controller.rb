@@ -1,10 +1,10 @@
 class FoodsController < ApplicationController
 
   before_filter :authenticate_admin, :only => [:manage, :list, :create, :update, :destroy]
-  before_filter :authenticate
+  # before_filter :authenticate
 
   def index
-    @food_blogs = Food.paginate(:page => params[:page], :per_page => 5, :order => "publish_date DESC")
+    @food_blogs = Food.reorder("publish_date DESC").page(params[:page]).per_page(5)
     quotes = Quote.where(:food => true).pluck(:id)
     @quote = Quote.where(:id => quotes.sample).first if Quote.where(:id => quotes.sample).first
     @featured_blogs_one = Food.featured_blogs.in_groups_of(3, false).first

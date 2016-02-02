@@ -1,4 +1,4 @@
-NickMing::Application.routes.draw do
+Kings::Application.routes.draw do
 
   root :to => 'pages#home'
 

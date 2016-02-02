@@ -95,14 +95,6 @@ ActiveRecord::Schema.define(:version => 20131009023518) do
     t.datetime "updated_at",          :null => false
   end
 
-  create_table "travel_comments", :force => true do |t|
-    t.integer  "travel_id"
-    t.text     "content"
-    t.string   "commenter"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "travel_images", :force => true do |t|
     t.integer  "travel_id"
     t.string   "image"
