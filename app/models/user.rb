@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   attr_accessor   :password
-  attr_accessible :name, :email, :password, :admin, :attending, :image
+  # attr_accessible :name, :email, :password, :admin, :attending, :image
 
   has_many :travels
   has_many :foods
@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   
   mount_uploader :image, UserImageUploader
   
-  email_regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :email,                   :presence => true,
                                       :uniqueness => { :case_sensitive => false },

@@ -4,8 +4,10 @@ class GalleriesController < ApplicationController
   # before_filter :authenticate
 
   def list
-    @search = Gallery.search(params[:search])
-    @galleries = @search.paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
+    @search = Gallery.ransack(params[:search])
+    #For metasearch, which is deprecated @galleries = @search.paginate(:page => params[:page], :per_page => 12).order("created_at DESC")
+    @galleries = @search.result.paginate(page: params[:page], per_page: params[12])
+    
   end
   
   def new
@@ -17,7 +19,7 @@ class GalleriesController < ApplicationController
   end
   
   def create
-    @image = Gallery.new(params[:gallery])
+    @image = Gallery.new(gallery_params)
     if @image.save
       redirect_to :action => 'list'
     else
@@ -27,7 +29,7 @@ class GalleriesController < ApplicationController
   
   def update
     @image = Gallery.find(params[:id])
-    if @image.update_attributes(params[:gallery])
+    if @image.update_attributes(gallery_params)
       redirect_to admins_path
     else
       render "edit"
@@ -38,16 +40,6 @@ class GalleriesController < ApplicationController
     Gallery.find(params[:id]).destroy
     redirect_to :action => 'list'
   end  
-    
-  def index3
-    @lodgings = Gallery.where(:lodging => true)
-    @engagements = Gallery.where(:engagement => true)
-    @friends = Gallery.where(:friend_upload => true)
-    @cruise = Gallery.where(:wedding_cruise => true)
-    @wedding = Gallery.where(:wedding => true)
-    @images = Gallery.all - @lodgings - @engagements - @cruise - @wedding 
-    @first_image = @images.first 
-  end
   
   def index
     @engagement = Gallery.where(:engagement => true).page(params[:page]).per_page(12)
@@ -69,10 +61,6 @@ class GalleriesController < ApplicationController
     end
   end
   
-  def engagement
-    @engagements = Gallery.where(:engagement => true).paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
-  end
-
   def wedding
     @wedding = Gallery.where(:wedding => true).paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
   end
@@ -80,27 +68,24 @@ class GalleriesController < ApplicationController
   def travel_images
     @travel_images = TravelImage.paginate(:page => params[:page], :per_page => 3, :order => "created_at DESC")
   end
-  
-  def travel_lodging
-    @images = Gallery.where(:lodging => true)
-    @first_image = @images.first
-  end
     
-  # def create_friend_upload
-  #   @image = Gallery.create(params[:gallery])
-  # end
+  private
   
-  def friend_photos
-    @image = Gallery.new
-    @images = Gallery.where(:friend_upload => true)
-    @comment = @image.comments.build
-    @comments = Comment.where("gallery_id is not null")
-  end
-  
-  def correct_photos
-    @images = Gallery.where(:friend_upload => true)
-    @image = Gallery.find(params[:id]) if params[:id]
-  end
-  
+      def gallery_params
+        params.require(:gallery).permit(
+        :image, 
+        :description, 
+        :featured, 
+        :lodging, 
+        :name, 
+        :engagement, 
+        :friend_upload, 
+        :user_id, 
+        :friend_uploader, 
+        :wedding, 
+        :wedding_cruise,
+        { comments_attributes: [:content, :user_id, :commenter, :gallery_id, :travel_id, :food_id] },
+        )
+      end
 
 end

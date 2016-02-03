@@ -1,7 +1,7 @@
 class Food < ActiveRecord::Base
 
-  attr_accessible :title, :content, :publish_date, :user_id, :published, :food_images_attributes, :restaurant, :restaurant_location, :rest, :recipe,
-  :recipes_attributes, :featured_blog
+  # attr_accessible :title, :content, :publish_date, :user_id, :published, :food_images_attributes, :restaurant, :restaurant_location, :rest, :recipe,
+  # :recipes_attributes, :featured_blog
   
   has_many :food_images
   has_many :comments
@@ -13,7 +13,12 @@ class Food < ActiveRecord::Base
   accepts_nested_attributes_for :comments
   accepts_nested_attributes_for :recipes, :allow_destroy => true
 
-  scope :featured_blogs, where(:featured_blog => true).order('publish_date DESC').limit(6)
+  # scope :featured_blogs, where(:featured_blog => true).order('publish_date DESC').limit(6)
+
+  scope :featured_blogs, -> {
+    where(:featured_blog => true).order('publish_date DESC').limit(6)
+  }
+
 
   def self.featured_image(t)
     t.food_images.where(:featured => true)

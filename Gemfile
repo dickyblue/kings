@@ -11,21 +11,21 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'heroku'
 gem 'will_paginate'
-gem 'meta_search'
 gem 'fog'
 gem 'simple_form'
-gem 'fancybox2-rails', '~> 0.2.4'
+gem 'fancybox2-rails'
 gem "font-awesome-rails"
 gem "rename"
 gem "figaro"
 gem 'test-unit', '~> 3.0'
+gem 'ransack'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'bootstrap-sass', '2.0.2'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'bootstrap-sass', '~> 3.3.6'
+  gem 'sass-rails', '>= 3.2'
+  gem 'coffee-rails'
   gem 'jquery-fileupload-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

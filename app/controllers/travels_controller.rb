@@ -21,8 +21,8 @@ class TravelsController < ApplicationController
   end
   
   def list
-    @search = Travel.search(params[:search])
-    @travel_blogs = @search.paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
+    @search = Travel.ransack(params[:search])
+    @travel_blogs = @search.result.paginate(page: params[:page], per_page: params[12])    
   end
   
   def show
@@ -38,7 +38,7 @@ class TravelsController < ApplicationController
   end
   
   def create
-    @travel_blog = Travel.new(params[:travel])
+    @travel_blog = Travel.new(travel_params)
     @travel_blog.user_id = current_user.id
     if @travel_blog.save
       redirect_to(:action => 'list')
@@ -49,7 +49,7 @@ class TravelsController < ApplicationController
     
   def update
     @travel_blog = Travel.find(params[:id])
-    if @travel_blog.update_attributes(params[:travel])
+    if @travel_blog.update_attributes(travel_params)
       redirect_to(:action => 'list')
     else
       render "manage"
@@ -61,5 +61,22 @@ class TravelsController < ApplicationController
     redirect_to :action => 'index'
   end
   
+
+  private
+  
+      def travel_params
+        params.require(:travel).permit(
+        :title, 
+        :content, 
+        :publish_date, 
+        :user_id, 
+        :published, 
+        :travel_images_attributes, 
+        :destination, 
+        :featured_blog,
+        { travel_images_attributes: [:image, :name, :description, :featured, :image_cache, :travel_id] },
+        { comments_attributes: [:content, :user_id, :commenter, :gallery_id, :travel_id, :food_id] },
+        )
+      end
 
 end

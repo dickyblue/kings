@@ -27,7 +27,8 @@ $yellow:      #FCFC88;
 $light-turquoise: #88d5c2;
 $dark-gray:   #756e6b;
 
-@import 'bootstrap';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 
 body {
@@ -282,6 +283,8 @@ input, textarea {
   font-size: 30px;
   font-family: mathletebulky;
   background: transparent;
+  vertical-align: middle;
+  margin-bottom: -10px;
   }
 
 
@@ -692,7 +695,7 @@ ul img {
   clear: both
   }
 
-.slide_gallery li {
+.slide_gallery, .slide_gallery li {
   position: relative;
   display: inline;
   margin-right: 9px;
@@ -708,6 +711,10 @@ ul img {
   /*overflow: auto; #removed to show all of background for overall site */
   padding-left: 0px;
   }
+
+.nav-pills > li > a {
+  padding: 5px 20px;
+  }
   
 .nav-pills {
   margin-left: 0px;
@@ -717,7 +724,10 @@ ul img {
   }
 
 .nav-pills > .active > a,
-.nav-pills > .active > a:hover {
+.nav-pills > .active > a:hover,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a, {
   color: #ffffff;
   background-color: $turquoise;
   -webkit-border-radius: 0px;
@@ -735,13 +745,13 @@ ul img {
   }
   
 .gallery-slideshow-caption {
-  width:900px;
+  width:1140px;
   height:100px;
   position: absolute;
   float: right;
   padding: 10px;
   left:0;
-  top: 300px; 
+  top: 400px; 
   color:#fff;
   background: $turquoise;
   opacity:0.7;
@@ -962,7 +972,7 @@ hr.dotted {
 /*-------------CAROUSEL---------------------*/
 
 #myCarouselMain {
-  height: 400px;
+  height: 500px;
   }  
 
 #myCarousel2 img {
@@ -973,7 +983,7 @@ hr.dotted {
 }
 
 .main-carousel-height {
-  height: 400px;
+  height: 500px;
   }
 
 .thumb-carousel-height {
@@ -1017,10 +1027,26 @@ hr.dotted {
   opacity: 1;
   } 
   
-.carousel-control {   
-  top: 50%
+.carousel-control {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 50px;
+  font-weight: 100;
+  line-height: 25px;
+  color: #fff;
+  text-align: center;
+  background: #222;
+  border: 3px solid #fff;
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
+  border-radius: 23px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
   }
-
 
 /*-------------GALLERY INDEX---------------------*/
 
@@ -1028,7 +1054,7 @@ hr.dotted {
   position: relative;
   margin-left: 0px; 
   overflow: show;
-  }
+}
   
 .index-gal-grid img{
 -webkit-transition: all .5s ease;
@@ -1039,10 +1065,6 @@ transition: all .5s ease;
   }  
 
 .index-gal-grid li:hover img {
-  /*-moz-transform: rotate(-5deg);  
-  -o-transform: rotate(-5deg);  
-  -webkit-transform: rotate(-5deg);  
-  transform: rotate(-5deg);*/
   transform:scale(1.1);
   -ms-transform:scale(1.1); /* IE 9 */
   -moz-transform:scale(1.1); /* Firefox */
@@ -1054,10 +1076,10 @@ transition: all .5s ease;
 
 .index-gal-grid {
   height: 180px;
-  width: 300px;
+  width: 270px;
   float: left;
-  background: white;
   overflow: hidden;
+  list-style: none;
   margin: 0 0px 20px 20px;
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1070,7 +1092,6 @@ transition: all .5s ease;
   position: absolute;
   opacity: 0;
   filter:alpha(opacity=0); /* For IE8 and earlier */
-  font-family: 'mathletebulky';
   font-size: 30px;
   color: black;
   top: 10px;
@@ -1093,16 +1114,16 @@ transition: all .5s ease;
   }
   
 .enlarge-fancybox {
-  right: 0px;
+  right: 10px;
   top: 120px;
   height: 50px;
   width: 50px;  
   }  
   
 .edit-gallery {
-  right: 0px;
+  right: 10px;
   top: -10px;
-  height: 30px;
+  height: 50px;
   width: 50px;
   }  
 
@@ -1110,8 +1131,9 @@ transition: all .5s ease;
   text-align: center;
   }
 
-.icon-zoom-in, .icon-edit {
+.glyphicon-edit, .glyphicon-zoom-in {
   color: white;
+  font-size: 25px;
   }
     
 hr.subnav-top {
@@ -1132,6 +1154,7 @@ hr.subnav-bottom {
   padding-bottom: 5px; 
   border-bottom: 1px solid #aaa;
   font-weight: normal;
+  font-family: 'mathletebulky';
   }  
 
 .gallery-text {

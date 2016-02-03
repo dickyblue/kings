@@ -23,8 +23,8 @@ class FoodsController < ApplicationController
   end
   
   def list
-    @search = Food.search(params[:search])
-    @food_blogs = @search.paginate(:page => params[:page], :per_page => 12, :order => "created_at DESC")
+    @search = Food.ransack(params[:search])
+    @food_blogs = @search.result.paginate(page: params[:page], per_page: params[12])
   end
   
   def show
@@ -40,7 +40,7 @@ class FoodsController < ApplicationController
   end
   
   def create
-    @food_blog = Food.new(params[:food])
+    @food_blog = Food.new(food_params)
     @food_blog.user_id = current_user.id
     if @food_blog.save
       redirect_to(:action => 'list')
@@ -51,7 +51,7 @@ class FoodsController < ApplicationController
     
   def update
     @food_blog = Food.find(params[:id])
-    if @food_blog.update_attributes(params[:food])
+    if @food_blog.update_attributes(food_params)
       redirect_to(:action => 'list')
     else
       render "manage"
@@ -61,6 +61,26 @@ class FoodsController < ApplicationController
   def destroy
     Food.find(params[:id]).destroy
     redirect_to :action => 'index'
+  end
+  
+  private
+  
+  def food_params
+    params.require(:food).permit(
+    :title, 
+    :content, 
+    :publish_date, 
+    :user_id, 
+    :published, 
+    :restaurant, 
+    :restaurant_location, 
+    :rest, 
+    :recipe, 
+    :featured_blog,
+    { food_images_attributes: [:image, :name, :description, :featured, :food_id] },
+    { comments_attributes: [:content, :user_id, :commenter, :gallery_id, :travel_id, :food_id] },
+    { recipes_attributes: [:name, :recipe_instructions, :ingredients_attributes, :food_id] },
+    )
   end
 
 

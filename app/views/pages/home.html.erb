@@ -1,14 +1,12 @@
 <div class="container row">
 
-  <div class="carousel slide" id="myCarouselMain">
-    <div class="carousel-inner main-carousel-height">
+  <div class="carousel slide" id="myCarouselMain" data-ride="carousel">
+    <div class="carousel-inner main-carousel-height" role="listbox">
       <div class="item active">
-        <ul>
-          <li class="slide_gallery">
+          <div class="slide_gallery">
           <%= image_tag(@first_image.image_url(:featured)) if @first_image %>
           <span class="gallery-slideshow-caption"><%= @first_image.description if @first_image%></span>
-          </li>
-        </ul>
+          </div>
       </div>
     
       <% @featured_images.each do |fb| %>
@@ -26,6 +24,7 @@
       <a data-slide="prev" href="#myCarouselMain" class="left carousel-control">‹</a>
       <a data-slide="next" href="#myCarouselMain" class="right carousel-control">›</a>
   </div>
+  
 
 <script>
   $('#myCarouselMain').carousel();
@@ -33,7 +32,7 @@
  
   <br>
   
-  <h2 class="promocyja-font" style="text-align: center; font-size: 38px;">Welcome, we are <span style="font-size: 45px;">The Smiths!</span></h2>
+  <h2 class="promocyja-font" style="text-align: center; font-size: 38px;">Welcome, we are <span style="font-size: 45px;">The Kings!</span></h2>
 
   <br>
     
@@ -44,6 +43,6 @@
     
   <span class="pull-right">Lots of love,<br><br>
 
-	  The Smiths</span>
+	  The Kings</span>
   
 </div>

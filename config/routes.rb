@@ -2,42 +2,32 @@ Kings::Application.routes.draw do
 
   root :to => 'pages#home'
 
-  match '/login', :to => 'sessions#new', :as => :login
-  match '/signout', :to => 'sessions#destroy', :as => :sign_out
+  match '/login', :to => 'sessions#new', :as => :login, via: [:get]
+  match '/signout', :to => 'sessions#destroy', :as => :sign_out, via: [:get, :post]
 
-  match '/our_story', :to => 'pages#our_story', :as => :our_story
-  match '/weekend_schedule', :to => 'pages#weekend_schedule', :as => :weekend_schedule
-  match '/future_plans', :to => 'pages#future_plans', :as => :future_plans
-  match '/gift_registries', :to => 'pages#gift_registries', :as => :gift_registries
-
-  match '/galleries/index2', :to => 'galleries#index2', :as => :index2_gallery
-  match '/galleries/engagement', :to => 'galleries#engagement', :as => :engagement
-  match '/galleries/travel', :to => 'galleries#travel_images', :as => :travel_images
-  match '/galleries/wedding', :to => 'galleries#wedding', :as => :wedding
+  match '/galleries/index2', :to => 'galleries#index2', :as => :index2_gallery, via: [:get]
+  match '/galleries/engagement', :to => 'galleries#engagement', :as => :engagement, via: [:get]
+  match '/galleries/travel', :to => 'galleries#travel_images', :as => :travel_images, via: [:get]
+  match '/galleries/wedding', :to => 'galleries#wedding', :as => :wedding, via: [:get]
 
 
-  match '/galleries/manage', :to => 'galleries#manage', :as => :manage_gallery
-  match '/galleries/list', :to => 'galleries#list', :as => :list_gallery
-  match '/galleries/friend_upload', :to => 'galleries#friend_upload', :as => :friend_upload
-  post  '/galleries/create_friend_upload', :to => 'galleries#create_friend_upload', :as => :create_friend_upload
-  post  '/galleries/wedding_photos', :to => 'comments#create_gallery_comment', :as => :create_gallery_comment
-  post  '/travels/:id', :to => 'comments#create_travel_comment', :as => :create_travel_comment
-  post  '/foods/:id', :to => 'comments#create_food_comment', :as => :create_food_comment
-  match '/galleries/wedding_photos', :to => 'galleries#friend_photos', :as => :friend_photos  
-  match '/galleries/correct_photos', :to => 'galleries#correct_photos', :as => :correct_photos  
-  match '/travel_lodging', :to => 'galleries#travel_lodging', :as => :travel_lodging
+  match '/galleries/manage', :to => 'galleries#manage', :as => :manage_gallery, via: [:get, :post]
+  match '/galleries/list', :to => 'galleries#list', :as => :list_gallery, via: [:get, :post]
+  post  '/galleries/wedding_photos', :to => 'comments#create_gallery_comment', :as => :create_gallery_comment, via: [:get, :post]
+  post  '/travels/:id', :to => 'comments#create_travel_comment', :as => :create_travel_comment, via: [:get, :post]
+  post  '/foods/:id', :to => 'comments#create_food_comment', :as => :create_food_comment, via: [:get, :post]
 
-  match '/users/manage', :to => 'users#manage', :as => :manage_user
-  match '/users/list', :to => 'users#list', :as => :list_user
+  match '/users/manage', :to => 'users#manage', :as => :manage_user, via: [:get, :post]
+  match '/users/list', :to => 'users#list', :as => :list_user, via: [:get, :post]
   
-  match '/travels/manage', :to => 'travels#manage', :as => :manage_travel
-  match '/travels/list', :to => 'travels#list', :as => :list_travel_blogs
+  match '/travels/manage', :to => 'travels#manage', :as => :manage_travel, via: [:get, :post]
+  match '/travels/list', :to => 'travels#list', :as => :list_travel_blogs, via: [:get, :post]
 
-  match '/foods/manage', :to => 'foods#manage', :as => :manage_food
-  match '/foods/list', :to => 'foods#list', :as => :list_food_blogs
+  match '/foods/manage', :to => 'foods#manage', :as => :manage_food, via: [:get, :post]
+  match '/foods/list', :to => 'foods#list', :as => :list_food_blogs, via: [:get, :post]
 
-  match '/quotes/manage', :to => 'quotes#manage', :as => :manage_quote
-  match '/quotes/list', :to => 'quotes#list', :as => :list_quotes
+  match '/quotes/manage', :to => 'quotes#manage', :as => :manage_quote, via: [:get, :post]
+  match '/quotes/list', :to => 'quotes#list', :as => :list_quotes, via: [:get, :post]
   
   resources :galleries, :sessions, :users, :admins, :comments, :travels, :foods, :quotes
   
