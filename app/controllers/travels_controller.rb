@@ -7,8 +7,8 @@ class TravelsController < ApplicationController
     @travel_blogs = Travel.reorder("publish_date DESC").page(params[:page]).per_page(5)
     quotes = Quote.where(:travel => true).pluck(:id) 
     @quote = Quote.where(:id => quotes.sample).first if Quote.where(:id => quotes.sample).first
-    @featured_blogs_one = Travel.featured_blogs.in_groups_of(3, false).first
-    @featured_blogs_two = Travel.featured_blogs.in_groups_of(3, false).last
+    @featured_blogs_one = Travel.featured_blogs.in_groups_of(4, false).first
+    @featured_blogs_two = Travel.featured_blogs.in_groups_of(4, false).last
   end
   
   def new
@@ -71,11 +71,10 @@ class TravelsController < ApplicationController
         :publish_date, 
         :user_id, 
         :published, 
-        :travel_images_attributes, 
         :destination, 
         :featured_blog,
-        { travel_images_attributes: [:image, :name, :description, :featured, :image_cache, :travel_id] },
-        { comments_attributes: [:content, :user_id, :commenter, :gallery_id, :travel_id, :food_id] },
+        travel_images_attributes: [:id, :image, :name, :description, :featured, :image_cache, :travel_id],
+        comments_attributes: [:id, :content, :user_id, :commenter, :gallery_id, :travel_id, :food_id],
         )
       end
 

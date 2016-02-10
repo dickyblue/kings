@@ -21,7 +21,7 @@ class FoodImageUploader < CarrierWave::Uploader::Base
   end
   
   def default_url
-    ["thekhuus_eat.png"].compact.join('_')
+    ["kings_eat.png"].compact.join('_')
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -49,7 +49,7 @@ class FoodImageUploader < CarrierWave::Uploader::Base
   end
 
   version :index do
-    process :resize_to_limit => [620, 400]
+    process :resize_to_limit => [720, 400]
   end
   
   version :large do
@@ -57,7 +57,7 @@ class FoodImageUploader < CarrierWave::Uploader::Base
   end
   
   version :list do
-    process :resize_to_fill => [300, 180]
+    process :resize_to_fill => [270, 180]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -3,7 +3,5 @@
   <%= f.simple_fields_for :ingredients do |builder| %>
     <%= render 'ingredient_fields', :f => builder %>
   <% end %>
-    <p><%= link_to_add_fields "Add Ingredient", f, :ingredients %></p>
 <%= f.input :recipe_instructions, :input_html => { style: 'height:200px;', :class => "input-xxlarge" } %>          
-<p><%= link_to_remove_fields "Delete Recipe", f %></p>
 </div>

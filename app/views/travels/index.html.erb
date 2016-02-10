@@ -3,18 +3,19 @@
     <span style="font-size: 22px">– <%= @quote.author if @quote %></span>
   </div>
 
+<div class="hidden-sm hidden-xs">
 <% if Travel.featured_blogs.count > 0 %> 
   <%= render :partial => 'shared/blog_index_carousel', :locals => {the_model: Travel}%>
 <% end %>
-    
+</div>    
     <br><br>
     
       
       <% @travel_blogs.each do |tb| %>
       
         <div class="white-box">
-          <div class="row">
-            <div class="span3 travel-index-left-column">
+          <div class="row col-sm-12 col-xs-12">
+            <div class="col-md-3 col-sm-3 col-xs-3 travel-index-left-column">
               <%= image_tag(tb.user.image_url(:thumb), :class => "round-images") if tb.user.image %><br><br>
 
               AUTHOR:<br>
@@ -30,9 +31,9 @@
               <%= pluralize(tb.comments.count, 'Comment') %><br><br>
             </div>
           
-            <div class="span8 travel-index-right-column">
+            <div class="col-md-9 col-sm-9 col-xs-9 travel-index-right-column">
               <p class="mathlete-bulky-font" style="font-size: 38px"><%= link_to tb.title, travel_path(tb) %></p><br>
-              <%= image_tag(Travel.featured_image(tb).first.image_url(:index))%><br><br>
+              <%= image_tag(Travel.featured_image(tb).first.image_url(:index), class: "img-responsive")%><br><br>
               <%= truncate(tb.content, :length => 200) %>
             </div>    
           </div>

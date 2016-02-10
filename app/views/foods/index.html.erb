@@ -2,19 +2,20 @@
   <div class="promocyja-font food-quote">“<%= @quote.quote if @quote %>”<br> 
     <span style="font-size: 22px">– <%= @quote.author if @quote %></span>
   </div>
-  
+
+<div class="hidden-sm hidden-xs">  
 <% if Food.featured_blogs.count > 0 %> 
   <%= render :partial => 'shared/blog_index_carousel', :locals => {the_model: Food}%>
 <% end %>
-
+</div>
   <br><br>
 
     
     <% @food_blogs.each do |fb| %>
     
       <div class="white-box">
-        <div class="row">
-          <div class="span3 travel-index-left-column">
+        <div class="row col-sm-12 col-xs-12">
+          <div class="col-md-3 col-sm-3 col-xs-3 travel-index-left-column">
             <%= image_tag(fb.user.image_url(:thumb), :class => "round-images") if fb.user %><br><br>
 
             AUTHOR:<br>
@@ -32,9 +33,9 @@
             <%= pluralize(fb.comments.count, 'Comment') %><br><br>
           </div>
         
-          <div class="span8 travel-index-right-column">
+          <div class="col-md-9 col-sm-9 col-xs-9 travel-index-right-column">
             <p class="mathlete-bulky-font" style="font-size: 38px"><%= link_to fb.title, food_path(fb) %></p><br>
-            <%= image_tag(Food.featured_image(fb).first.image_url(:index))%><br><br>
+            <%= image_tag(Food.featured_image(fb).first.image_url(:index), class: "img-responsive")%><br><br>
             <%= truncate(fb.content, :length => 200) %>
           </div>    
         </div>

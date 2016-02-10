@@ -59,10 +59,10 @@ body > #container {
 .container {
   background: transparent url("background.png") 100% 100% repeat; 
   }
-
+  
 .white-box {
   background-color: white;
-  width: 920px;
+  width: 1140px;
   border-radius: 4px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 4px;
@@ -73,6 +73,18 @@ body > #container {
   -webkit-box-shadow: 5px 5px 5px #D8D8D8;
   box-shadow: 5px 5px 5px #D8D8D8;
   }      
+
+@media (max-width: 767px) {
+.white-box {
+	width: 650px;
+	}	
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.white-box {
+	width: 720px;
+}	
+}	
 
 .welcome-pix {
   border: solid 1px #eee;
@@ -247,10 +259,6 @@ input, textarea {
   list-style: none;
   padding: 0;
   margin-left: 0px;
-  }
-
-.center-travel-image {
-  padding: 10px;
   }
 
 .white-link, .white-link a {
@@ -898,12 +906,13 @@ hr {
 
 /*-------------BLOGS---------------------*/
 
+
+
 .white-box .travel-index-left-column {
   background-color: $turquoise;
-  padding: 10px;
+  padding: 10px 15px;
   color: white;
   float: left;
-  margin-left: 10px;
   margin-top: -10px;
   padding-bottom: 100000px;
   margin-bottom:  -100000px;
@@ -943,7 +952,7 @@ hr {
 
 .list-pages-grid {
   height: 390px;
-  width: 300px;
+  width: 270px;
   float: left;
   background: white;
   overflow: hidden;
@@ -971,6 +980,10 @@ hr.dotted {
 
 /*-------------CAROUSEL---------------------*/
 
+#myCarousel {
+	width: 1170px;
+} 
+
 #myCarouselMain {
   height: 500px;
   }  
@@ -984,11 +997,26 @@ hr.dotted {
 
 .main-carousel-height {
   height: 500px;
-  }
+}
 
 .thumb-carousel-height {
   height: 180px;
   }
+  
+ .list-group {
+	 margin-bottom: 0;
+ } 
+
+.thumbnails {
+    height: 180px;
+    width: 270px;
+    float: left;
+	margin-left: -10px;
+    list-style: none;
+	margin-right: 32.5px;
+	overflow: visible;
+}
+
 
 .thumbnails li img {
   -webkit-transition: all .5s ease;
@@ -1007,10 +1035,16 @@ hr.dotted {
   -webkit-transform: rotate(-5deg);  
   transform: rotate(-5deg);*/
   }
+
+.index-pages-li {
+    position: relative;
+    overflow: visible;
+}
   
 .index-pages-li-title {
   position: absolute;
-  width: 300px;
+  float: left;
+  width: 270px;
   opacity: 0;
   font-family: 'mathletebulky';
   font-size: 30px;
@@ -1029,8 +1063,7 @@ hr.dotted {
   
 .carousel-control {
   position: absolute;
-  top: 40%;
-  left: 15px;
+  top: 50%;
   width: 40px;
   height: 40px;
   margin-top: -20px;
@@ -1053,7 +1086,7 @@ hr.dotted {
 .index-gal-li {
   position: relative;
   margin-left: 0px; 
-  overflow: show;
+  overflow: visible;
 }
   
 .index-gal-grid img{

@@ -3,7 +3,8 @@
   <div class="carousel slide" id="myCarouselMain" data-ride="carousel">
     <div class="carousel-inner main-carousel-height" role="listbox">
       <div class="item active">
-          <div class="slide_gallery">
+
+		  <div class="slide_gallery">
           <%= image_tag(@first_image.image_url(:featured)) if @first_image %>
           <span class="gallery-slideshow-caption"><%= @first_image.description if @first_image%></span>
           </div>
@@ -11,12 +12,12 @@
     
       <% @featured_images.each do |fb| %>
       <div class="item">
-        <ul>
-          <li class="slide_gallery">
+        <!-- <ul style="margin-left: -40px;"> -->
+          <div class="slide_gallery">
           <%= image_tag(fb.image_url(:featured))%>
           <span class="gallery-slideshow-caption"><%= fb.description %></span>
-          </li>
-        </ul>
+          </div>
+        <!-- </ul> -->
       </div>
       <% end %>
     

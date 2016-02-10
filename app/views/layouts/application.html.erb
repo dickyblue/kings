@@ -3,7 +3,7 @@
 <head>
   <title>The Khuus</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   
 <% # Adding google analytics below %>   
@@ -28,11 +28,7 @@
   <div class="navbar">
     <div class="navbar-inner">
         <div class="container">
-            <% if current_user %>
               <%= link_to logo, root_path %>
-			  <% else %>
-			  <%= link_to logo, root_path %>
-            <% end %>
 		
           <ul class="nav navbar-nav pull-right">
             <li class="<%= 'active' if controller.is_a?(GalleriesController) %>"  style="width: 195px;"><%= link_to galleries_path do %> <div class="ca-icon"></div><% end %><%= link_to "Photo Gallery", galleries_path %></li>

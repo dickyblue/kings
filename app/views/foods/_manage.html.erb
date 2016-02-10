@@ -3,7 +3,6 @@
   <%= f.association :food_images do |builder| %>
       <%= render 'food_image_fields', :f => builder %>
   <% end %>
-  <p><%= link_to_add_fields "Add Food Image", f, :food_images %></p>
 
 
   <br><br>
@@ -30,7 +29,6 @@
           <%= f.simple_fields_for :recipes do |builder| %>
             <%= render 'recipe_fields', :f => builder %><br><br><br><br>
           <% end %>
-          <p><%= link_to_add_fields "Add New Recipe", f, :recipes %></p>
       </div>
   
   <br> 

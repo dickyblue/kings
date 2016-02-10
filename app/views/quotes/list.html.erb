@@ -4,8 +4,8 @@
   <%= link_to "«« Back to Admin »»", admins_path %>
 
   <div>
-    <%= simple_form_for @search, :url => list_quotes_path do |f| %>
-      Keyword Search: <%= f.input :author_or_quote_contains, :label => false %>
+    <%= search_form_for @search, :url => list_quotes_path do |f| %>
+      Keyword Search: <%= f.search_field :author_or_quote_cont, :label => false %>
       SORT BY: <%= f.sort_link :id, "ID Order" %>
     <% end %>
   </div>

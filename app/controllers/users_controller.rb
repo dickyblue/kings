@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   before_filter :authenticate_admin
   
   def list
-    @search = User.search(params[:search])
-    @users = @search.paginate(:page => params[:page], :per_page => 15, :order => "created_at DESC")
+    @search = User.ransack(params[:search])
+    @users = @search.result.paginate(page: params[:page], per_page: params[12])
   end
   
   def new

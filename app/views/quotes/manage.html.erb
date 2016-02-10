@@ -2,8 +2,8 @@
 
   <%= f.input :author %>
   <%= f.input :quote, :input_html => { style: 'height:200px;', :class => "input-xxlarge" } %>
-  <%= f.input :travel, :label => "Travel Quote?", :as => :radio, :collection => [["True", true], ["False", false]] %>
-  <%= f.input :food, :label => "Food Quote?", :as => :radio, :collection => [["True", true], ["False", false]] %>
+  <%= f.input :travel, :label => "Travel Quote?", :as => :radio_buttons, :collection => [["True", true], ["False", false]] %>
+  <%= f.input :food, :label => "Food Quote?", :as => :radio_buttons, :collection => [["True", true], ["False", false]] %>
   
   <br> 
   

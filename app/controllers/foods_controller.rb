@@ -7,8 +7,8 @@ class FoodsController < ApplicationController
     @food_blogs = Food.reorder("publish_date DESC").page(params[:page]).per_page(5)
     quotes = Quote.where(:food => true).pluck(:id)
     @quote = Quote.where(:id => quotes.sample).first if Quote.where(:id => quotes.sample).first
-    @featured_blogs_one = Food.featured_blogs.in_groups_of(3, false).first
-    @featured_blogs_two = Food.featured_blogs.in_groups_of(3, false).last
+    @featured_blogs_one = Food.featured_blogs.in_groups_of(4, false).first
+    @featured_blogs_two = Food.featured_blogs.in_groups_of(4, false).last
   end
   
   def new
@@ -77,9 +77,9 @@ class FoodsController < ApplicationController
     :rest, 
     :recipe, 
     :featured_blog,
-    { food_images_attributes: [:image, :name, :description, :featured, :food_id] },
-    { comments_attributes: [:content, :user_id, :commenter, :gallery_id, :travel_id, :food_id] },
-    { recipes_attributes: [:name, :recipe_instructions, :ingredients_attributes, :food_id] },
+    food_images_attributes: [:id, :image, :name, :description, :featured, :food_id],
+    comments_attributes: [:id, :content, :user_id, :commenter, :gallery_id, :travel_id, :food_id],
+    recipes_attributes: [:id, :name, :recipe_instructions, :food_id], ingredients_attributes: [:id, :ingredient_name, :quantity_used, :recipe_id],
     )
   end
 

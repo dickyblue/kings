@@ -8,12 +8,12 @@ class QuotesController < ApplicationController
   end
   
   def list
-    @search = Quote.search(params[:search])
-    @quotes = @search.paginate(:page => params[:page], :per_page => 10, :order => "created_at DESC")
+    @search = Quote.ransack(params[:search])
+    @quotes = @search.result.paginate(page: params[:page], per_page: params[10])
   end
   
   def create
-    @quote = Quote.new(params[:quote])
+    @quote = Quote.new(quote_params)
     if @quote.save
       redirect_to(:action => 'list')
     else
@@ -22,8 +22,8 @@ class QuotesController < ApplicationController
   end
   
   def update
-    @quote = Quote.find(params[:quote])
-    if @quote.update_attributes(params[:quote])
+    @quote = Quote.find(params[:id])
+    if @quote.update_attributes(quote_params)
       redirect_to(:action => 'list')
     else
       render "manage"
@@ -33,6 +33,17 @@ class QuotesController < ApplicationController
   def destroy
     Quote.find(params[:id]).destroy
     redirect_to :action => 'list'
+  end
+  
+  private 
+  
+  def quote_params
+    params.require(:quote).permit(
+    :quote, 
+    :author, 
+    :travel,
+    :food 
+    )
   end
 
 end

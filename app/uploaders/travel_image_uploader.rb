@@ -49,7 +49,7 @@ class TravelImageUploader < CarrierWave::Uploader::Base
   end
 
   version :index do
-    process :resize_to_fill => [620, 400]
+    process :resize_to_fill => [720, 400]
   end
   
   version :large do
@@ -57,7 +57,7 @@ class TravelImageUploader < CarrierWave::Uploader::Base
   end
   
   version :list do
-    process :resize_to_fill => [300, 180]
+    process :resize_to_fill => [270, 180]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

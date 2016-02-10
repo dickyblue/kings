@@ -141,11 +141,11 @@ module ApplicationHelper
   # end
   
   def travel_stamp
-    travel_stamp = image_tag("kings_travel.png", :att => "Travel Stamp")
+    travel_stamp = image_tag("travel_luggage_stamp.png", class: "img-responsive", :att => "Travel Stamp")
   end
   
   def food_logo
-    food_logo = image_tag("thekhuus_eat.png", :att => "Food Logo")
+    food_logo = image_tag("kings_eat.png", class: "img-responsive", :att => "Food Logo")
   end  
   
   def photo_gallery
@@ -160,22 +160,10 @@ module ApplicationHelper
     eat_photo = image_tag("eats.png", :att => "Food")
   end
   
-  def link_to_remove_fields(name, f)
-    f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
-  end
-  
   def randomized_background_image
     images = ["kings_login_rain.png", "kings_login_sail.png"]
     images[rand(images.size)]
   end  
-
-  def link_to_add_fields(name, f, association)
-    new_object = f.object.class.reflect_on_association(association).klass.new
-    fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
-      render(association.to_s.singularize + "_fields", :f => builder)
-    end
-    link_to_function(name, ("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
-  end
   
   class BootstrapLinkRenderer < ::WillPaginate::ActionView::LinkRenderer
     protected

@@ -1,18 +1,18 @@
-  <div class="span9">
+  <div class="col-md-10 col-sm-10 col-xs-10">
     <h3><%= blog.title %></h3>
     Posted By: <%= blog.user.name %>  |  Dated: <%= blog.publish_date.strftime("%B %d, %Y") if blog.publish_date %> 
   </div>
 </div>
 
 <div class="row">
-  <div class="span11 center-travel-image">
-    <%= image_tag(@featured_image.first.image_url(:large)) %><br>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <%= image_tag(@featured_image.first.image_url(:large), class: "img-responsive") %><br>
     <em style="font-size: 12px; line-height: 100%"><strong><%= @featured_image.first.name %>: </strong><%= @featured_image.first.description %></em><br><br>
     <%= simple_format(blog.content) %><br><br>
   </div>      
 
   <% @all_but_featured_image.each do |f| %>
-  <div class="span11 center-travel-image">
+  <div class="col-md-12 col-sm-12 col-xs-12 center-travel-image">
     <%= image_tag(f.image_url(:large)) if f.image %><br>
     <em style="font-size: 12px; line-height: 100%"><strong><%= f.name %>: </strong><%= f.description %></em>
   </div><br><br>

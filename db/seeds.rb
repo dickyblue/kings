@@ -7,5 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create(name: 'Ming', email: 'ming.f.huang@gmail.com', password: 'chicken128', admin: true)
-User.create(name: 'Nick', email: 'nicholas.khuu@gmail.com', password: 'chicken128', admin: true)
+User.create(name: 'Mandy', email: 'ming.f.huang@gmail.com', password: 'chicken128', admin: true)
+User.create(name: 'Nate', email: 'nicholas.khuu@gmail.com', password: 'chicken128', admin: true)
+User.create(name: 'Guest', email: 'minghuang08@gmail.com', password: 'chicken128', admin: false)
