@@ -19,7 +19,8 @@ gem "rename"
 gem "figaro"
 gem 'test-unit', '~> 3.0'
 gem 'ransack'
-
+gem 'rails_12factor' #required for Heroku
+ 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
