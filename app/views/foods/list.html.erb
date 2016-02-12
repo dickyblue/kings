@@ -30,6 +30,7 @@
 </div>
 
 
-<%= page_navigation_links @food_blogs, '#'%>
+<div class="pull-right"><%= will_paginate @food_blogs, renderer: BootstrapPagination::Rails %></div>    
+
 
 <div class="btn primary white-link pull-right"><%= link_to "New", :action => 'new' %></div>

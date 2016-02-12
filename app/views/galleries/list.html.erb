@@ -31,7 +31,8 @@
 </div>
 
 
-<%= page_navigation_links @galleries, '#'%>
+<div class="pull-right"><%= will_paginate @galleries, renderer: BootstrapPagination::Rails %></div>    
+
 
 <div class="btn primary white-link pull-right"><%= link_to "New", :action => 'new' %></div>
 </div>

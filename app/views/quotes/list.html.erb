@@ -43,6 +43,7 @@
 
 </table>
 
-<%= page_navigation_links @quotes, '#'%>
+<div class="pull-right"><%= will_paginate @quotes, renderer: BootstrapPagination::Rails %></div>    
+
 
 <div class="btn primary white-link pull-right"><%= link_to "New", :action => 'manage' %></div>

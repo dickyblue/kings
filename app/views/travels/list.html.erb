@@ -29,6 +29,7 @@
   <% end %>
 </div>
 
-<%= page_navigation_links @travel_blogs, '#'%>
+<div class="pull-right"><%= will_paginate @travel_blogs, renderer: BootstrapPagination::Rails %></div>    
+
 
 <div class="btn primary white-link pull-right"><%= link_to "New", :action => 'new' %></div>

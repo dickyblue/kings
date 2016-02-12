@@ -38,6 +38,7 @@
 
 </table>
 
-<%= page_navigation_links @users, '#'%>
+<div class="pull-right"><%= will_paginate @users, renderer: BootstrapPagination::Rails %></div>    
+
 
 <div class="btn primary white-link pull-right"><%= link_to "New", :action => 'new' %></div>
