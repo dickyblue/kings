@@ -9,6 +9,8 @@ class TravelsController < ApplicationController
     @quote = Quote.where(:id => quotes.sample).first if Quote.where(:id => quotes.sample).first
     @featured_blogs_one = Travel.featured_blogs.in_groups_of(4, false).first
     @featured_blogs_two = Travel.featured_blogs.in_groups_of(4, false).last
+    # @featured_blogs_one = Travel.featured_blogs.slice(0..3)
+    # @featured_blogs_two = Travel.featured_blogs.slice(4..7)
   end
   
   def new

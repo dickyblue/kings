@@ -14,14 +14,14 @@
   </div>
   
   <div class="item">
+	  <% @featured_blogs_two.each do |fb| %>
         <ul class="thumbnails list-group">
-            <% @featured_blogs_two.each do |fb| %>
             <li class="index-pages-li">
             <%= link_to image_tag(the_model.featured_image(fb).first.image_url(:list)), fb if the_model.featured_image(fb).first %>
             <span class="index-pages-li-title"><%= link_to fb.title, fb %></span>
             </li>
-            <% end %>
         </ul>
+      <% end %>
   </div>
 </div>
 <!-- <a data-slide="prev" href="#myCarousel" class="left carousel-control carousel-control-mini">‹</a>

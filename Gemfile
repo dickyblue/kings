@@ -20,6 +20,7 @@ gem "figaro"
 gem 'test-unit', '~> 3.0'
 gem 'ransack'
 gem 'rails_12factor' #required for Heroku
+gem 'will_paginate-bootstrap'
  
 # Gems used only for assets and not required
 # in production environments by default.

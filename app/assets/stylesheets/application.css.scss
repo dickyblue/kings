@@ -264,6 +264,15 @@ input, textarea {
 .white-link, .white-link a {
   color: white;
   }
+
+.pagination > .active > span {
+	background-color: $turquoise;
+	border-color: $turquoise;
+	}
+	
+.pagination > li > a {
+	color: $turquoise;
+	}	
   
 /*-------------NAV BAR------------------------*/
   

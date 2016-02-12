@@ -40,4 +40,4 @@
         </div><br><br>    
       <% end %>
   
-  <div class="pull-right"><%= page_navigation_links @travel_blogs, '#' %></div>    
+  <div class="pull-right"><%= will_paginate @travel_blogs, renderer: BootstrapPagination::Rails %></div>    
